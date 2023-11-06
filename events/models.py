@@ -24,6 +24,7 @@ class Event(models.Model):
     def __str__(self):
         return self.title
 
+    @property
     def number_of_likes(self):
         return self.likes.count
 
