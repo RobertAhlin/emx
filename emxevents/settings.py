@@ -31,7 +31,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-robertahlin-emx-lymh6zhmfc.us2.codeanyapp.com', 'robertahlin-emx-lymh6zhmfc.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['8000-robertahlin-emx-lymh6zhmfc.us2.codeanyapp.com',
+                 'emx-6d9da8d3da50.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -85,7 +86,6 @@ WSGI_APPLICATION = 'emxevents.wsgi.application'
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
-
 
 
 # Password validation
