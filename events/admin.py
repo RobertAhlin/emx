@@ -6,6 +6,4 @@ from django_summernote.admin import SummernoteModelAdmin
 @admin.register(Event)
 class EventAdmin(SummernoteModelAdmin):
 
-    summernote_fields = ('content')
-
-
+    summernote_field = ('content')
