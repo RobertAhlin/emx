@@ -32,7 +32,7 @@ class SignUp(models.Model):
     sign = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='signed_up')
     name = models.CharField(max_length=80)
     email = models.EmailField()
-    start_number = models.CharField(unique=True, blank=True, null=True)
+    start_number = models.CharField(max_length=8, unique=True, blank=True, null=True)
     transponder = models.IntegerField(null=True, blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
