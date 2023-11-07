@@ -54,10 +54,10 @@
                             <span class="text-secondary"> {{ event.number_of_likes}}</span>
                         </strong>
                     </div>
-                    <div class="col-1">
+                    <div class="col-3">
                         {% with signed_up.count as total_signed_ups %}
                         <strong class="text-secondary"><i class="far fa-clipboard"></i>
-                        {{ total_signed_ups }}</strong>
+                        {{ total_signed_ups }} / {{ event.signed_up.count }} </strong> approved sign ups.
                         {% endwith %}
                     </div>
                 </div>
@@ -71,7 +71,7 @@
     </div>
     <div class="row">
         <div class="col-md-8 card mb-4  mt-3">
-            <h4>Confirmed attending:</h4>
+            <h4>Approved:</h4>
             <div class="card-body">
                 <!-- We want a for loop inside the tags to iterate through each sign_up in sign_ups -->
                 {% for sign in signed_up %}
@@ -114,5 +114,4 @@
         </div>
     </div>
 </div>
-
 {% endblock content %}
