@@ -34,6 +34,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['8000-robertahlin-emx-lymh6zhmfc.us2.codeanyapp.com',
                  'emx-6d9da8d3da50.herokuapp.com', 'localhost']
 
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 # Application definition
 
