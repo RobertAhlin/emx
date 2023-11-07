@@ -78,15 +78,16 @@
         </div>
         <div class="col-md-4 card mb-4  mt-3 ">
             <div class="card-body">
-                <!-- Comment form -->
+                <!-- Sign up form -->
                 {% if user.is_authenticated %}
                 <h3>Sign up to the event:</h3>
                 <p>Signing up as {{ user.username }}</p>
                 <form method="post" style="margin-top: 1.3em;">
-                    {{ event_form | crispy }}
+                    {{ sign_up_form | crispy }}
                     {% csrf_token %}
                     <button type="submit" class="btn btn-signup btn-lg">Submit</button>                
                 </form>
+                {% endif %}
             </div>
         </div>
     </div>

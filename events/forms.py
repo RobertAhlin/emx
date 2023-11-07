@@ -5,4 +5,4 @@ from django import forms
 class SignUpForm(forms.ModelForm):
     class Meta:
         model = SignUp
-        fields = ('body',)
+        fields = ('start_number', 'transponder',)
