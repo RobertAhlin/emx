@@ -56,7 +56,7 @@
     </div>
     <div class="row">
         <div class="col-md-8 card mb-4  mt-3 ">
-            <h3>Signed up:</h3>
+            <h4>Confirmed attending:</h4>
             <div class="card-body">
                 <!-- We want a for loop inside the tags to iterate through each comment in comments -->
                 {% for sign_up in sign_ups %}</form> %}
@@ -80,8 +80,8 @@
             <div class="card-body">
                 <!-- Sign up form -->
                 {% if user.is_authenticated %}
-                <h3>Sign up to the event:</h3>
-                <p>Signing up as {{ user.username }}</p>
+                <h4>Sign up to the event:</h4>
+                <p>Signing up as: <strong>{{ user.username }}</strong></p>
                 <form method="post" style="margin-top: 1.3em;">
                     {{ sign_up_form | crispy }}
                     {% csrf_token %}
