@@ -178,29 +178,12 @@ It feels like this game can be expanded to endless.
 
 ## <a id="testing"></a>Testing
 
-Through the developing of the game I made sure I had something to run in the console. So whenever I made och changed something, I tested it. So continuesly testing the game has been important.
+Through the developing of the EMX Events I had various challanges.
+I followed the "I think, therefore I blog" walkthrough to set it up and use that blog as a base and the changed to my needs. At one part everything just fell apart. The Admin user interface stopped working. When logged in as an admin it showed nothing. Trying to fix it, it kind of went downhill from there. So I started over from start in a new repo and a new workspace and copied code piece by piece untill I was on track again.
 
-I started to struggle a bit with updating cells in google sheet.
-I wanted the cells to update with one row of data:<br>
-     ```character_data = [player_name, char_name, char_str, char_sta, char_cha]```<br>
-     ```player_sheet.update("A2:E2", [character_data])```
-     <br>
-Event though it works, the terminal gives me the following warning:<br>
-    " ```/home/codeany/.local/lib/python3.8/site-packages/gspread/worksheet.py:1069: UserWarning: [Deprecated][in version 6.0.0]: method signature will change to: 'Worksheet.update(value = [[]], range_name=)' arguments 'range_name' and 'values' will swap, values will be mandatory of type: 'list(list(...))'
-warnings.warn("```
+- Allauth : `../.pip-modules/lib/` doesn't work in Codeanywhere. It gives: `ls: cannot access '../.pip-modules/lib/': No such file or directory` the solution was found in Slack and I used this command instead: `cp -r /home/codeany/.local/lib/python3.9/site-packages/allauth/templates/* ./templates/.`
 
-So I changed it to update each cell individually. Not pretty, I know, but couldn't find a way to get the prevoius line of code working without a warning.<br>
-     ```player_sheet.update_acell('A2', player_name)```<br>
-     ```player_sheet.update_acell('B2', char_name)```<br>
-     ```player_sheet.update_acell('C2', char_str)```<br>
-     ```player_sheet.update_acell('D2', char_sta)```<br>
-     ```player_sheet.update_acell('E2', char_cha)```<br>
 
-I also encountered this:<br>
-    ```gspread.exceptions.APIError: {'code': 429, 'message': "Quota exceeded for quota metric 'Read requests' and limit 'Read requests per minute per user' of service 'sheets.googleapis.com' for consumer...```<br>
-I'm guessing I can't access the google sheet when testing and just hitting continue over and over too fast.
-
-When trying showing the game to my mentor, we discovered that we couln't have the Heroku terminal open at the same time. One had to close it.
 
 ### <a id="validating"></a>Validating
 
