@@ -58,19 +58,20 @@
         <div class="col-md-8 card mb-4  mt-3 ">
             <h4>Confirmed attending:</h4>
             <div class="card-body">
-                <!-- We want a for loop inside the tags to iterate through each comment in comments -->
-                {% for sign_up in sign_ups %}</form> %}
+                <!-- We want a for loop inside the tags to iterate through each sign_up in sign_ups -->
+                {% for sign in signed_up %}
                 <div class="comments" style="padding: 10px;">
                     <p class="font-weight-bold">
-                        <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
-                        {{ sign_up.name}}
-                        <span class=" text-muted font-weight-normal">
-                            <!-- The comment's created date goes here -->
-                            {{ sign_up.created_on }}
-                        </span> wrote:
+                        <span class=" text-muted font-weight-normal"></span>
+                            <!-- The signer's name. -->
+                            <strong>{{ sign.name}}</strong>
+                            <!-- The start number of the rider -->
+                            with start number: <strong>{{ sign.start_number }}</strong>
+                                <!-- The date when user signed up -->
+                                signed up <i> {{ sign.created_on }}</i>
+                        </span> 
                     </p>
-                    <!-- The body of the comment goes before the | -->
-                    {{ sign_up.body | linebreaks }}
+                    
                 </div>
                 <!-- Our for loop ends here -->
                 {% endfor %}
@@ -79,14 +80,20 @@
         <div class="col-md-4 card mb-4  mt-3 ">
             <div class="card-body">
                 <!-- Sign up form -->
-                {% if user.is_authenticated %}
-                <h4>Sign up to the event:</h4>
-                <p>Signing up as: <strong>{{ user.username }}</strong></p>
-                <form method="post" style="margin-top: 1.3em;">
-                    {{ sign_up_form | crispy }}
-                    {% csrf_token %}
-                    <button type="submit" class="btn btn-signup btn-lg">Submit</button>                
-                </form>
+                {% if signed %}
+                    <div class="alert alert-success" role="alert">
+                        Your sign up is awaiting confirmation from admin.
+                    </div>
+                {% else %}
+                    {% if user.is_authenticated %}
+                    <h4>Sign up to the event:</h4>
+                    <p>Signing up as: <strong>{{ user.username }}</strong></p>
+                    <form method="post" style="margin-top: 1.3em;">
+                        {{ sign_up_form | crispy }}
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-signup btn-lg">Submit</button>                
+                    </form>
+                    {% endif %}
                 {% endif %}
             </div>
         </div>
