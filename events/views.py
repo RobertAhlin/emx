@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
+from django.contrib import messages
 from .models import Event
 from .forms import SignUpForm
 
@@ -52,6 +53,10 @@ class EventDetail(View):
             sign_up = sign_up_form.save(commit=False)
             sign_up.sign = event
             sign_up.save()
+
+            messages.success(
+                request, "You have successfully signed up for the event.")
+
         else:
             sign_up_form = SignUpForm()
 
