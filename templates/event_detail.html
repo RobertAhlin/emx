@@ -35,7 +35,6 @@
                     {{ event.content | safe }}
                 </p>
                 <div class="row">
-
                     <div class="col-1">
                         <strong>
                             {% if user.is_authenticated %}
@@ -71,14 +70,14 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-8 card mb-4  mt-3 ">
+        <div class="col-md-8 card mb-4  mt-3">
             <h4>Confirmed attending:</h4>
             <div class="card-body">
                 <!-- We want a for loop inside the tags to iterate through each sign_up in sign_ups -->
                 {% for sign in signed_up %}
-                <div class="comments">
-                    <p class="font-weight-bold">
-                        <span class=" text-muted font-weight-normal"></span>
+                <div>
+                    <p class="sign-p">
+                        <span>
                             <!-- The signer's name. -->
                             <strong>{{ sign.name}}</strong>
                             <!-- The start number of the rider -->
