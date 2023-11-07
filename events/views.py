@@ -1,5 +1,6 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
+from django.http import HttpResponseRedirect
 from .models import Event
 from .forms import SignUpForm
 
@@ -65,3 +66,15 @@ class EventDetail(View):
                 "sign_up_form": SignUpForm(),
             },
         )
+
+class EventLike(View):
+
+    def post(self, request, slug):
+        event = get_object_or_404(Event, slug=slug)
+
+        if event.likes.filter(id=request.user.id).exists():
+            event.likes.remove(request.user)
+        else:
+            event.likes.add(request.user)
+            
+        return HttpResponseRedirect(reverse('event_detail', args=[slug]))
