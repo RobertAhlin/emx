@@ -3,6 +3,7 @@ from django.views import generic, View
 from .models import Event
 from .forms import SignUpForm
 
+
 class EventList(generic.ListView):
     model = Event
     queryset = Event.objects.filter(status=1).order_by('-created_on')
@@ -29,7 +30,7 @@ class EventDetail(View):
                 "signed_up": signed_up,
                 "signed": False,
                 "liked": liked,
-                "sign_up_form" : SignUpForm(),
+                "sign_up_form": SignUpForm(),
             },
         )
 
@@ -46,9 +47,9 @@ class EventDetail(View):
 
         if sign_up_form.is_valid():
             sign_up_form.instance.email = request.user.email
-            sign_up_form.instance.name = request.user.name
+            sign_up_form.instance.name = request.user.username
             sign_up = sign_up_form.save(commit=False)
-            sign_up.event = event
+            sign_up.sign = event
             sign_up.save()
         else:
             sign_up_form = SignUpForm()

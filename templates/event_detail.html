@@ -60,15 +60,15 @@
             <div class="card-body">
                 <!-- We want a for loop inside the tags to iterate through each sign_up in sign_ups -->
                 {% for sign in signed_up %}
-                <div class="comments" style="padding: 10px;">
+                <div class="comments">
                     <p class="font-weight-bold">
                         <span class=" text-muted font-weight-normal"></span>
                             <!-- The signer's name. -->
                             <strong>{{ sign.name}}</strong>
                             <!-- The start number of the rider -->
-                            with start number: <strong>{{ sign.start_number }}</strong>
+                            #<strong>{{ sign.start_number }}</strong>
                                 <!-- The date when user signed up -->
-                                signed up <i> {{ sign.created_on }}</i>
+                                - signed up <i> {{ sign.created_on }}</i>
                         </span> 
                     </p>
                     
