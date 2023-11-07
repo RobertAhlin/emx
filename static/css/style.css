@@ -9,8 +9,12 @@ body {
     color: #4A4A4F;
 }
 
-.red-o {
-    color: #E84610;
+.blue-e {
+    color: #007979;
+}
+
+.brown-mx {
+    color: #797900;
 }
 
 .thin {
@@ -57,7 +61,7 @@ body {
     overflow: hidden;
     position: relative;
     display: inline-block;
-    height: 33vh;
+    height: 24vh;
     width: 100%;
 }
 

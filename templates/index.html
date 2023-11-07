@@ -14,8 +14,7 @@
                         <div class="card-body">
                             <div class="image-container">
                                 {% if "placeholder" in event.featured_image.url %}
-                                <img class="card-img-top"
-                                    src="https://www.svemo.se/_next/image?url=https%3A%2F%2Fcms.svemo.se%2Fwp-content%2Fuploads%2F2022%2F10%2FSVEMO-24.jpg&w=3840&q=75">
+                                <img class="card-img-top" src="{% static 'images/emx.webp' %}" alt="dirtbike rider revving away">
                                 {% else %}
                                 <img class="card-img-top" src=" {{ event.featured_image.url }}">
                                 {% endif %}
