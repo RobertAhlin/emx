@@ -6,16 +6,16 @@
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
                 <!-- Event title goes in these h1 tags -->
-                <h1 class="post-title">{{ sign.title }}</h1>
+                <h1 class="post-title">{{ event.title }}</h1>
                 <!-- Event author goes before the | the events's created date goes after -->
-                <p class="post-subtitle"> {{ sign.author }} | {{ sign.created_on }}</p>
+                <p class="post-subtitle"> {{ event.author }} | {{ event.created_on }}</p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->
-                {% if "placeholder" in sign.featured_image.url %}
-                <img class="card-img-top" src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
+                {% if "placeholder" in event.featured_image.url %}
+                <img class="card-img-top" src="https://www.svemo.se/_next/image?url=https%3A%2F%2Fcms.svemo.se%2Fwp-content%2Fuploads%2F2022%2F10%2FSVEMO-24.jpg&w=3840&q=75">
                 {% else %}
-                <img class="card-img-top" src=" {{ sign.featured_image.url }}">
+                <img class="card-img-top" src=" {{ event.featured_image.url }}">
                 {% endif %}
             </div>
         </div>
@@ -29,13 +29,13 @@
                 <!-- The event content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
                 <p class="card-text ">
-                    {{ sign.content | safe }}
+                    {{ event.content | safe }}
                 </p>
                 <div class="row">
 
                     <div class="col-1">
                         <!-- The number of likes goes before the closing strong tag -->
-                        <strong class="text-secondary"><i class="far fa-heart"></i> {{ sign.number_of_likes }} </strong>
+                        <strong class="text-secondary"><i class="far fa-heart"></i> {{ event.number_of_likes }} </strong>
                     </div>
                     <div class="col-1">
                         {% with signed_up.count as total_signed_ups %}

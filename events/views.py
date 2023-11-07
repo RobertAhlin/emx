@@ -14,18 +14,18 @@ class EventDetail(View):
 
     def get(self, request, slug, *args, **kwargs):
         queryset = Event.objects.filter(status=1)
-        sign = get_object_or_404(queryset, slug=slug)
-        signed_up = sign.signed_up.filter(
+        event = get_object_or_404(queryset, slug=slug)
+        signed_up = event.signed_up.filter(
             approved=True).order_by("-created_on")
         liked = False
-        if sign.likes.filter(id=self.request.user.id).exists():
+        if event.likes.filter(id=self.request.user.id).exists():
             liked = True
 
         return render(
             request,
             "event_detail.html",
             {
-                "sign": sign,
+                "event": event,
                 "signed_up": signed_up,
                 "liked": liked,
             },
