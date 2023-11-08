@@ -25,9 +25,9 @@ class EventDetail(View):
         if event.likes.filter(id=self.request.user.id).exists():
             liked = True
 
-        # Get a list of existing start numbers for approved sign-ups
-        existing_start_numbers = signed_up.values_list(
-            'start_number', flat=True)
+        # Get a list of existing start numbers or an empty list if there are none
+        existing_start_numbers = [str(sign.start_number)
+                                  for sign in signed_up if sign.start_number]
 
         sign_up_form = SignUpForm()
         sign_up_form.fields['start_number'].widget.attrs['data-existing-start-numbers'] = ','.join(

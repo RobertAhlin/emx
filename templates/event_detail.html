@@ -96,7 +96,7 @@
                 <!-- Sign up form -->
                 {% if signed %}
                     <div class="alert alert-success" role="alert">
-                        Your sign up is awaiting confirmation from admin.
+                        Your sign up is awaiting confirmation.
                     </div>
                 {% else %}
                     {% if user.is_authenticated %}
@@ -122,8 +122,8 @@
             var existingStartNumbers = $(this).data('existing-start-numbers').split(',');
             var startNumberMessage = $('#start-number-message');
 
-            if (existingStartNumbers.includes(enteredStartNumber)) {
-                startNumberMessage.text('This start number is already taken!');
+            if (enteredStartNumber !== null && existingStartNumbers.includes(enteredStartNumber)) {
+                startNumberMessage.text('This start number is already taken.');
                 $(this).val('');  // Clear the input field
             } else {
                 startNumberMessage.text('');  // Clear the message
