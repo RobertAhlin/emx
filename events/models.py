@@ -26,7 +26,7 @@ class Event(models.Model):
 
     @property
     def number_of_likes(self):
-        return self.likes.count
+        return self.likes.count()
 
 
 class SignUp(models.Model):
