@@ -224,6 +224,7 @@ Otherwise just slack me (Robert Ahlin) and I will redeploy again.
 - A lot of help comes from search hits at the "stack overflow" forums.
 - <a href="<https://djangocentral.com/authentication-using-an-email-address/" target="_blank">Djangocentral</a> - Code examples and help.
 - ChatGPT - While exploring the endless possibilies using ChatGPT I have used this to troubleshoot and ask for help for code snippets.
+- <a href="https://learndjango.com/" target="_blank">https://learndjango.com/</a> - to set up the password reset function
 - Using <a href="https://www.online-spellcheck.com/" target="_blank">https://www.online-spellcheck.com/</a> for spelling.
 
 ### <a id="acknowledgments"></a>Acknowledgments

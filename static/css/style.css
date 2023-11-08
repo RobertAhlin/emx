@@ -42,22 +42,34 @@ body {
     background-color: transparent;
 }
 
+.card-img-top {
+    border-radius: 10px 5px;
+    box-shadow: 0 5px 5px #3a3a3a;
+}
+
+.card-title {
+    margin-top: 5px;
+}
+
 .image-container {
     position: relative;
 }
 
 .image-flash {
     position: absolute;
-    top: 5%;
+    bottom: -3px;
     min-width: 30%;
-    left: -2px;
+    left: -3px;
+    border-radius: 10px 5px;
+    box-shadow: 0 5px 5px #3a3a3a;
     background-color: #797900;
 }
 
 .author {
     color: white;
-    margin: 4px;
-    text-transform: uppercase;
+    margin: 2px;
+    padding-left: 5%;
+
 }
 
 .masthead {

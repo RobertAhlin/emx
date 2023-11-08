@@ -1,0 +1,21 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: [example.com] Password Reset Email
+From: webmaster@localhost
+To: rob@ahlin.org
+Date: Wed, 08 Nov 2023 10:21:50 -0000
+Message-ID: <169943891069.53872.15968814938887706465@6b003048974d>
+
+Hello from example.com!
+
+You're receiving this email because you or someone else has requested a password reset for your user account.
+It can be safely ignored if you did not request a password reset. Click the link below to reset your password.
+
+http://8000-robertahlin-emx-lymh6zhmfc.us2.codeanyapp.com/accounts/password/reset/key/1-bxccse-74dd1ce5eec77593667f69f8fa982a10/
+
+In case you forgot, your username is Admin.
+
+Thank you for using example.com!
+example.com
+-------------------------------------------------------------------------------

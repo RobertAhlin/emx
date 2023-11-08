@@ -19,7 +19,7 @@
                                 <img class="card-img-top" src=" {{ event.featured_image.url }}">
                                 {% endif %}
                                 <div class="image-flash">
-                                    <p class="author">Author: {{ event.author }}</p>
+                                    <p class="author">By: {{ event.author }}</p>
                                 </div>
                             </div>
                             <a href="{% url 'event_detail' event.slug %}" class="post-link">
