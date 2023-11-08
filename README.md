@@ -41,7 +41,7 @@ The idea for this project is to get create an event handler for motocross and en
 
 # <a id="agile"></a>Thinking Agile
 
-  The agile understanding is a piece of cake. I have got an exam from two years part time studies from an Aglie Project Managment course where most of the agile concept was covered, all from scrum, SAFe, project owner to the legal aspects and also change management. To use the project board in Github was a new experience, as I'm use to mostly using Miro and Trello. But fun to learn something new. Using the User Stories on the board is a nice way to keep track of what to do and see the progress. Using the board on my own is a bit strange, as for example, the iterations and iteration planning will not be applicable in the same way. But to show my knowledge I first created a backlog to where I can apply the MoSCoW principle and sort out thinks to do and not to do etc. Also a column for things to be tested as a way of using Defenition of Done (DoD).<br>
+  I'm already familaar with the agile understanding. Just 6 month ago, I got an exam from two years part time studies from an Aglie Project Managment course where most of the agile concept was covered, all from scrum, SAFe, project owner to the legal aspects and also change management. To use the project board in Github was a new experience, as I'm use to mostly using Miro and Trello. But fun to learn something new. Using the User Stories on the board is a nice way to keep track of what to do and see the progress. Using the board on my own is a bit strange, as for example, the iterations and iteration planning will not be applicable in the same way. But to show my knowledge I first created a backlog to where I can apply the MoSCoW principle and sort out things to do and not to do etc. Also a column for things to be tested as a way of using Defenition of Done (DoD).<br>
   <img src="readmefiles/agile-board_01.jpg" width="75%" alt="Image showing a Project Board">
   
 # <a id="user-experience"></a>User Experience
@@ -93,8 +93,9 @@ I wanted the player to experience some visual features that will happen for diff
 ## <a id="technologies"></a>Technologies
 
 1. Python - to create functions for the game.
-2.
-3.
+2. Django - using Django blog as a foundation.
+3. Cloudinary - to host images.
+4. Summernote - to apply a wysiwyg editor.
 
 ## <a id="flowshart"></a>Flowshart
 
@@ -179,7 +180,9 @@ It feels like this game can be expanded to endless.
 ## <a id="testing"></a>Testing
 
 Through the developing of the EMX Events I had various challanges.
-I followed the "I think, therefore I blog" walkthrough to set it up and use that blog as a base and the changed to my needs. At one part everything just fell apart. The Admin user interface stopped working. When logged in as an admin it showed nothing. Trying to fix it, it kind of went downhill from there. So I started over from start in a new repo and a new workspace and copied code piece by piece untill I was on track again.
+I followed the "I think, therefore I blog" walkthrough to set it up and use that blog as a base and then changed to my needs. At one part everything just fell apart. The Admin user interface stopped working. When logged in as an admin it showed nothing. Trying to fix it, it kind of went downhill from there. So I started over from scratch in a new repo and a new workspace and copied code piece by piece untill I was on track again. This will explain why the user stories in the project board are linked to two different repos.
+
+I decided from the beginning that I should make sure to test everything I do. So from the first runnable skeleton of the project. I made sure it was working on Heroku by doing an early deploy. Through the whole process of developing the EMX Events app I hade it running with `python3 manage.py runserver` and checked that all was working about when I did each commit.
 
 - Allauth : `../.pip-modules/lib/` doesn't work in Codeanywhere. It gives: `ls: cannot access '../.pip-modules/lib/': No such file or directory` the solution was found in Slack and I used this command instead: `cp -r /home/codeany/.local/lib/python3.9/site-packages/allauth/templates/* ./templates/.`
 
