@@ -38,6 +38,8 @@ class SignUp(models.Model):
         Event, on_delete=models.CASCADE, related_name='signed_up'
     )
     name = models.CharField(max_length=80)
+    fname = models.CharField(max_length=80)
+    lname = models.CharField(max_length=80)
     email = models.EmailField()
     start_number = models.CharField(
         max_length=8,
