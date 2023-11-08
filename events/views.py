@@ -4,6 +4,7 @@ from django.http import HttpResponseRedirect
 from django.contrib import messages
 from .models import Event
 from .forms import SignUpForm
+from django.urls import reverse
 
 
 class EventList(generic.ListView):
@@ -24,6 +25,14 @@ class EventDetail(View):
         if event.likes.filter(id=self.request.user.id).exists():
             liked = True
 
+        # Get a list of existing start numbers for approved sign-ups
+        existing_start_numbers = signed_up.values_list(
+            'start_number', flat=True)
+
+        sign_up_form = SignUpForm()
+        sign_up_form.fields['start_number'].widget.attrs['data-existing-start-numbers'] = ','.join(
+            existing_start_numbers)
+
         return render(
             request,
             "event_detail.html",
@@ -32,7 +41,7 @@ class EventDetail(View):
                 "signed_up": signed_up,
                 "signed": False,
                 "liked": liked,
-                "sign_up_form": SignUpForm(),
+                "sign_up_form": sign_up_form,
             },
         )
 

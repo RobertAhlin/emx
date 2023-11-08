@@ -105,7 +105,8 @@
                     <form method="post" style="margin-top: 1.3em;">
                         {{ sign_up_form | crispy }}
                         {% csrf_token %}
-                        <button type="submit" class="btn btn-signup btn-lg">Submit</button>                
+                        <small id="start-number-message" class="text-danger"></small><br>
+                        <button type="submit" class="btn btn-signup btn-lg">Submit</button>
                     </form>
                     {% endif %}
                 {% endif %}
@@ -113,4 +114,21 @@
         </div>
     </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#id_start_number').on('change', function () {
+            var enteredStartNumber = $(this).val();
+            var existingStartNumbers = $(this).data('existing-start-numbers').split(',');
+            var startNumberMessage = $('#start-number-message');
+
+            if (existingStartNumbers.includes(enteredStartNumber)) {
+                startNumberMessage.text('This start number is already taken!');
+                $(this).val('');  // Clear the input field
+            } else {
+                startNumberMessage.text('');  // Clear the message
+            }
+        });
+    });
+</script>
 {% endblock content %}
