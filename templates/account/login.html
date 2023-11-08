@@ -19,24 +19,14 @@
 
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
-            {% url 'account_login' as login_url %}
-            {% element form form=form method="post" action=login_url tags="entrance,login" %}
-                {% slot body %}
-                    {% csrf_token %}
-                    {% element fields form=form unlabeled=True %}
-                    {% endelement %}
-                    {% if redirect_field_value %}
-                        <input type="hidden"
-                            name="{{ redirect_field_name }}"
-                            value="{{ redirect_field_value }}" />
-                    {% endif %}
-                {% endslot %}
-                {% slot actions %}
-                    <!--- {% element button type="submit" tags="prominent,login" %} --->
-                        <button class="btn btn-signup right" type="submit">{% trans "Sign In" %}</button>
-                    <!--- {% endelement %} --->
-                {% endslot %}
-            {% endelement %}
+            <form class="login" method="POST" action="{% url 'account_login' %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                {% if redirect_field_value %}
+                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                {% endif %}
+                <button class="btn btn-signup right" type="submit">{% trans "Sign In" %}</button>
+            </form>
         </div>
     </div>
 </div>
