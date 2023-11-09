@@ -14,6 +14,14 @@ class EventList(generic.ListView):
     paginate_by = 6
 
 
+class OldEventList(generic.ListView):
+    model = Event
+    queryset = Event.objects.filter(status=1).order_by('event_date')
+    template_name = 'old_events.html'
+    context_object_name = 'event_list'
+    
+
+
 class EventDetail(View):
 
     def get(self, request, slug, *args, **kwargs):
