@@ -9,7 +9,7 @@ from django.urls import reverse
 
 class EventList(generic.ListView):
     model = Event
-    queryset = Event.objects.filter(status=1).order_by('-created_on')
+    queryset = Event.objects.filter(status=1).order_by('event_date')
     template_name = 'index.html'
     paginate_by = 6
 

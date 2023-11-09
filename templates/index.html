@@ -19,8 +19,11 @@
                                 {% else %}
                                 <img class="card-img-top" src=" {{ event.featured_image.url }}">
                                 {% endif %}
-                                <div class="image-flash">
+                                <div class="image-flash-author">
                                     <p class="author">By: {{ event.author }}</p>
+                                </div>
+                                <div class="image-flash-event-date">
+                                    <p class="author">{{ event.event_date }}</p>
                                 </div>
                                 </a>
                             </div>

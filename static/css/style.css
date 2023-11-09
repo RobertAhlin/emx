@@ -1,5 +1,5 @@
 body {
-    background-color: #F9FAFC;
+    background-color: #f9fcd4;
 }
 
 .sign-p {
@@ -55,11 +55,21 @@ body {
     position: relative;
 }
 
-.image-flash {
+.image-flash-author {
     position: absolute;
     bottom: -3px;
     min-width: 30%;
-    left: -3px;
+    right: -5px;
+    border-radius: 10px 5px;
+    box-shadow: 0 5px 5px #3a3a3a;
+    background-color: #797900;
+}
+
+.image-flash-event-date {
+    position: absolute;
+    top: -3px;
+    min-width: 30%;
+    left: -5px;
     border-radius: 10px 5px;
     box-shadow: 0 5px 5px #3a3a3a;
     background-color: #797900;
