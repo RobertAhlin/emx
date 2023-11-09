@@ -80,10 +80,6 @@ This will show what I learnt with Python using Django and all things in earlier 
 
 The skeleton is based on a Django blog. I started "emxevent" as a project and "events" as an app. From that I changed the models to fit my needs.
 
-**Wireframe**
-
-When starting this project I tried to get my ideas in to a word document.<br>
-<img src="" width="" alt="">
 
 ### <a id="surface"></a>Surface
 
@@ -120,9 +116,9 @@ I wanted the player to experience some visual features that will happen for diff
 
 <h3>Existing Features</h3>
 
-Game starting:
-The game starts with a preface and explain how to play the game.<br>
-<img src="readmefiles/preface.jpg" alt="Image example of the preface text."><br>
+View event date:<br>
+On the index page for each event, it is possible to see when the event will happen.<br>
+<img src="readmefiles/event_date_01.jpg" alt="Image example of the displayed event day."><br>
 
 The player will have to be able to use a keyboard to type letters to operate the game.<br>
 First of all to enter a name, and then create a character with name and stats.<br>
