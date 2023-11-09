@@ -42,7 +42,10 @@ The idea for this project is to get create an event handler for motocross and en
 # <a id="agile"></a>Thinking Agile
 
   I'm already familaar with the agile understanding. Just 6 month ago, I got an exam from two years part time studies in an Aglie Project Managment course where most of the agile concept was covered, all from Scrum, SAFe, project owner to the legal aspects and also change management. To use the project board in Github was a new experience, as I'm use to using Miro and Trello. But fun to learn something new. Using the User Stories on the board is a nice way to keep track of what to do and see the progress. Using the board on my own is a bit strange, as for example, the iterations and iteration planning will not be applicable in the same way. But to show my knowledge I first created a backlog column where I can apply the MoSCoW principle and sort out things to do and not to do etc. Also a column for things to be tested as a way of using Defenition of Done (DoD).<br>
-  <img src="readmefiles/agile-board_01.jpg" width="75%" alt="Image showing a Project Board">
+  <img src="readmefiles/agile-board_01.jpg" width="75%" alt="Image showing a Project Board"><br>
+  
+  Using the DoD column I place all implemented user stories in that column waiting to be tested. My defenition of done was to do a final test and document it in this README. Also leave a comment in the user story that it was done before move it to the done column.<br>
+  <img src="readmefiles/agile-board_02.jpg" alt="Image showing a Project Board"><br>
   Later I added a column for User Stories I choosed not to do.
   
 # <a id="user-experience"></a>User Experience
@@ -116,19 +119,13 @@ I wanted the player to experience some visual features that will happen for diff
 
 <h3>Existing Features</h3>
 
-View event date:<br>
+<b>View event date:</b><br>
 On the index page for each event, it is possible to see when the event will happen.<br>
 <img src="readmefiles/event_date_01.jpg" alt="Image example of the displayed event day."><br>
 
-The player will have to be able to use a keyboard to type letters to operate the game.<br>
-First of all to enter a name, and then create a character with name and stats.<br>
-<img src="readmefiles/screenshot_01a.jpg" alt="Image example of the game starting."><br>
-
-Through the game it will ask if the player would like to continue or quit using the keys "c" respectively "q".<br>
-<img src="readmefiles/screenshot_02a.jpg" alt="Image example of option to continue or quit game."><br>
-
-The game will also ask if the player would like to roll the dice by typing letters "y" or "n".<br>
-<img src="readmefiles/screenshot_02b.jpg" alt="Image example of option to roll dice or not."><br>
+<b>Events sorted by event date:</b><br>
+On the index page the events are sorted with the next upcoming event first.<br>
+<img src="readmefiles/sort_by_event_date_01.jpg" alt="Image example of events sorted by event date."><br>
 
 <h3>Google Sheet</h3>
 
