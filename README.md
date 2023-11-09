@@ -37,17 +37,18 @@ This is event handler for motocross and enduro, which will forfill a real life n
 
 The live link to Heroku can be found here - <a href="https://emx-event-c84aa8e070ad.herokuapp.com/" target="_blank">https://emx-event-c84aa8e070ad.herokuapp.com/</a>
 
-The idea for this project is to get create an event handler for motocross and enduro events. Riders can register to sign up for events. Competitions, training or other events.
+The idea for this project is to get create an event handler for motocross and enduro events. Riders can register to sign up for events. Competitions, training or other available events.
 
 # <a id="agile"></a>Thinking Agile
 
-  I'm already familaar with the agile understanding. Just 6 month ago, I got an exam from two years part time studies from an Aglie Project Managment course where most of the agile concept was covered, all from scrum, SAFe, project owner to the legal aspects and also change management. To use the project board in Github was a new experience, as I'm use to mostly using Miro and Trello. But fun to learn something new. Using the User Stories on the board is a nice way to keep track of what to do and see the progress. Using the board on my own is a bit strange, as for example, the iterations and iteration planning will not be applicable in the same way. But to show my knowledge I first created a backlog to where I can apply the MoSCoW principle and sort out things to do and not to do etc. Also a column for things to be tested as a way of using Defenition of Done (DoD).<br>
+  I'm already familaar with the agile understanding. Just 6 month ago, I got an exam from two years part time studies in an Aglie Project Managment course where most of the agile concept was covered, all from Scrum, SAFe, project owner to the legal aspects and also change management. To use the project board in Github was a new experience, as I'm use to using Miro and Trello. But fun to learn something new. Using the User Stories on the board is a nice way to keep track of what to do and see the progress. Using the board on my own is a bit strange, as for example, the iterations and iteration planning will not be applicable in the same way. But to show my knowledge I first created a backlog column where I can apply the MoSCoW principle and sort out things to do and not to do etc. Also a column for things to be tested as a way of using Defenition of Done (DoD).<br>
   <img src="readmefiles/agile-board_01.jpg" width="75%" alt="Image showing a Project Board">
+  Later I added a column for User Stories I choosed not to do.
   
 # <a id="user-experience"></a>User Experience
 
-The idea is to make it simple and be able to easlily overview different events<br>
-By registering as a user, the rider can store some data to the database so when signing up to events, some data can be prepopulated from the user data.
+The idea is to make it simple and be able to easily overview different events.<br>
+By registering as a user, you are able to sign up for events.
 
 ## <a id="user-stories"></a>User stories
 
@@ -55,12 +56,14 @@ A user should:
 
 - Be able to register as a rider
 - Be able to sign up for events.
+- Be able to like an event and see if other users has liked it.
 - See other riders that has sined up for an event.
+- See old events.
+- 
 
 ### <a id="strategy"></a>Strategy
 
-I aimed for a text based role-playing game where a player should be able to create and name a character with some simple stats. The characters stats combined with dice rolls would determine the outcome. For example: If the character has more strength it will be able to fight the dragon. If it has more charisma it will be more "lucky with partners". Even if the main story will end up the same, there will be three different side events from every time the dice rolls.
-The story should be able to be edited easily in a Google Sheet. That will act as a database for the story, dice roll events and saving player and character.
+I used the Django blog walkthrough as a base. My idea was to use the posts as a way to create events, and then use the comment function to sign up for the event. From there build more content and functions.
 
 ### <a id="scope"></a>Scope
 
@@ -69,12 +72,13 @@ This will show what I learnt with Python using Django and all things in earlier 
 ### <a id="structure"></a>Structure
 
 - Using Django and Python
+- Implement Cloudinary for images to the event
 - Linked to ElephantSQL to use Postages SQL
 - User Summernote for a WYSIWYG editor for creating event.
 
 ### <a id="skeleton"></a>Skeleton
 
-The skeleton is based on a Django blog.
+The skeleton is based on a Django blog. I started "emxevent" as a project and "events" as an app. From that I changed the models to fit my needs.
 
 **Wireframe**
 
@@ -153,29 +157,26 @@ If the text in the story ends with "Time to roll your dice:" it will trigger nex
 
 <h3>Error handling</h3>
 
-The game has error handling to:
+The app has error handling for:
 
-- Check the API connection to Google Sheet.
-- Check that "rpg_p3" Google Sheet exists.
-- Restrict the player name only to alphabetical letters and max 20 character long.
-- Restrict the character name only to alphabetical letters and max 20 character long.
-- Set the total value of character stats to 12.
-- Make sure the player only enter numbers for stats.
+- Not be able to use an existing start number when signing up for an event.
+- 
 
 ## <a id="finalizing"></a>Finalizing
 
 A screenshot form the game running in Heroku console.<br>
-<img src="readmefiles/screenshot_03.jpg" alt="Image of the Heroku console when game is in action"><br>
+<img src="" alt=""><br>
 
 ## <a id ="more-features"></a>More Features?
 
-Is there more to add to the game?<br>
-It feels like this game can be expanded to endless.
+I can actually think of a lot of things to implement to this.
 
-- Option to go for different storylines.
-- Feature to be able to answer the riddles.
-- Different events can upgrade the character stats.
-- Create a graphic interface.
+- Permit selected users to create events.
+- Implent emailing functions. Such as
+  - Send an authentication link when signing up.
+  - Send a password reset link.
+- Save a riders transponder number in the user information.
+- 
 
 ## <a id="testing"></a>Testing
 
@@ -190,9 +191,30 @@ I decided from the beginning that I should make sure to test everything I do. So
     `{% if event.event_date >= today %}`<br>
     To test it I added this line to print the results to the browser: `{{ event.event_date }} | {{ today }}` showed: "Nov. 8, 2023 | 2023-11-09"<br>
     This showed that the format was incorrect of the two dates. The solution that finally worked is: `{% if event.event_date|date:"Y-m-d" >= today %}`
-
-- Sign up for event. Manual testing to sign up for an event.
-
+    
+<details><summary>Sign up for event. Manual testing to sign up for an event.</summary>
+1. In the event_detail.html page I entered values for First name, Last name, Start number and Transponder. Then clicked on submit.<br>
+<img src="readmefiles/test-sign_up_01.jpg" alt="Example one in the sign up process."><br>
+2. I get a message that it was successful and that it is now waiting for approval.<br>
+<img src="readmefiles/test-sign_up_02.jpg" alt="Example two in the sign up process."><br>
+3. Logging in to the admin panel I see that the sign up is waiting for approval.<br>
+<img src="readmefiles/test-sign_up_03.jpg" alt="Example three in the sign up process."><br>
+4. Logged in as an Admin I approved the sign up.<br>
+<img src="readmefiles/test-sign_up_04.jpg" alt="Example four in the sign up process."><br>
+<img src="readmefiles/test-sign_up_05.jpg" alt="Example five in the sign up process."><br>
+5. Going back to the site I now confirm that it is approved and showing up in the list.<br>
+<img src="readmefiles/test-sign_up_06.jpg" alt="Example six in the sign up process."><br>
+6. When viewing old events details it is not possible to sign up. The sign up form will automatically be disabled when the date for the event has passed.<br>
+<img src="readmefiles/test-sign_up_07.jpg" alt="Example seven in the sign up process."><br>
+<hr>
+<h3>Error handling for sign up</h3>
+1. Testing <b>not</b> to fill in the First name or Last name will result in a warning since those fields are required.<br>
+<img src="readmefiles/test-sign_up_errors_01.jpg" alt="Example of error not filling in first or last name."><br>
+1. The start number needs to be unique so there is an error handling for that. However the field is accepted as empty.<br>
+<img src="readmefiles/test-sign_up_errors_02.jpg" alt="Example of error not filling in first or last name."><br>
+1. If the user try to use a number that has been taken. The field will be cleared and a warning will appear when changing field.<br>
+<img src="readmefiles/test-sign_up_errors_03.jpg" alt="Example of error not filling in first or last name."><br>
+</details>
 
 ### <a id="validating"></a>Validating
 

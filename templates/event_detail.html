@@ -59,6 +59,7 @@
                             </span>
                         </strong>
                     </div>
+                    <!-- View how many approved sign ups and total sing ups. -->
                     <div class="col-3">
                         {% with signed_up.count as total_signed_ups %}
                         <strong class="text-secondary">
@@ -99,29 +100,30 @@
         </div>
         <div class="col-md-4 card mb-4 mt-3 ">
             <div class="card-body">
+                
                 <!-- Sign up form -->
                 {% if signed %}
-                <div class="alert alert-success" role="alert">
-                    Your sign up is awaiting confirmation.
-                </div>
+                    <div class="alert alert-success" role="alert">
+                        Your sign up is awaiting confirmation.
+                    </div>
                 {% else %}
-                {% if user.is_authenticated %}
-                {% if event.event_date|date:"Y-m-d" >= today %}
-                <h4>Sign up to the event:</h4>
-                <p>Signing up as: <strong>{{user.username}}</strong></p>
-                <form method="post" style="margin-top: 1.3em;">
-                    {{sign_up_form | crispy}}
-                    {% csrf_token %}
-                    <small id="start-number-message" class="text-danger">
-                    </small><br>
-                    <button type="submit" class="btn btn-signup btn-lg">Submit</button>
-                </form>
-                {% else %}
-                <div class="alert alert-warning" role="alert">
-                    Sign up for this event has closed.
-                </div>
-                {% endif %}
-                {% endif %}
+                    {% if user.is_authenticated %}
+                        {% if event.event_date|date:"Y-m-d" >= today %}
+                            <h4>Sign up to the event:</h4>
+                            <p>Signing up as: <strong>{{user.username}}</strong></p>
+                            <form method="post" style="margin-top: 1.3em;">
+                                {{sign_up_form | crispy}}
+                                {% csrf_token %}
+                                <small id="start-number-message" class="text-danger">
+                                </small><br>
+                                <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+                            </form>
+                        {% else %}
+                            <div class="alert alert-warning" role="alert">
+                                Sign up for this event has closed.
+                            </div>
+                        {% endif %}
+                    {% endif %}
                 {% endif %}
             </div>
         </div>
