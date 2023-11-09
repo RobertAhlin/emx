@@ -81,6 +81,7 @@ class EventDetail(View):
             },
         )
 
+
 class EventLike(View):
 
     def post(self, request, slug):
@@ -90,5 +91,5 @@ class EventLike(View):
             event.likes.remove(request.user)
         else:
             event.likes.add(request.user)
-            
+
         return HttpResponseRedirect(reverse('event_detail', args=[slug]))

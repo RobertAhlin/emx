@@ -186,6 +186,11 @@ I decided from the beginning that I should make sure to test everything I do. So
 
 - Allauth: `../.pip-modules/lib/` doesn't work in Codeanywhere. It gives: `ls: cannot access '../.pip-modules/lib/': No such file or directory` the solution was found in Slack and I used this command instead: `cp -r /home/codeany/.local/lib/python3.9/site-packages/allauth/templates/* ./templates/.`
 
+- Filtering out events on event_date prior to todays date didn't work at all first.
+    `{% if event.event_date >= today %}`<br>
+    To test it I added this line to print the results to the browser: `{{ event.event_date | {{ today }}` showed: "Nov. 8, 2023 | 2023-11-09"<br>
+    This showed that the format was incorrect of the two dates. The solution that finally worked is: `{% if event.event_date|date:"Y-m-d" >= today %}`
+
 - Sign up for event. Manual testing to sign up for an event.
 
 
