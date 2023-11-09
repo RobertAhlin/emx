@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.contrib import messages
-from .models import Event
+from .models import Event, SignUp
 from .forms import SignUpForm
 from django.urls import reverse
 
@@ -19,7 +19,6 @@ class OldEventList(generic.ListView):
     queryset = Event.objects.filter(status=1).order_by('event_date')
     template_name = 'old_events.html'
     context_object_name = 'event_list'
-    
 
 
 class EventDetail(View):
@@ -33,7 +32,7 @@ class EventDetail(View):
         if event.likes.filter(id=self.request.user.id).exists():
             liked = True
 
-        # Get a list of existing start numbers or an empty list if there are none
+        # List of existing start numbers or an empty list if there are none
         existing_start_numbers = [str(sign.start_number)
                                   for sign in signed_up if sign.start_number]
 

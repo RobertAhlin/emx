@@ -11,14 +11,15 @@
                 <!-- Event title -->
                 <h1 class="post-title">{{ event.title }}</h1>
                 <!-- Show scheduled event date, author and the events's created date. -->
-                <p class="post-subtitle">Event date: <strong>{{ event.event_date }}</strong><i> created by: {{ event.author }} on {{ event.created_on }}</i></p>
+                <p class="post-subtitle">Event date: <strong>{{event.event_date}}</strong><i> created by:
+                        {{event.author}} on {{ event.created_on }}</i></p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->
                 {% if "placeholder" in event.featured_image.url %}
                 <img class="card-img-top" src="{% static 'images/emx.webp' %}" alt="dirtbike rider revving away">
                 {% else %}
-                <img class="card-img-top" src=" {{ event.featured_image.url }}">
+                <img class="card-img-top" src="{{ event.featured_image.url }}">
                 {% endif %}
             </div>
         </div>
@@ -27,37 +28,43 @@
 
 <div class="container">
     <div class="row">
-        <div class="col card mb-4  mt-3 left  top">
+        <div class="col card mb-4 mt-3 left top">
             <div class="card-body">
                 <!-- The event content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
-                <p class="card-text ">
-                    {{ event.content | safe }}
-                </p>
+                <p class="card-text ">{{event.content | safe}}</p>
                 <div class="row">
                     <div class="col-1">
                         <strong>
                             {% if user.is_authenticated %}
-                                <form class="d-inline" action="{% url 'event_like' event.slug %}" method="POST">
-                                    {% csrf_token %}
-                                    {% if liked %}
-                                        <button type="submit" name="emxevent_id" value="{{event.slug}}" class="btn-like"><i class="fas fa-heart"></i></button>
-
-                                    {% else %}
-                                        <button type="submit" name="emxevent_id" value="{{event.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
-
-                                    {% endif %}
-                                </form>
+                            <form class="d-inline" action="{% url 'event_like' event.slug %}" method="POST">
+                                {% csrf_token %}
+                                {% if liked %}
+                                <button type="submit" name="emxevent_id" value="{{ event.slug }}" class="btn-like">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                {% else %}
+                                <button type="submit" name="emxevent_id" value="{{ event.slug }}" class="btn-like">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                {% endif %}
+                            </form>
                             {% else %}
-                                <span class="text-secondary"><i class="far fa-heart"></i></span>
+                            <span class="text-secondary">
+                                <i class="far fa-heart"></i>
+                            </span>
                             {% endif %}
-                            <span class="text-secondary"> {{ event.number_of_likes}}</span>
+                            <span class="text-secondary">
+                                {{event.number_of_likes}}
+                            </span>
                         </strong>
                     </div>
                     <div class="col-3">
                         {% with signed_up.count as total_signed_ups %}
-                        <strong class="text-secondary"><i class="far fa-clipboard"></i>
-                        {{ total_signed_ups }} / {{ event.signed_up.count }} </strong> approved sign ups.
+                        <strong class="text-secondary">
+                            <i class="far fa-clipboard"></i>
+                            {{total_signed_ups}} / {{event.signed_up.count}}
+                        </strong> approved sign ups.
                         {% endwith %}
                     </div>
                 </div>
@@ -70,57 +77,57 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-8 card mb-4  mt-3">
+        <div class="col-md-8 card mb-4 mt-3">
             <h4>Approved:</h4>
             <div class="card-body">
-                <!-- We want a for loop inside the tags to iterate through each sign_up in sign_ups -->
+                <!-- Iterate through each sign_up in sign_ups -->
                 {% for sign in signed_up %}
                 <div>
                     <p class="sign-p">
                         <span>
                             <!-- Full name -->
-                            <strong>{{ sign.fname }} {{ sign.lname }}</strong>                          
-                            <!-- The start number of the rider -->
+                            <strong>{{sign.fname}} {{sign.lname}}</strong>
+                            <!-- Start number of the rider -->
                             #<strong>{{ sign.start_number }}</strong>
-                                <!-- Username and the date when user signed up -->
-                                - signed up by <i>{{ sign.name }} - {{ sign.created_on }}</i>
-                        </span> 
+                            <!-- Username and signed up date. -->
+                            - signed up by <i>{{sign.name}} - {{sign.created_on}}</i>
+                        </span>
                     </p>
-                    
                 </div>
-                <!-- Our for loop ends here -->
                 {% endfor %}
             </div>
         </div>
-        <div class="col-md-4 card mb-4  mt-3 ">
+        <div class="col-md-4 card mb-4 mt-3 ">
             <div class="card-body">
                 <!-- Sign up form -->
-                    {% if signed %}
-                    <div class="alert alert-success" role="alert">
-                        Your sign up is awaiting confirmation.
-                    </div>
-                    {% else %}
-                        {% if user.is_authenticated %}
-                            {% if event.event_date|date:"Y-m-d" >= today %}
-                                <h4>Sign up to the event:</h4>
-                                <p>Signing up as: <strong>{{ user.username }}</strong></p>
-                                <form method="post" style="margin-top: 1.3em;">
-                                    {{ sign_up_form | crispy }}
-                                    {% csrf_token %}
-                                    <small id="start-number-message" class="text-danger"></small><br>
-                                    <button type="submit" class="btn btn-signup btn-lg">Submit</button>
-                                </form>
-                            {% else %}
-                                <div class="alert alert-warning" role="alert">
-                                    Sign up for this event has closed.
-                                </div>
-                            {% endif %}
-                    {% endif %}
+                {% if signed %}
+                <div class="alert alert-success" role="alert">
+                    Your sign up is awaiting confirmation.
+                </div>
+                {% else %}
+                {% if user.is_authenticated %}
+                {% if event.event_date|date:"Y-m-d" >= today %}
+                <h4>Sign up to the event:</h4>
+                <p>Signing up as: <strong>{{user.username}}</strong></p>
+                <form method="post" style="margin-top: 1.3em;">
+                    {{sign_up_form | crispy}}
+                    {% csrf_token %}
+                    <small id="start-number-message" class="text-danger">
+                    </small><br>
+                    <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+                </form>
+                {% else %}
+                <div class="alert alert-warning" role="alert">
+                    Sign up for this event has closed.
+                </div>
+                {% endif %}
+                {% endif %}
                 {% endif %}
             </div>
         </div>
     </div>
 </div>
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function () {
@@ -138,4 +145,5 @@
         });
     });
 </script>
+
 {% endblock content %}

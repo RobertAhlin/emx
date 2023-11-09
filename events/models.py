@@ -56,4 +56,3 @@ class SignUp(models.Model):
 
     def __str__(self):
         return f"{self.name}, signed up {self.created_on}"
-
