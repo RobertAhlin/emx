@@ -127,18 +127,11 @@ On the index page for each event, it is possible to see when the event will happ
 On the index page the events are sorted with the next upcoming event first.<br>
 <img src="readmefiles/sort_by_event_date_01.jpg" alt="Image example of events sorted by event date."><br>
 
+<b>Footer:</b><br>
+The footer of the page contains links to external social sites and a live timing applaction. (All sites are in Swedish).<br>
+<img src="readmefiles/footer.jpg" alt="Image example of the footer including links to externa sites."><br>
 
-<h3>Play mechanics</h3>
 
-There is one main story in the Google Sheet document.
-Each section of the game has its on row in the sheet.
-Each line in the sheet will be checked if it's been used. If not, it will be printed and marked with "x" to be able to continue.
-The length of the sentences are set to mach the width of the Heroku console. Just so that the row brake doesn't happen within a word. Also the text block are small enough to fit within the console windows to prevent the need of scrolling to read the text.<br>
-<img src="readmefiles/google-sheet_01.jpg" alt="Example from a marked google sheet row"><br>
-To mark the row with "x" also gives the benefits to manually set or remove an "x" in the sheet. For example to be able to run a specific text block over and over again in the console while testing.<br>
-
-If the text in the story ends with "Time to roll your dice:" it will trigger next roll dice event.<br>
-<img src="readmefiles/google-sheet_02.jpg" alt="Example from text ending with Time to roll your dice:"><br>
 
 <h3>Error handling</h3>
 
