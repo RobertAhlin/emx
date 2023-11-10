@@ -139,8 +139,9 @@ The footer of the page contains links to external social sites and a live timing
 
 The app has error handling for:
 
+- First and Last name required when signing up.
 - Not be able to use an existing start number when signing up for an event.
-- 
+
 
 ## <a id="finalizing"></a>Finalizing
 

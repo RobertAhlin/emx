@@ -5,20 +5,26 @@ from django.contrib import messages
 from .models import Event, SignUp
 from .forms import SignUpForm
 from django.urls import reverse
-
+from django.utils import timezone
 
 class EventList(generic.ListView):
     model = Event
-    queryset = Event.objects.filter(status=1).order_by('event_date')
     template_name = 'index.html'
     paginate_by = 6
+
+    def get_queryset(self):
+        today = timezone.now().date()
+        return Event.objects.filter(status=1, event_date__gte=today).order_by('event_date')
 
 
 class OldEventList(generic.ListView):
     model = Event
-    queryset = Event.objects.filter(status=1).order_by('event_date')
     template_name = 'old_events.html'
     context_object_name = 'event_list'
+
+    def get_queryset(self):
+        today = timezone.now().date()
+        return Event.objects.filter(status=1, event_date__lt=today).order_by('event_date')
 
 
 class EventDetail(View):

@@ -11,7 +11,7 @@
         <div class="col-12 mt-3 left">
             <div class="row">
                 {% for event in event_list %}
-                    {% if event.event_date|date:"Y-m-d" >= today %}
+
                         <div class="col-md-4">
                             <div class="card mb-4">
                                 <div class="card-body">
@@ -46,7 +46,7 @@
                         </div>
                         <div class="row">
                         {% endif %}
-                    {% endif %}
+
                 {% endfor %}
 
             </div>
