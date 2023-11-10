@@ -127,14 +127,6 @@ On the index page for each event, it is possible to see when the event will happ
 On the index page the events are sorted with the next upcoming event first.<br>
 <img src="readmefiles/sort_by_event_date_01.jpg" alt="Image example of events sorted by event date."><br>
 
-<h3>Google Sheet</h3>
-
-The game use a Google Sheet as a database. This to easily edit the text of the story. There is one sheet for the main story,<br>
-<img src="readmefiles/google-sheet_04.jpg" alt="Image example google sheet story sheet."><br>
- one sheet for events from the roll dice,<br>
- <img src="readmefiles/google-sheet_05.jpg" alt="Image example google sheet diceroll sheet."><br>
- and one sheet for the player and character data.<br>
- <img src="readmefiles/google-sheet_03.jpg" alt="Image example google sheet player sheet."><br>
 
 <h3>Play mechanics</h3>
 

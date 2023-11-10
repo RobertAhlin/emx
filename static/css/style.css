@@ -2,6 +2,11 @@ body {
     background-color: #f9fcd4;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .sign-p {
     margin-bottom: 0;
 }
@@ -29,12 +34,12 @@ body {
     background-color: #fff;
 }
 
-.dark-bg {
-    background-color: #445261;
+.emx-bg {
+    background-color: #797900;
 }
 
 .main-bg {
-    background-color: #F9FAFC;
+    background-color: #fcf5d5;
 }
 
 .card {
