@@ -11,7 +11,7 @@ class EventList(generic.ListView):
     model = Event
     queryset = Event.objects.filter(status=1).order_by('event_date')
     template_name = 'index.html'
-    paginate_by = 4
+    paginate_by = 6
 
 
 class OldEventList(generic.ListView):

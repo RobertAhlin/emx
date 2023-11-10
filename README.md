@@ -177,28 +177,39 @@ I decided from the beginning that I should make sure to test everything I do. So
     To test it I added this line to print the results to the browser: `{{ event.event_date }} | {{ today }}` showed: "Nov. 8, 2023 | 2023-11-09"<br>
     This showed that the format was incorrect of the two dates. The solution that finally worked is: `{% if event.event_date|date:"Y-m-d" >= today %}`
     
+<details><summary>Create an event with image upload.</summary>
+1. In the Admin panel I clicked the "+Add" button to start creating an event. I added an image to also test that the Cloudinary API works.<br>
+<img src="readmefiles/test-add_event_01.jpg" alt="Sceeentshot example one in the add event process."><br>
+2. As shown in the image, I saved it as a draft first to test that function. I made sure the event wasn't visible on the index page.<br>
+<img src="readmefiles/test-add_event_02.jpg" alt="Sceeentshot example two in the add event process."><br>
+3. I went back to the Admin panel and opened the event and set it to "Active" and saved it.<br>
+<img src="readmefiles/test-add_event_03.jpg" alt="Sceeentshot example three in the add event process."><br>
+4. Finally I made sure it appear on the index page and that I could click on it to see event details.<br>
+<img src="readmefiles/test-add_event_04.jpg" alt="Sceeentshot example four in the add event process."><br>
+</details>
+
 <details><summary>Sign up for event. Manual testing to sign up for an event.</summary>
 1. In the event_detail.html page I entered values for First name, Last name, Start number and Transponder. Then clicked on submit.<br>
-<img src="readmefiles/test-sign_up_01.jpg" alt="Example one in the sign up process."><br>
+<img src="readmefiles/test-sign_up_01.jpg" alt="Sceeentshot example one in the sign up process."><br>
 2. I get a message that it was successful and that it is now waiting for approval.<br>
-<img src="readmefiles/test-sign_up_02.jpg" alt="Example two in the sign up process."><br>
+<img src="readmefiles/test-sign_up_02.jpg" alt="Sceeentshot example two in the sign up process."><br>
 3. Logging in to the admin panel I see that the sign up is waiting for approval.<br>
-<img src="readmefiles/test-sign_up_03.jpg" alt="Example three in the sign up process."><br>
+<img src="readmefiles/test-sign_up_03.jpg" alt="Sceeentshot example three in the sign up process."><br>
 4. Logged in as an Admin I approved the sign up.<br>
-<img src="readmefiles/test-sign_up_04.jpg" alt="Example four in the sign up process."><br>
-<img src="readmefiles/test-sign_up_05.jpg" alt="Example five in the sign up process."><br>
+<img src="readmefiles/test-sign_up_04.jpg" alt="Sceeentshot example four in the sign up process."><br>
+<img src="readmefiles/test-sign_up_05.jpg" alt="Sceeentshot example five in the sign up process."><br>
 5. Going back to the site I now confirm that it is approved and showing up in the list.<br>
-<img src="readmefiles/test-sign_up_06.jpg" alt="Example six in the sign up process."><br>
+<img src="readmefiles/test-sign_up_06.jpg" alt="Sceeentshot example six in the sign up process."><br>
 6. When viewing old events details it is not possible to sign up. The sign up form will automatically be disabled when the date for the event has passed.<br>
-<img src="readmefiles/test-sign_up_07.jpg" alt="Example seven in the sign up process."><br>
+<img src="readmefiles/test-sign_up_07.jpg" alt="Sceeentshot example seven in the sign up process."><br>
 <hr>
 <h3>Error handling for sign up</h3>
 1. Testing <b>not</b> to fill in the First name or Last name will result in a warning since those fields are required.<br>
-<img src="readmefiles/test-sign_up_errors_01.jpg" alt="Example of error not filling in first or last name."><br>
+<img src="readmefiles/test-sign_up_errors_01.jpg" alt="Sceeentshot example of error not filling in first or last name."><br>
 1. The start number needs to be unique so there is an error handling for that. However the field is accepted as empty.<br>
-<img src="readmefiles/test-sign_up_errors_02.jpg" alt="Example of error not filling in first or last name."><br>
+<img src="readmefiles/test-sign_up_errors_02.jpg" alt="Sceeentshot example of error not filling in first or last name."><br>
 1. If the user try to use a number that has been taken. The field will be cleared and a warning will appear when changing field.<br>
-<img src="readmefiles/test-sign_up_errors_03.jpg" alt="Example of error not filling in first or last name."><br>
+<img src="readmefiles/test-sign_up_errors_03.jpg" alt="Sceeentshot example of error not filling in first or last name."><br>
 </details>
 
 ### <a id="validating"></a>Validating
