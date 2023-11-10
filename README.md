@@ -256,6 +256,7 @@ Otherwise just slack me (Robert Ahlin) and I will redeploy again.
 - ChatGPT - While exploring the endless possibilies using ChatGPT I have used this to troubleshoot and ask for help for code snippets.
 - <a href="https://learndjango.com/" target="_blank">https://learndjango.com/</a> - to set up the password reset function. There will be no mail sent as I've choosed not to implement a SMTP engine in this scope.
 - Using <a href="https://www.online-spellcheck.com/" target="_blank">https://www.online-spellcheck.com/</a> for spelling.
+- Images from https://www.pexels.com, https://www.svemo.com, <https://stock.adobe.com/>
 
 ### <a id="acknowledgments"></a>Acknowledgments
 
