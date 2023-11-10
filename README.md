@@ -127,11 +127,13 @@ On the index page for each event, it is possible to see when the event will happ
 On the index page the events are sorted with the next upcoming event first.<br>
 <img src="readmefiles/sort_by_event_date_01.jpg" alt="Image example of events sorted by event date."><br>
 
+<b>Page for old events</b><br>
+Adding more events over time would soon fill the event page with a lot of events. And I didn't want to have all the event saved. I first thought of making a delete function. But I also thought that both event creators and users might want to se when the event was and who participated. So I made a new page for old events. And on the index page I added a date sorting function that only showed event with a date in the futere. I copied index.html to old_event.html and changed the date sorting function to only show event with an event date prior to today.<br>
+<img src="readmefiles/test-event_with_old_date_03.jpg" alt="Sceeentshot of events in the Old Event page"><br>
+
 <b>Footer:</b><br>
 The footer of the page contains links to external social sites and a live timing applaction. (All sites are in Swedish).<br>
 <img src="readmefiles/footer.jpg" alt="Image example of the footer including links to externa sites."><br>
-
-
 
 <h3>Error handling</h3>
 
@@ -164,12 +166,8 @@ I followed the "I think, therefore I blog" walkthrough to set it up and use that
 I decided from the beginning that I should make sure to test everything I do. So from the first runnable skeleton of the project. I made sure it was working on Heroku by doing an early deploy. Through the whole process of developing the EMX Events app I hade it running with `python3 manage.py runserver` and checked that all was working about when I did each commit.
 
 - Allauth: `../.pip-modules/lib/` doesn't work in Codeanywhere. It gives: `ls: cannot access '../.pip-modules/lib/': No such file or directory` the solution was found in Slack and I used this command instead: `cp -r /home/codeany/.local/lib/python3.9/site-packages/allauth/templates/* ./templates/.`
-
-- Filtering out events on event_date prior to todays date didn't work at all first.
-    `{% if event.event_date >= today %}`<br>
-    To test it I added this line to print the results to the browser: `{{ event.event_date }} | {{ today }}` showed: "Nov. 8, 2023 | 2023-11-09"<br>
-    This showed that the format was incorrect of the two dates. The solution that finally worked is: `{% if event.event_date|date:"Y-m-d" >= today %}`
-    
+   
+Please click on each test below to se details:    
 <details><summary>Create an event with image upload.</summary>
 1. In the Admin panel I clicked the "+Add" button to start creating an event. I added an image to also test that the Cloudinary API works.<br>
 <img src="readmefiles/test-add_event_01.jpg" alt="Sceeentshot example one in the add event process."><br>
@@ -199,10 +197,25 @@ I decided from the beginning that I should make sure to test everything I do. So
 <h3>Error handling for sign up</h3>
 1. Testing <b>not</b> to fill in the First name or Last name will result in a warning since those fields are required.<br>
 <img src="readmefiles/test-sign_up_errors_01.jpg" alt="Sceeentshot example of error not filling in first or last name."><br>
-1. The start number needs to be unique so there is an error handling for that. However the field is accepted as empty.<br>
-<img src="readmefiles/test-sign_up_errors_02.jpg" alt="Sceeentshot example of error not filling in first or last name."><br>
-1. If the user try to use a number that has been taken. The field will be cleared and a warning will appear when changing field.<br>
-<img src="readmefiles/test-sign_up_errors_03.jpg" alt="Sceeentshot example of error not filling in first or last name."><br>
+2. The start number needs to be unique so there is an error handling for that. However the field is accepted as empty.<br>
+<img src="readmefiles/test-sign_up_errors_02.jpg" alt="Sceeentshot showing filling a start number the alreay exist."><br>
+3. If the user try to use a number that has been taken. The field will be cleared and a warning will appear when changing field.<br>
+<img src="readmefiles/test-sign_up_errors_03.jpg" alt="Sceeentshot showing the message of that start number already taken."><br>
+</details>
+
+<details><summary>Events with an event date that passed today date.</summary>
+Filtering out events on event_date prior to todays date didn't work at all first using this line of code:<br>
+`{% if event.event_date >= today %}`<br>
+To test it I added this line to print the results to the browser:<br> `{{ event.event_date }} | {{ today }}`<br>
+in the browser it showed: "Nov. 8, 2023 | 2023-11-09"<br>
+I understood that the format was not same of the two dates. The solution that finally worked is:<br> `{% if event.event_date|date:"Y-m-d" >= today %}`<br>
+Once I got it working I did events to make sure the function worked.<br>
+As shown in the image below I just created an event.<br>
+<img src="readmefiles/test-event_with_old_date_01.jpg" alt="Sceeentshot example of creating and event with date prior to today"><br>
+The event got a event date prior to today. (When I did the test it was 2023-11-10)<br>
+<img src="readmefiles/test-event_with_old_date_02.jpg" alt="Sceeentshot example of selecting a date prior to today"><br>
+On the website it is possible to click "Old Events" to get a view over events that has an event date before todays date.
+<img src="readmefiles/test-event_with_old_date_03.jpg" alt="Sceeentshot of events in the Old Event page"><br>
 </details>
 
 ### <a id="validating"></a>Validating
@@ -241,7 +254,7 @@ Otherwise just slack me (Robert Ahlin) and I will redeploy again.
 - A lot of help comes from search hits at the "stack overflow" forums.
 - <a href="<https://djangocentral.com/authentication-using-an-email-address/" target="_blank">Djangocentral</a> - Code examples and help.
 - ChatGPT - While exploring the endless possibilies using ChatGPT I have used this to troubleshoot and ask for help for code snippets.
-- <a href="https://learndjango.com/" target="_blank">https://learndjango.com/</a> - to set up the password reset function
+- <a href="https://learndjango.com/" target="_blank">https://learndjango.com/</a> - to set up the password reset function. There will be no mail sent as I've choosed not to implement a SMTP engine in this scope.
 - Using <a href="https://www.online-spellcheck.com/" target="_blank">https://www.online-spellcheck.com/</a> for spelling.
 
 ### <a id="acknowledgments"></a>Acknowledgments

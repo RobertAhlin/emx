@@ -7,6 +7,22 @@ a {
     color: inherit;
 }
 
+.navbar {
+    position: fixed;
+    z-index: 99;
+    width: 50%;
+}
+
+.navbar-text {
+    position: fixed;
+    text-align: right;
+    z-index: 98;
+    right: 0;
+    background-color: #FFFFFF;
+    padding: 20px;
+    width: 50%;
+}
+
 .sign-p {
     margin-bottom: 0;
 }
@@ -40,6 +56,10 @@ a {
 
 .main-bg {
     background-color: #fcf5d5;
+}
+
+.main-padding {
+    padding-top: 50px;
 }
 
 .card {
