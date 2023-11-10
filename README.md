@@ -131,6 +131,10 @@ On the index page the events are sorted with the next upcoming event first.<br>
 Adding more events over time would soon fill the event page with a lot of events. And I didn't want to have all the event saved. I first thought of making a delete function. But I also thought that both event creators and users might want to se when the event was and who participated. So I made a new page for old events. And on the index page I added a date sorting function that only showed event with a date in the futere. I copied index.html to old_event.html and changed the date sorting function to only show event with an event date prior to today.<br>
 <img src="readmefiles/test-event_with_old_date_03.jpg" alt="Sceeentshot of events in the Old Event page"><br>
 
+<b>Likes</b>
+I kept the function to like an event. First I thought of removing it as it seemed quite unnecessary to like an event. But for educational purpose I kept it. Also it will give a hint of if it is an event is popular.<br>
+View total likes:<img src="readmefiles/like_before.jpg" alt="Screenshot of likes and not yet liked by logged in user."> Liked by user:<img src="readmefiles/liked_after.jpg" alt="Screenshot of likes and now liked by logged in user."><br>
+
 <b>Footer:</b><br>
 The footer of the page contains links to external social sites and a live timing applaction. (All sites are in Swedish).<br>
 <img src="readmefiles/footer.jpg" alt="Image example of the footer including links to externa sites."><br>
@@ -221,6 +225,10 @@ The event got a event date prior to today. (When I did the test it was 2023-11-1
 <img src="readmefiles/test-event_with_old_date_02.jpg" alt="Sceeentshot example of selecting a date prior to today"><br>
 On the website it is possible to click "Old Events" to get a view over events that has an event date before todays date.
 <img src="readmefiles/test-event_with_old_date_03.jpg" alt="Sceeentshot of events in the Old Event page"><br>
+</details>
+
+<details><summary>Like and Unlike event</summary>
+
 </details>
 
 ### <a id="validating"></a>Validating
