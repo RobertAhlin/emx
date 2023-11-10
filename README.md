@@ -205,11 +205,15 @@ Please click on each test below to se details:
 </details>
 
 <details><summary>Events with an event date that passed today date.</summary>
-Filtering out events on event_date prior to todays date didn't work at all first using this line of code:<br>
+This is a small story on it self. Filtering out events on event_date prior to todays date didn't work at all first using this line of code:<br>
 `{% if event.event_date >= today %}`<br>
 To test it I added this line to print the results to the browser:<br> `{{ event.event_date }} | {{ today }}`<br>
 in the browser it showed: "Nov. 8, 2023 | 2023-11-09"<br>
 I understood that the format was not same of the two dates. The solution that finally worked is:<br> `{% if event.event_date|date:"Y-m-d" >= today %}`<br>
+But when I added more events I discovered that the "for event in event_list" loop generated empty entries rather than remove them. Here I got the help from ChatGPT that came up with the solution to filter it out in the view before passing the data to the template.<br>
+def get_queryset(self):<br>
+        today = timezone.now().date()<br>
+        return Event.objects.filter(status=1, event_date__gte=today).order_by('event_date')<br><br>
 Once I got it working I did events to make sure the function worked.<br>
 As shown in the image below I just created an event.<br>
 <img src="readmefiles/test-event_with_old_date_01.jpg" alt="Sceeentshot example of creating and event with date prior to today"><br>
