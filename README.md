@@ -1,12 +1,11 @@
 # <a id="title"></a>EMX Event Management
 
 <img src="" alt=""><br>
-(By now this ReadMe is just copied from another project to serve as a template. The content will change during the project buildup.)
 
-<h2>Project</h2>
+<h2>Project 4 - EMX Events</h2>
 
 Welcome to this Enduro and Motocross event handler.<br>
-This is event handler for motocross and enduro, which will forfill a real life need. There is no good event handler to create events for motocross and enduro clubs. All clubs uses thier own systems. (Everything from Google sheets and mail groups all kind of temporary solutions.) There is one event hadler for official competitions handled by SVEMO a Swedish motorsport association.
+This is event handler for motocross and enduro, which will forfill a real life need. There is no good event handler to create events for motocross and enduro clubs. All clubs uses thier own systems. (Everything from Google sheets and mail groups all kind of temporary solutions.) There is one event hadler for official competitions handled by SVEMO the Swedish motorsport association.
 
 # <a id="table-of-content"></a>Table of Content
 
@@ -24,6 +23,8 @@ This is event handler for motocross and enduro, which will forfill a real life n
 - <a href="#technologies">Technologies</a>
   - <a href="#flowshart">Flowshart</a>
 - <a href="#features">Features</a>
+  - <a href="view-event-date">View event date</a>
+  - <a href="events-sorted">Events sorted by event date</a>
 - <a href="#finalizing">Finalizing</a>
 - <a href="#more-features">More Features</a>
 - <a href="#testing">Testing</a>
@@ -115,27 +116,33 @@ I wanted the player to experience some visual features that will happen for diff
 - If a text block end whith the phrase "The end!" that will trigger the ending sequense where player is asked to confirm game end.
 - Game will reboot.
 
-## <a id="features"></a>Features
+# <a id="features"></a>Features
 
-<h3>Existing Features</h3>
+## Existing Features
 
-<b>View event date:</b><br>
+### <a id="view-event-date"></a><b>View event date:</b>
 On the index page for each event, it is possible to see when the event will happen.<br>
 <img src="readmefiles/event_date_01.jpg" alt="Image example of the displayed event day."><br>
 
-<b>Events sorted by event date:</b><br>
+### <a id="events-sorted"></a><b>Events sorted by event date:</b>
 On the index page the events are sorted with the next upcoming event first.<br>
 <img src="readmefiles/sort_by_event_date_01.jpg" alt="Image example of events sorted by event date."><br>
 
-<b>Page for old events</b><br>
-Adding more events over time would soon fill the event page with a lot of events. And I didn't want to have all the event saved. I first thought of making a delete function. But I also thought that both event creators and users might want to se when the event was and who participated. So I made a new page for old events. And on the index page I added a date sorting function that only showed event with a date in the futere. I copied index.html to old_event.html and changed the date sorting function to only show event with an event date prior to today.<br>
+### <b>Page for old events</b>
+Adding more events over time would soon fill the event page with a lot of events. And I didn't want to have all the event saved. I first thought of making a delete function. But I also thought that both event creators and users might want to see when the event was and who participated. So I made a new page for old events. I copied index.html to old_event.html and added date sorting functions to respective view to after and before today's date.<br>
 <img src="readmefiles/test-event_with_old_date_03.jpg" alt="Sceeentshot of events in the Old Event page"><br>
 
-<b>Likes</b>
+### <b>Likes</b>
 I kept the function to like an event. First I thought of removing it as it seemed quite unnecessary to like an event. But for educational purpose I kept it. Also it will give a hint of if it is an event is popular.<br>
 View total likes:<img src="readmefiles/like_before.jpg" alt="Screenshot of likes and not yet liked by logged in user."> Liked by user:<img src="readmefiles/liked_after.jpg" alt="Screenshot of likes and now liked by logged in user."><br>
 
-<b>Footer:</b><br>
+### <b>Signed up</b>
+On the index page is it possible to se how many has signed up for the event.<br>
+<img src="readmefiles/signed_up_01.jpg" alt="Screenshot of total amount of sign ups for an event."><br>
+When looking at the details of the event. It shows how many has been approved and how many has signed up in total.<br>
+<img src="readmefiles/signed_up_02.jpg" alt="Screenshot of how many sign ups has been approved and total amount of sign ups for the event."><br>
+
+### <b>Footer:</b>
 The footer of the page contains links to external social sites and a live timing applaction. (All sites are in Swedish).<br>
 <img src="readmefiles/footer.jpg" alt="Image example of the footer including links to externa sites."><br>
 
@@ -161,7 +168,7 @@ I can actually think of a lot of things to implement to this.
   - Send an authentication link when signing up.
   - Send a password reset link.
 - Save a riders transponder number in the user information.
-- 
+- Categorize the events. Like "Enduro" or "Motocross".
 
 ## <a id="testing"></a>Testing
 
