@@ -9,7 +9,7 @@ a {
 
 .navbar {
     position: fixed;
-    z-index: 99;
+    z-index: 98;
     width: 100%;
     box-shadow: 0 5px 5px #3a3a3a;
 }
@@ -20,6 +20,26 @@ a {
     box-shadow: 0 5px 5px #3a3a3a;
     top: 0px;
     right: 100px;
+}
+
+.alert-two {
+    position: fixed;
+    z-index: 99;
+    border-radius: 10px 5px;
+    box-shadow: 0 5px 5px #3a3a3a;
+    top: 100px;
+    right: 10%;
+    padding: 18px;
+}
+
+.alert-old {
+    position: fixed;
+    z-index: 99;
+    border-radius: 10px 5px;
+    box-shadow: 0 5px 5px #3a3a3a;
+    top: 150px;
+    left: 15%;
+    padding: 18px;
 }
 
 

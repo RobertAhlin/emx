@@ -81,17 +81,6 @@
         <div class="col-md-8 card mb-4 mt-3">
             <h4>Approved:</h4>
             <div class="card-body">
-                {% if user.is_authenticated %}
-                <p>User is authenticated.</p>
-                {% else %}
-                <p>User is not authenticated.</p>
-                {% endif %}
-                {% if user.is_authenticated and user == sign.user %}
-                <p>User is authenticated and matches sign's user.</p>
-                {% else %}
-                <p>User is not authenticated or does not match sign's user.</p>
-                {% endif %}
-                <!-- Iterate through each sign_up in sign_ups -->
                 <!-- Iterate through each sign_up in signed_up -->
                 {% for sign in signed_up %}
                 <div class="sign-p">
@@ -120,7 +109,7 @@
                 
                 <!-- Sign up form -->
                 {% if signed %}
-                    <div class="alert alert-success" role="alert">
+                    <div class="alert-two alert-success" role="alert">
                         Your sign up is awaiting confirmation.
                     </div>
                 {% else %}
@@ -136,7 +125,7 @@
                                 <button type="submit" class="btn btn-signup btn-lg">Submit</button>
                             </form>
                         {% else %}
-                            <div class="alert alert-warning" role="alert">
+                            <div class="alert-old alert-warning" role="alert">
                                 Sign up for this event has closed.
                             </div>
                         {% endif %}
@@ -152,14 +141,23 @@
     $(document).ready(function () {
         $('#id_start_number').on('change', function () {
             var enteredStartNumber = $(this).val();
-            var existingStartNumbers = $(this).data('existing-start-numbers').split(',');
-            var startNumberMessage = $('#start-number-message');
+            var existingStartNumbers = $(this).data('existing-start-numbers');
 
-            if (enteredStartNumber !== null && existingStartNumbers.includes(enteredStartNumber)) {
-                startNumberMessage.text('This start number is already taken.');
-                $(this).val('');  // Clear the input field
-            } else {
-                startNumberMessage.text('');  // Clear the message
+            console.log('Entered Start Number:', enteredStartNumber);
+            console.log('Existing Start Numbers:', existingStartNumbers);
+
+            if (enteredStartNumber !== null && existingStartNumbers) {
+                var startNumberArray = existingStartNumbers.split(',');
+                console.log('Start Number Array:', startNumberArray);
+
+                var startNumberMessage = $('#start-number-message');
+
+                if (startNumberArray.includes(enteredStartNumber)) {
+                    startNumberMessage.text('This start number is already taken.');
+                    $(this).val('');  // Clear the input field
+                } else {
+                    startNumberMessage.text('');  // Clear the message
+                }
             }
         });
     });

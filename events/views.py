@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.contrib import messages
@@ -79,19 +79,27 @@ class EventDetail(View):
 
             messages.success(
                 request, "You have successfully signed up for the event.")
-
         else:
-            sign_up_form = SignUpForm()
+            # Form is not valid, set the data-existing-start-numbers attribute
+            existing_start_numbers = [str(sign.start_number)
+                                    for sign in signed_up if sign.start_number]
+            sign_up_form.fields['start_number'].widget.attrs['data-existing-start-numbers'] = ','.join(
+                existing_start_numbers)
 
+            print(sign_up_form.errors)
+            messages.error(
+                request, "Failed to sign up. Please check the form.")
+
+        # Always render the template, whether the form is valid or not
         return render(
             request,
             "event_detail.html",
             {
                 "event": event,
                 "signed_up": signed_up,
-                "signed": True,
+                "signed": False,
                 "liked": liked,
-                "sign_up_form": SignUpForm(),
+                "sign_up_form": sign_up_form,
             },
         )
 
