@@ -82,9 +82,9 @@ a {
 
 .image-flash-author {
     position: absolute;
-    bottom: -3px;
+    bottom: -10px;
     min-width: 30%;
-    right: -5px;
+    right: 10px;
     border-radius: 10px 5px;
     box-shadow: 0 5px 5px #3a3a3a;
     background-color: #007979;
