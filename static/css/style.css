@@ -14,6 +14,13 @@ a {
     box-shadow: 0 5px 5px #3a3a3a;
 }
 
+.alert {
+    position: fixed;
+    z-index: 100;
+    box-shadow: 0 5px 5px #3a3a3a;
+    top: 0px;
+    right: 100px;
+}
 
 
 .sign-p {
