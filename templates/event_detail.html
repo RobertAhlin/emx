@@ -92,28 +92,25 @@
                 <p>User is not authenticated or does not match sign's user.</p>
                 {% endif %}
                 <!-- Iterate through each sign_up in sign_ups -->
+                <!-- Iterate through each sign_up in signed_up -->
                 {% for sign in signed_up %}
-                <div>
-                    <p class="sign-p">
-                        <span>
-                            <!-- Full name -->
-                            <strong>{{sign.fname}} {{sign.lname}}</strong>
-                            <!-- Start number of the rider -->
-                            #<strong>{{ sign.start_number }}</strong>
-                            <!-- Username and signed up date. -->
-                            - signed up by <i>{{sign.name}} - {{sign.created_on}}</i>
-
-                            {% if user.is_authenticated and user.username == sign.name %}
-                            <!-- Form to handle deletion of sign up -->
-                            <form class="d-inline" action="{% url 'delete_signup' event.slug sign.id %}" method="post">
-                                {% csrf_token %}
-                                <button type="submit" class="btn btn-link btn-sm">
-                                    <i class="fas fa-trash"></i> Delete
-                                </button>
-                            </form>
-                            {% endif %}
-                        </span>
-                    </p>
+                <div class="sign-p">
+                    <!-- Full name -->
+                    <strong>{{sign.fname}} {{sign.lname}}</strong>
+                    <!-- Start number of the rider -->
+                    #<strong>{{ sign.start_number }}</strong>
+                    <!-- Username and signed up date. -->
+                    - signed up by <i>{{sign.name}} - {{sign.created_on}}</i>
+                
+                    {% if user.is_authenticated and user.username == sign.name %}
+                    <!-- Form to handle deletion of sign up -->
+                    <form class="d-inline" action="{% url 'delete_signup' event.slug sign.id %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-link btn-sm text-danger">
+                            <i class="fas fa-delete-left"></i>
+                        </button>
+                    </form>
+                    {% endif %}
                 </div>
                 {% endfor %}
             </div>
