@@ -81,6 +81,16 @@
         <div class="col-md-8 card mb-4 mt-3">
             <h4>Approved:</h4>
             <div class="card-body">
+                {% if user.is_authenticated %}
+                <p>User is authenticated.</p>
+                {% else %}
+                <p>User is not authenticated.</p>
+                {% endif %}
+                {% if user.is_authenticated and user == sign.user %}
+                <p>User is authenticated and matches sign's user.</p>
+                {% else %}
+                <p>User is not authenticated or does not match sign's user.</p>
+                {% endif %}
                 <!-- Iterate through each sign_up in sign_ups -->
                 {% for sign in signed_up %}
                 <div>
@@ -92,6 +102,16 @@
                             #<strong>{{ sign.start_number }}</strong>
                             <!-- Username and signed up date. -->
                             - signed up by <i>{{sign.name}} - {{sign.created_on}}</i>
+
+                            {% if user.is_authenticated and user.username == sign.name %}
+                            <!-- Form to handle deletion of sign up -->
+                            <form class="d-inline" action="{% url 'delete_signup' event.slug sign.id %}" method="post">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-link btn-sm">
+                                    <i class="fas fa-trash"></i> Delete
+                                </button>
+                            </form>
+                            {% endif %}
                         </span>
                     </p>
                 </div>

@@ -7,6 +7,7 @@ from .forms import SignUpForm
 from django.urls import reverse
 from django.utils import timezone
 
+
 class EventList(generic.ListView):
     model = Event
     template_name = 'index.html'
@@ -106,3 +107,12 @@ class EventLike(View):
             event.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('event_detail', args=[slug]))
+
+
+class DeleteSignUp(View):
+    def post(self, request, slug, signup_id):
+        # Ensure that the user can only delete their own sign-up
+        sign_up = get_object_or_404(
+            SignUp, id=signup_id, sign__slug=slug, name=request.user.username)
+        sign_up.delete()
+        return redirect('event_detail', slug=slug)

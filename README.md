@@ -131,6 +131,8 @@ On the index page the events are sorted with the next upcoming event first.<br>
 ### <b>Page for old events</b>
 Adding more events over time would soon fill the event page with a lot of events. And I didn't want to have all the event saved. I first thought of making a delete function. But I also thought that both event creators and users might want to see when the event was and who participated. So I made a new page for old events. I copied index.html to old_event.html and added date sorting functions to respective view to after and before today's date.<br>
 <img src="readmefiles/test-event_with_old_date_03.jpg" alt="Sceeentshot of events in the Old Event page"><br>
+When viewing details of an old event. It is longer possible to sign up for the event. This is also notifided through an active alert message:
+<img src="readmefiles/old_event_closed_01.jpg" alt="Sceeentshot alert message closed for sign up."><br>
 
 ### <b>Likes</b>
 I kept the function to like an event. First I thought of removing it as it seemed quite unnecessary to like an event. But for educational purpose I kept it. Also it will give a hint of if it is an event is popular.<br>
@@ -179,15 +181,25 @@ I decided from the beginning that I should make sure to test everything I do. So
 
 - Allauth: `../.pip-modules/lib/` doesn't work in Codeanywhere. It gives: `ls: cannot access '../.pip-modules/lib/': No such file or directory` the solution was found in Slack and I used this command instead: `cp -r /home/codeany/.local/lib/python3.9/site-packages/allauth/templates/* ./templates/.`
    
-Please click on each test below to se details:    
+Please click on each test below to se details:
+<details><summary>Register as a user.</summary>
+To test to register as a user I:
+1. Clicked Register in the navigation bar:<br>
+<img src="readmefiles/test-register_01.jpg" alt="Sceeentshot example one in the add event process."><br>
+2. Filled in the form with a username and password.<br>
+<img src="readmefiles/test-register_02.jpg" alt="Sceeentshot example one in the add event process."><br>
+3. Finally when rigistration has been submittet the user gets logged in and an alert will appert to notify the user.<br>
+<img src="readmefiles/test-register_03.jpg" alt="Sceeentshot example one in the add event process."><br>
+</details>
+
 <details><summary>Create an event with image upload.</summary>
 1. In the Admin panel I clicked the "+Add" button to start creating an event. I added an image to also test that the Cloudinary API works.<br>
 <img src="readmefiles/test-add_event_01.jpg" alt="Sceeentshot example one in the add event process."><br>
-2. As shown in the image, I saved it as a draft first to test that function. I made sure the event wasn't visible on the index page.<br>
+1. As shown in the image, I saved it as a draft first to test that function. I made sure the event wasn't visible on the index page.<br>
 <img src="readmefiles/test-add_event_02.jpg" alt="Sceeentshot example two in the add event process."><br>
-3. I went back to the Admin panel and opened the event and set it to "Active" and saved it.<br>
+1. I went back to the Admin panel and opened the event and set it to "Active" and saved it.<br>
 <img src="readmefiles/test-add_event_03.jpg" alt="Sceeentshot example three in the add event process."><br>
-4. Finally I made sure it appear on the index page and that I could click on it to see event details.<br>
+1. Finally I made sure it appear on the index page and that I could click on it to see event details.<br>
 <img src="readmefiles/test-add_event_04.jpg" alt="Sceeentshot example four in the add event process."><br>
 </details>
 
@@ -234,8 +246,9 @@ On the website it is possible to click "Old Events" to get a view over events th
 <img src="readmefiles/test-event_with_old_date_03.jpg" alt="Sceeentshot of events in the Old Event page"><br>
 </details>
 
-<details><summary>Like and Unlike event</summary>
-
+<details><summary>Pagination</summary>
+I added enough envents to make sure I hade more to activate the pagination function to verify that it works.<br>
+<img src="readmefiles/test-pagination_01.jpg" alt="Sceeentshot the 'Next' button when pagnitate."><br>
 </details>
 
 ### <a id="validating"></a>Validating
@@ -253,19 +266,17 @@ The site was deployed to Heroku. Using the Code institute guidence from Love San
 
 - I used the GitHub template to create my own repository.
 - Used Codeanywhere as IDE.
-- Made a Google sheet and set up the API according to the videos in the Love Sandwiches walkthrough.
 - I deployed the project to Heroku going through these steps.
     1. Create new app.
-    2. Named it: rpg-p3 (Short for Role Playing Game - Project 3).
+    2. Named it: emx (Short for Enduro MotoCross).
     3. Choose Europe as region.
-    4. I went to the Settings tab to create config vars for CREDS and PORT.
-    5. I added the buildpacks Python and Nodejs.
-    6. In the Deploy tab I connected to GitHub repository "rpg-p3".
+    4. I went to the Settings tab to create config vars for:
+        - Cloudinary url
+        - Database url
+        - Port
+        - Secret key
+    5. In the Deploy tab I connected to GitHub repository "emx".
     7. I manually deployed branch (main).
-
-I have in two occations experienced that Heroku stopped working and I had to redeploy branch. Seems like there is some time of timelimit?
-I truly do hope that it is still running when it is time for review.
-Otherwise just slack me (Robert Ahlin) and I will redeploy again.
 
 ## <a id="credits"></a>Credits
 
