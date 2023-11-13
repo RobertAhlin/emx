@@ -10,18 +10,11 @@ a {
 .navbar {
     position: fixed;
     z-index: 99;
-    width: 50%;
+    width: 100%;
+    box-shadow: 0 5px 5px #3a3a3a;
 }
 
-.navbar-text {
-    position: fixed;
-    text-align: right;
-    z-index: 98;
-    right: 0;
-    background-color: #FFFFFF;
-    padding: 20px;
-    width: 50%;
-}
+
 
 .sign-p {
     margin-bottom: 0;
