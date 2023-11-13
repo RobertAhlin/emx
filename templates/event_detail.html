@@ -139,7 +139,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function () {
-        $('#id_start_number').on('change', function () {
+        $('#id_start_number').on('blur', function () {
             var enteredStartNumber = $(this).val();
             var existingStartNumbers = $(this).data('existing-start-numbers');
 
