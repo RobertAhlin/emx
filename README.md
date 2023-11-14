@@ -251,9 +251,11 @@ I added enough envents to make sure I hade more to activate the pagination funct
 <img src="readmefiles/test-pagination_01.jpg" alt="Sceeentshot the 'Next' button when pagnitate."><br>
 </details>
 
+- When I started to create more events and more sign ups to events I soon discovered that the sign ups didn't register in the database. Trying to troubleshoot I soon discovered that the issue was that start_number in my model had `unique=True`. My original thought was that each sign up should have a unique start number related for each event. But as the database will check for all start numbers in all events, it was not possible to use the same start number in different events. I solved it by just remober the `unique=True` line in the model.
+
 ### <a id="validating"></a>Validating
 
-I googled for any PEP8 and Python code validators, but could not find anyone working. I think I tried like five or six different. Some just threw errors on the API credentials and some didn't work at all. After spending some time to find a validator that worked I gave up. I relying on my telling me that it looked nice.
+Form my issue of not being able to find a working pep8 validator, I got a validator in the feedback. So using 
 
 ### <a id="bugs"></a>Bugs?
 
