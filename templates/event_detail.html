@@ -137,27 +137,24 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function () {
         $('#id_start_number').on('change', function () {
             var enteredStartNumber = $(this).val();
-            var existingStartNumbers = $(this).data('existing-start-numbers');
+            var existingStartNumbers = $(this).data('existing-start-numbers').split(',');
 
+            // Log the list of existing start numbers to the console
             console.log('Entered Start Number:', enteredStartNumber);
             console.log('Existing Start Numbers:', existingStartNumbers);
 
-            if (enteredStartNumber !== null && existingStartNumbers) {
-                var startNumberArray = existingStartNumbers.split(',');
-                console.log('Start Number Array:', startNumberArray);
+            var startNumberMessage = $('#start-number-message');
 
-                var startNumberMessage = $('#start-number-message');
-
-                if (startNumberArray.includes(enteredStartNumber)) {
-                    startNumberMessage.text('This start number is already taken.');
-                    $(this).val('');  // Clear the input field
-                } else {
-                    startNumberMessage.text('');  // Clear the message
-                }
+            if (enteredStartNumber !== null && existingStartNumbers.includes(enteredStartNumber)) {
+                startNumberMessage.text('This start number is already taken.');
+                $(this).val('');  // Clear the input field
+            } else {
+                startNumberMessage.text('');  // Clear the message
             }
         });
     });

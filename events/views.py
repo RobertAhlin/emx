@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, reverse, redirect
+from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.contrib import messages
@@ -79,25 +79,18 @@ class EventDetail(View):
 
             messages.success(
                 request, "You have successfully signed up for the event.")
+
         else:
-            # Form is not valid, set the data-existing-start-numbers attribute
-            existing_start_numbers = [str(sign.start_number)
-                                    for sign in signed_up if sign.start_number]
-            sign_up_form.fields['start_number'].widget.attrs['data-existing-start-numbers'] = ','.join(
-                existing_start_numbers)
-
             print(sign_up_form.errors)
-            messages.error(
-                request, "Failed to sign up. Please check the form.")
+            sign_up_form = SignUpForm()
 
-        # Always render the template, whether the form is valid or not
         return render(
             request,
             "event_detail.html",
             {
                 "event": event,
                 "signed_up": signed_up,
-                "signed": False,
+                "signed": True,
                 "liked": liked,
                 "sign_up_form": sign_up_form,
             },
@@ -118,9 +111,10 @@ class EventLike(View):
 
 
 class DeleteSignUp(View):
+    
     def post(self, request, slug, signup_id):
         # Ensure that the user can only delete their own sign-up
         sign_up = get_object_or_404(
-            SignUp, id=signup_id, sign__slug=slug, name=request.user.username)
+            SignUp, id=signup_id, sign__slug=slug, user=request.username)
         sign_up.delete()
         return redirect('event_detail', slug=slug)

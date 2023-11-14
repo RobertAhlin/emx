@@ -43,7 +43,6 @@ class SignUp(models.Model):
     email = models.EmailField()
     start_number = models.CharField(
         max_length=8,
-        unique=True,
         blank=True,
         null=True
     )
