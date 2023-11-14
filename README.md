@@ -144,9 +144,16 @@ On the index page is it possible to se how many has signed up for the event.<br>
 When looking at the details of the event. It shows how many has been approved and how many has signed up in total.<br>
 <img src="readmefiles/signed_up_02.jpg" alt="Screenshot of how many sign ups has been approved and total amount of sign ups for the event."><br>
 
-### <b>Footer:</b>
+### <b>Delete sign up</b>
+If you're logged in a user, viewing the details of an event and you have an approved sign up. There is an option to delete the sign up.<br>
+Next to your sign up is an icon to delete the sign up.<br>
+<img src="readmefiles/test-delete_sign-up_01.jpg" alt="Image example of delete sign up icon."><br>
+
+### <b>Footer</b>
 The footer of the page contains links to external social sites and a live timing applaction. (All sites are in Swedish).<br>
 <img src="readmefiles/footer.jpg" alt="Image example of the footer including links to externa sites."><br>
+
+
 
 <h3>Error handling</h3>
 
@@ -226,6 +233,17 @@ To test to register as a user I:
 3. If the user try to use a number that has been taken. The field will be cleared and a warning will appear when changing field.<br>
 <img src="readmefiles/test-sign_up_errors_03.jpg" alt="Sceeentshot showing the message of that start number already taken."><br>
 </details>
+
+<details><summary>Deleting a sign up</summary>
+I logged in a user, viewed the details of an event and made sure the user I used had an approved sign up.<br>
+Next to the sign up is an icon to delete it<br>
+<img src="readmefiles/test-delete_sign-up_01.jpg" alt="Image example of delete sign up icon."><br>
+When clicking the icon. The words "Confirm delete!" appear to make sure the deletion is not a missclick.<br>
+<img src="readmefiles/test-delete_sign-up_02.jpg" alt="Image example of confirm delete sign up."><br>
+After clicking "Confirm delete!". A success message of deleting the sign up appear, containing the name of the person in the deleted sign up.<br>
+<img src="readmefiles/test-delete_sign-up_03.jpg" alt="Image example of success message of deleting a sign up."><br>
+When looking in the approved sign up list. The sign up is gone.<br>
+<img src="readmefiles/test-delete_sign-up_04.jpg" alt="Image example of a approved sign up list after deleted one sign up."><br>
 
 <details><summary>Events with an event date that passed today date.</summary>
 This is a small story on it self. Filtering out events on event_date prior to todays date didn't work at all first using this line of code:<br>
