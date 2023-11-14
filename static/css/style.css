@@ -215,3 +215,11 @@ a {
     background: transparent;
     border: none;
 }
+
+.confirm-delete {
+    display: none;
+    cursor: pointer;
+    text-decoration: underline;
+    color: #c90000;
+    font-weight: bold;
+}

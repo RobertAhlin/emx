@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.contrib import messages
@@ -114,7 +114,10 @@ class DeleteSignUp(View):
     
     def post(self, request, slug, signup_id):
         # Ensure that the user can only delete their own sign-up
-        sign_up = get_object_or_404(
-            SignUp, id=signup_id, sign__slug=slug, user=request.username)
+        sign_up = get_object_or_404(SignUp, id=signup_id, sign__slug=slug, name=request.user.username)
         sign_up.delete()
+
+        # Message to confirm removded sign up.
+        messages.success(request, f'You have removed {sign_up.fname} {sign_up.lname} from the event.')
+
         return redirect('event_detail', slug=slug)

@@ -93,11 +93,14 @@
                 
                     {% if user.is_authenticated and user.username == sign.name %}
                     <!-- Form to handle deletion of sign up -->
-                    <form class="d-inline" action="{% url 'delete_signup' event.slug sign.id %}" method="post">
+                    <form class="d-inline" action="{% url 'delete_signup' event.slug sign.id %}" method="post"
+                        id="delete-form-{{ sign.id }}">
                         {% csrf_token %}
-                        <button type="submit" class="btn btn-link btn-sm text-danger">
+                        <button type="button" class="btn btn-link btn-sm text-danger" onclick="showConfirmation('{{ sign.id }}')">
                             <i class="fas fa-delete-left"></i>
                         </button>
+                        <span id="confirmation-text-{{ sign.id }}" class="confirm-delete" onclick="confirmDelete('{{ sign.id }}')">Confirm
+                            delete!</span>
                     </form>
                     {% endif %}
                 </div>
@@ -137,7 +140,6 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function () {
         $('#id_start_number').on('change', function () {
@@ -147,12 +149,26 @@
 
             if (enteredStartNumber !== null && existingStartNumbers.includes(enteredStartNumber)) {
                 startNumberMessage.text('This start number is already taken.');
-                $(this).val('');  // Clear the input field
+                $(this).val('');
             } else {
-                startNumberMessage.text('');  // Clear the message
+                startNumberMessage.text('');
             }
         });
     });
 </script>
+<script>
+    function confirmDelete(signupId) {
+        var confirmationText = document.getElementById('confirmation-text-' + signupId);
 
+        // Submit the form
+        document.getElementById('delete-form-' + signupId).submit();
+    }
+
+    function showConfirmation(signupId) {
+        var confirmationText = document.getElementById('confirmation-text-' + signupId);
+
+        // Show visibility of the confirmation text
+        confirmationText.style.display = confirmationText.style.display === 'inline' ? 'none' : 'inline';
+    }
+</script>
 {% endblock content %}
