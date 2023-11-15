@@ -128,7 +128,17 @@ class EditSignUp(UpdateView):
         context['signup_id'] = self.kwargs.get('signup_id')
         context['form'] = self.get_form()  # Change this line
         return context
-    
+
+    def form_valid(self, form):
+        # Retrieve the existing start number from the database
+        existing_start_number = SignUp.objects.get(
+            id=form.instance.id).start_number
+
+        # Set the retrieved start number in the form
+        form.instance.start_number = existing_start_number
+
+        return super().form_valid(form)
+
     def get_success_url(self):
         # Redirect to the event detail page after successful form submission
         return reverse('event_detail', args=[self.kwargs['slug']])

@@ -31,7 +31,6 @@
         <div class="col card mb-4 mt-3 left top">
             <div class="card-body">
                 <!-- The event content goes inside the card-text. -->
-                <!-- Use the | safe filter inside the template tags -->
                 <p class="card-text ">{{event.content | safe}}</p>
                 <div class="row">
                     <div class="col-1">
@@ -92,6 +91,12 @@
                     - signed up by <i>{{sign.name}} - {{sign.created_on}}</i>
                 
                     {% if user.is_authenticated and user.username == sign.name %}
+                    <!-- Edit link -->
+                    <span>
+                        <a href="{% url 'edit_signup' slug=event.slug signup_id=sign.id %}" class="btn btn-link btn-sm">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                    </span>
                     <!-- Form to handle deletion of sign up -->
                     <form class="d-inline" action="{% url 'delete_signup' event.slug sign.id %}" method="post"
                         id="delete-form-{{ sign.id }}">
@@ -102,10 +107,7 @@
                         <span id="confirmation-text-{{ sign.id }}" class="confirm-delete" onclick="confirmDelete('{{ sign.id }}')">Confirm
                             delete!</span>
                     </form>
-                    <!-- Add edit button with a link to the edit_signup view -->
-                    <a href="{% url 'edit_signup' slug=event.slug signup_id=sign.id %}" class="btn btn-link btn-sm">
-                        <i class="fas fa-edit"></i>
-                    </a>
+                    
                     {% endif %}
                 </div>
                 {% endfor %}
@@ -159,8 +161,7 @@
             }
         });
     });
-</script>
-<script>
+
     function confirmDelete(signupId) {
         var confirmationText = document.getElementById('confirmation-text-' + signupId);
 
