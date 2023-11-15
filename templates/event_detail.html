@@ -82,7 +82,7 @@
             <h4>Approved:</h4>
             <div class="card-body">
                 <!-- Iterate through each sign_up in signed_up -->
-                {% for sign in signed_up %}
+                {% for sign in signed_up %}                       
                 <div class="sign-p">
                     <!-- Full name -->
                     <strong>{{sign.fname}} {{sign.lname}}</strong>
@@ -102,6 +102,10 @@
                         <span id="confirmation-text-{{ sign.id }}" class="confirm-delete" onclick="confirmDelete('{{ sign.id }}')">Confirm
                             delete!</span>
                     </form>
+                    <!-- Add edit button with a link to the edit_signup view -->
+                    <a href="{% url 'edit_signup' slug=event.slug signup_id=sign.id %}" class="btn btn-link btn-sm">
+                        <i class="fas fa-edit"></i>
+                    </a>
                     {% endif %}
                 </div>
                 {% endfor %}

@@ -4,8 +4,9 @@ from django.http import HttpResponseRedirect
 from django.contrib import messages
 from .models import Event, SignUp
 from .forms import SignUpForm
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 from django.utils import timezone
+from django.views.generic.edit import UpdateView
 
 
 class EventList(generic.ListView):
@@ -47,6 +48,7 @@ class EventDetail(View):
         sign_up_form.fields['start_number'].widget.attrs['data-existing-start-numbers'] = ','.join(
             existing_start_numbers)
 
+        print("Event Detail View - Event Slug:", event.slug)  # Add this line
         return render(
             request,
             "event_detail.html",
@@ -81,7 +83,6 @@ class EventDetail(View):
                 request, "You have successfully signed up for the event.")
 
         else:
-            print(sign_up_form.errors)
             sign_up_form = SignUpForm()
 
         return render(
@@ -110,14 +111,39 @@ class EventLike(View):
         return HttpResponseRedirect(reverse('event_detail', args=[slug]))
 
 
-class DeleteSignUp(View):
+class EditSignUp(UpdateView):
+    model = SignUp
+    form_class = SignUpForm
+    template_name = 'edit_signup.html'
+    # success_url = reverse_lazy('home')
+
+    def get_object(self, queryset=None):
+        slug = self.kwargs.get('slug')
+        signup_id = self.kwargs.get('signup_id')
+        return get_object_or_404(SignUp, id=signup_id, sign__slug=slug, name=self.request.user.username)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['slug'] = self.kwargs.get('slug')
+        context['signup_id'] = self.kwargs.get('signup_id')
+        context['form'] = self.get_form()  # Change this line
+        return context
     
+    def get_success_url(self):
+        # Redirect to the event detail page after successful form submission
+        return reverse('event_detail', args=[self.kwargs['slug']])
+
+
+class DeleteSignUp(View):
+
     def post(self, request, slug, signup_id):
         # Ensure that the user can only delete their own sign-up
-        sign_up = get_object_or_404(SignUp, id=signup_id, sign__slug=slug, name=request.user.username)
+        sign_up = get_object_or_404(
+            SignUp, id=signup_id, sign__slug=slug, name=request.user.username)
         sign_up.delete()
 
         # Message to confirm removded sign up.
-        messages.success(request, f'You have removed {sign_up.fname} {sign_up.lname} from the event.')
+        messages.success(
+            request, f'You have removed {sign_up.fname} {sign_up.lname} from the event.')
 
         return redirect('event_detail', slug=slug)
