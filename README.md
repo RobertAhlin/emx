@@ -21,7 +21,6 @@ This is event handler for motocross and enduro, which will forfill a real life n
   - <a href="#skeleton">Skeleton</a>
   - <a href="#surface">Surface</a>
 - <a href="#technologies">Technologies</a>
-  - <a href="#flowshart">Flowshart</a>
 - <a href="#features">Features</a>
   - <a href="view-event-date">View event date</a>
   - <a href="events-sorted">Events sorted by event date</a>
@@ -45,7 +44,7 @@ The idea for this project is to get create an event handler for motocross and en
   I'm already familaar with the agile understanding. Just 6 month ago, I got an exam from two years part time studies in an Aglie Project Managment course where most of the agile concept was covered, all from Scrum, SAFe, project owner to the legal aspects and also change management. To use the project board in Github was a new experience, as I'm use to using Miro and Trello. But fun to learn something new. Using the User Stories on the board is a nice way to keep track of what to do and see the progress. Using the board on my own is a bit strange, as for example, the iterations and iteration planning will not be applicable in the same way. But to show my knowledge I first created a backlog column where I can apply the MoSCoW principle and sort out things to do and not to do etc. Also a column for things to be tested as a way of using Defenition of Done (DoD).<br>
   <img src="readmefiles/agile-board_01.jpg" width="75%" alt="Image showing a Project Board"><br>
   
-  Using the DoD column I place all implemented user stories in that column waiting to be tested. My defenition of done was to do a final test and document it in this README. Also leave a comment in the user story that it was done before move it to the done column.<br>
+  Using the DoD column I place all implemented user stories in that column waiting to be tested. My defenition of done was to do a final test and document it in this README. I also added checkboxes for task and to define the DoD. Also leave a comment in the user story that it was done before move it to the done column.<br>
   <img src="readmefiles/agile-board_02.jpg" alt="Image showing a Project Board"><br>
   Later I added a column for User Stories I choosed not to do.
   
@@ -53,6 +52,7 @@ The idea for this project is to get create an event handler for motocross and en
 
 The idea is to make it simple and be able to easily overview different events.<br>
 By registering as a user, you are able to sign up for events.
+When the sign up is approved. It's possible to view in the event details. And of the user is logged in, they are able to delete or edit the sign up.
 
 ## <a id="user-stories"></a>User stories
 
@@ -60,14 +60,16 @@ A user should:
 
 - Be able to register as a rider
 - Be able to sign up for events.
+- Be able to edit their own sign up.
+- Be able to delete their own sign up.
 - Be able to like an event and see if other users has liked it.
-- See other riders that has sined up for an event.
+- See other riders that has been approved for an event.
 - See old events.
-- 
 
 ### <a id="strategy"></a>Strategy
 
-I used the Django blog walkthrough as a base. My idea was to use the posts as a way to create events, and then use the comment function to sign up for the event. From there build more content and functions.
+I used the Django blog walkthrough as a base. My idea was to use the posts as a way to create events, and then use the comment function to sign up for the event. From there build more content and functions.<br>
+The comment model didn't fit at all so I made my own custom SignUp model.
 
 ### <a id="scope"></a>Scope
 
@@ -82,17 +84,16 @@ This will show what I learnt with Python using Django and all things in earlier 
 
 ### <a id="skeleton"></a>Skeleton
 
-The skeleton is based on a Django blog. I started "emxevent" as a project and "events" as an app. From that I changed the models to fit my needs.
+The skeleton is based on a Django blog. I started "emxevent" as a project and "events" as an app. From that I created the models to fit my needs.
 
 
 ### <a id="surface"></a>Surface
 
-What is possible to do with a text based game?
-I wanted the player to experience some visual features that will happen for different event.
+I see a lot of potential on this event managment app. I really had to but aside ideas I had not to make this project to big
 
-- First I added some ascii art. There is a dragon.
-- Second, I wanted the story text to stand out from the "console text" so I found a way to colorize the text. The story text as yellow and dice rolls as blue text.
-<img src="readmefiles/roll-dice-event.jpg" alt="Image example of text came with yellow story text and blue roll dice event text.">
+- I really like the rounded corner and shadow effect to get the website more three dimensional. As well as both the navigation bar and each event, but also messages and other small things.
+- 
+
 
 ## <a id="technologies"></a>Technologies
 
@@ -100,21 +101,6 @@ I wanted the player to experience some visual features that will happen for diff
 2. Django - using Django blog as a foundation.
 3. Cloudinary - to host images.
 4. Summernote - to apply a wysiwyg editor.
-
-## <a id="flowshart"></a>Flowshart
-
-<img src=""  alt=""><br>
-
-- Game start with a short preface for the game and also explaining some game commands.
-- Player enter their name and create a simple character.
-- Role-playing game start to get a story block from a Google Sheet.
-- After each text block the player is asked to continue.
-- The text block is checked for two different ending phrases.
-- If a text block ends with the phase "Time to roll your dice" the player will be asked to roll.
-  - From each of the dice roll event there will be three different scenarios. Then a player is asked continue.
-  - The game continue to the main story efter the scenario from the dice roll event.
-- If a text block end whith the phrase "The end!" that will trigger the ending sequense where player is asked to confirm game end.
-- Game will reboot.
 
 # <a id="features"></a>Features
 
@@ -178,6 +164,8 @@ I can actually think of a lot of things to implement to this.
   - Send a password reset link.
 - Save a riders transponder number in the user information.
 - Categorize the events. Like "Enduro" or "Motocross".
+- Make a comma separated csv file from list of the sign ups to be able to transfer it to a timing application.
+- More visual styling. Like instead of opening the edit of a sign up on new page. Open it in a "hovering" form in the event detail page.
 
 ## <a id="testing"></a>Testing
 
@@ -186,7 +174,6 @@ I followed the "I think, therefore I blog" walkthrough to set it up and use that
 
 I decided from the beginning that I should make sure to test everything I do. So from the first runnable skeleton of the project. I made sure it was working on Heroku by doing an early deploy. Through the whole process of developing the EMX Events app I hade it running with `python3 manage.py runserver` and checked that all was working about when I did each commit.
 
-- Allauth: `../.pip-modules/lib/` doesn't work in Codeanywhere. It gives: `ls: cannot access '../.pip-modules/lib/': No such file or directory` the solution was found in Slack and I used this command instead: `cp -r /home/codeany/.local/lib/python3.9/site-packages/allauth/templates/* ./templates/.`
    
 Please click on each test below to se details:
 <details><summary>Register as a user.</summary>
@@ -273,16 +260,19 @@ I added enough envents to make sure I hade more to activate the pagination funct
 
 ### <a id="validating"></a>Validating
 
-Form my issue of not being able to find a working pep8 validator, I got a validator in the feedback. So using 
+From my issue of not being able to find a working pep8 validator in PP3, I got a validator in the feedback. So using that to vaildate my code.
+
 
 ### <a id="bugs"></a>Bugs?
 
-I haven't really encountered any bugs in this project.<br>
-I got stuck several times in order to figure out different things but that is all about learning.
+I haven't really encountered any bugs in this project. Just a couple of small problems:<br>
+
+- Allauth: `../.pip-modules/lib/` doesn't work in Codeanywhere. It gives: `ls: cannot access '../.pip-modules/lib/': No such file or directory` the solution was found in Slack and I used this command instead: `cp -r /home/codeany/.local/lib/python3.9/site-packages/allauth/templates/* ./templates/.`
+- I got stuck several times in order to figure out different things but that is all about learning.
 
 ## <a id="deployment"></a>Deployment
 
-The site was deployed to Heroku. Using the Code institute guidence from Love Sandwiches walkthrough.
+The site was deployed to Heroku. Using the Code institute guidence from "I think, therefore I blog" walkthrough.
 
 - I used the GitHub template to create my own repository.
 - Used Codeanywhere as IDE.
@@ -310,5 +300,3 @@ The site was deployed to Heroku. Using the Code institute guidence from Love San
 - Images from https://www.pexels.com, https://www.svemo.com, <https://stock.adobe.com/>
 
 ### <a id="acknowledgments"></a>Acknowledgments
-
-- Thanks to my fiancé for supporting me when I get stuck.
