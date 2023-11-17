@@ -22,8 +22,16 @@ This is event handler for motocross and enduro, which will forfill a real life n
   - <a href="#surface">Surface</a>
 - <a href="#technologies">Technologies</a>
 - <a href="#features">Features</a>
-  - <a href="view-event-date">View event date</a>
-  - <a href="events-sorted">Events sorted by event date</a>
+  - <a href="#view-event-date">View event date</a>
+  - <a href="#events-sorted">Events sorted by event date</a>
+  - <a href="#old-events">Page for old events</a>
+  - <a href="#likes">Likes</a>
+  - <a href="#signed-up">Signed up</a>
+  - <a href="#delete-sign-up">Delete sign up</a>
+  - <a href="#footer">Footer</a>
+  - <a href="#crud">CRUD</a>
+  - <a href="#error-handling">Error handling</a>
+  
 - <a href="#finalizing">Finalizing</a>
 - <a href="#more-features">More Features</a>
 - <a href="#testing">Testing</a>
@@ -114,34 +122,35 @@ On the index page for each event, it is possible to see when the event will happ
 On the index page the events are sorted with the next upcoming event first.<br>
 <img src="readmefiles/sort_by_event_date_01.jpg" alt="Image example of events sorted by event date."><br>
 
-### <b>Page for old events</b>
+### <a id="old-events"></a><b>Page for old events</b>
 Adding more events over time would soon fill the event page with a lot of events. And I didn't want to have all the event saved. I first thought of making a delete function. But I also thought that both event creators and users might want to see when the event was and who participated. So I made a new page for old events. I copied index.html to old_event.html and added date sorting functions to respective view to after and before today's date.<br>
 <img src="readmefiles/test-event_with_old_date_03.jpg" alt="Sceeentshot of events in the Old Event page"><br>
 When viewing details of an old event. It is longer possible to sign up for the event. This is also notifided through an active alert message:
 <img src="readmefiles/old_event_closed_01.jpg" alt="Sceeentshot alert message closed for sign up."><br>
 
-### <b>Likes</b>
+### <a id="likes"></a><b>Likes</b>
 I kept the function to like an event. First I thought of removing it as it seemed quite unnecessary to like an event. But for educational purpose I kept it. Also it will give a hint of if it is an event is popular.<br>
 View total likes:<img src="readmefiles/like_before.jpg" alt="Screenshot of likes and not yet liked by logged in user."> Liked by user:<img src="readmefiles/liked_after.jpg" alt="Screenshot of likes and now liked by logged in user."><br>
 
-### <b>Signed up</b>
+### <a id="signed-up"></a><b>Signed up</b>
 On the index page is it possible to se how many has signed up for the event.<br>
 <img src="readmefiles/signed_up_01.jpg" alt="Screenshot of total amount of sign ups for an event."><br>
 When looking at the details of the event. It shows how many has been approved and how many has signed up in total.<br>
 <img src="readmefiles/signed_up_02.jpg" alt="Screenshot of how many sign ups has been approved and total amount of sign ups for the event."><br>
 
-### <b>Delete sign up</b>
+### <a id="delete-sign-up"></a><b>Delete sign up</b>
 If you're logged in a user, viewing the details of an event and you have an approved sign up. There is an option to delete the sign up.<br>
 Next to your sign up is an icon to delete the sign up.<br>
 <img src="readmefiles/test-delete_sign-up_01.jpg" alt="Image example of delete sign up icon."><br>
 
-### <b>Footer</b>
+### <a id="footer"></a><b>Footer</b>
+
 The footer of the page contains links to external social sites and a live timing applaction. (All sites are in Swedish).<br>
 <img src="readmefiles/footer.jpg" alt="Image example of the footer including links to externa sites."><br>
 
-## CRUD
+## <a id="crud"></a>CRUD
 
-## Error handling
+## <a id="error-handling"></a>Error handling
 
 The app has error handling in UI:
 
