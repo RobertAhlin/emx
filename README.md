@@ -260,6 +260,14 @@ I added enough envents to make sure I hade more to activate the pagination funct
 
 ### <a id="validating"></a>Validating
 
+- HTML Validating:
+  - Link to each page
+
+- CSS Validating
+  - 
+
+- PEP8 Validating
+  - 
 From my issue of not being able to find a working pep8 validator in PP3, I got a validator in the feedback. So using that to vaildate my code.
 
 
