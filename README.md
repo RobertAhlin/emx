@@ -139,11 +139,11 @@ Next to your sign up is an icon to delete the sign up.<br>
 The footer of the page contains links to external social sites and a live timing applaction. (All sites are in Swedish).<br>
 <img src="readmefiles/footer.jpg" alt="Image example of the footer including links to externa sites."><br>
 
+## CRUD
 
+## Error handling
 
-<h3>Error handling</h3>
-
-The app has error handling for:
+The app has error handling in UI:
 
 - First and Last name required when signing up.
 - Not be able to use an existing start number when signing up for an event.
