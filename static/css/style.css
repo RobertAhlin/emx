@@ -9,9 +9,19 @@ a {
 
 .navbar {
     position: fixed;
-    z-index: 98;
-    width: 100%;
+    z-index: 97;
+    width: 80%;
     box-shadow: 0 5px 5px #3a3a3a;
+}
+
+.message-area {
+    position: fixed;
+    background-color: #fff;
+    right: 0px;
+    z-index: 96;
+    width: 20%;
+    height: 60px;
+    box-shadow: 0 5px 5px 0px #3a3a3a;
 }
 
 .alert {
@@ -19,7 +29,7 @@ a {
     z-index: 100;
     box-shadow: 0 5px 5px #3a3a3a;
     top: 0px;
-    right: 100px;
+    right: 50px;
 }
 
 .alert-two {
