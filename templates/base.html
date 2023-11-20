@@ -42,9 +42,14 @@
                             <a class="nav-link" href="{% url 'old_events' %}">Old Events</a>
                         </li>
                         {% if user.is_authenticated %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                            </li>
+                            {% if user.is_staff %}
+                            </li>
+                                <a class="nav-link" href="{% url 'admin:index' %}" target="_blank">Admin panel</a>
+                            </li>
+                            {% endif %}
                         {% else %}
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
@@ -64,11 +69,16 @@
         <div class="info-area">
             <div class="container-fluid">
                 {% if user.is_authenticated %}
-                    <p class="logged-in-text">Logged in as:<br><strong>{{user.username}}</strong></p>
+                    {% if user.is_staff %}
+                    <p class="logged-in-text">Logged in as:<br><a href="{% url 'admin:index' %}" target="_blank"><strong>{{ user.username }}</strong></a>
+                    </p>
+                    {% else %}
+                    <p class="logged-in-text">Logged in as:<br><strong>{{ user.username }}</strong></p>
+                    {% endif %}
                 {% endif %}
             </div>
         </div>
-        
+
         <!-- Message notifications -->
         <div class="container">
             <div class="row">

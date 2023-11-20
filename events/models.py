@@ -37,9 +37,9 @@ class SignUp(models.Model):
     sign = models.ForeignKey(
         Event, on_delete=models.CASCADE, related_name='signed_up'
     )
-    name = models.CharField(max_length=80)  # Username
-    first_name = models.CharField(max_length=80) # First name
-    last_name = models.CharField(max_length=80) # Last name
+    name = models.CharField(max_length=80)
+    first_name = models.CharField(max_length=80)
+    last_name = models.CharField(max_length=80)
     email = models.EmailField()
     start_number = models.CharField(
         max_length=8,
