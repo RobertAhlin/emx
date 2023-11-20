@@ -156,6 +156,10 @@ class EditSignUp(UpdateView):
         # Set the retrieved start number in the form
         form.instance.start_number = existing_start_number
 
+        # Success message on edit sign up.
+        messages.success(
+            self.request, 'Your sign up details updated successfully.')
+
         return super().form_valid(form)
 
     def get_success_url(self):
