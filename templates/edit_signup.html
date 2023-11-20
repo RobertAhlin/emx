@@ -15,11 +15,16 @@
                     <p>Start Number: <strong>{{ form.instance.start_number }}</strong></p>
                     <!-- Fields for transponder number -->
                     <p>Transponder no.: {{ form.transponder }}</p>
+                    <button class="btn btn-signup btn-lg" onclick="goBack()">Cancel</button>
                     <button type="submit" class="btn btn-signup btn-lg">Save Changes</button>
                 </form>
             </div>
         </div>
     </div>
 </div>
-
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
 {% endblock %}

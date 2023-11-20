@@ -12,7 +12,7 @@
                 <h1 class="post-title">{{ event.title }}</h1>
                 <!-- Show scheduled event date, author and the events's created date. -->
                 <p class="post-subtitle">Event date: <strong>{{event.event_date}}</strong><i> created by:
-                    {{event.author}} on {{ event.created_on }}</i></p>
+                        {{event.author}} on {{ event.created_on }}</i></p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->
@@ -81,7 +81,7 @@
             <h4>Approved:</h4>
             <div class="card-body">
                 <!-- Iterate through each sign_up in signed_up -->
-                {% for sign in signed_up %}                       
+                {% for sign in signed_up %}
                 <div class="sign-p">
                     <!-- Full name -->
                     <strong>{{sign.fname}} {{sign.lname}}</strong>
@@ -89,7 +89,7 @@
                     #<strong>{{ sign.start_number }}</strong>
                     <!-- Username and signed up date. -->
                     - signed up by <i>{{sign.name}} - {{sign.created_on}}</i>
-                
+
                     {% if user.is_authenticated and user.username == sign.name %}
                     <!-- Edit link -->
                     <span>
@@ -101,13 +101,15 @@
                     <form class="d-inline" action="{% url 'delete_signup' event.slug sign.id %}" method="post"
                         id="delete-form-{{ sign.id }}">
                         {% csrf_token %}
-                        <button type="button" class="btn btn-link btn-sm text-danger" onclick="showConfirmation('{{ sign.id }}')">
-                            <i class="fas fa-delete-left"></i>
+                        <button type="button" class="btn btn-link btn-sm text-danger"
+                            onclick="showConfirmation('{{ sign.id }}')">
+                            <i class="fa fa-trash"></i>
                         </button>
-                        <span id="confirmation-text-{{ sign.id }}" class="confirm-delete" onclick="confirmDelete('{{ sign.id }}')">Confirm
+                        <span id="confirmation-text-{{ sign.id }}" class="confirm-delete btn btn-confirm btn-lg"
+                            onclick="confirmDelete('{{ sign.id }}')">Confirm
                             delete!</span>
                     </form>
-                    
+
                     {% endif %}
                 </div>
                 {% endfor %}
@@ -115,30 +117,30 @@
         </div>
         <div class="col-md-4 card mb-4 mt-3 ">
             <div class="card-body">
-                
+
                 <!-- Sign up form -->
                 {% if signed %}
-                    <div class="alert-two alert-success" role="alert">
-                        Your sign up is awaiting confirmation.
-                    </div>
+                <div class="alert-two alert-success" role="alert">
+                    Your sign up is awaiting confirmation.
+                </div>
                 {% else %}
-                    {% if user.is_authenticated %}
-                        {% if event.event_date | date:"Y-m-d" >= today %}
-                            <h4>Sign up to the event:</h4>
-                            <p>Signing up as: <strong>{{user.username}}</strong></p>
-                            <form method="post" style="margin-top: 1.3em;">
-                                {{sign_up_form | crispy}}
-                                {% csrf_token %}
-                                <small id="start-number-alert" class="text-danger">
-                                </small><br>
-                                <button type="submit" class="btn btn-signup btn-lg">Submit</button>
-                            </form>
-                        {% else %}
-                            <div class="alert-old alert-warning" role="alert">
-                                Sign up for this event has closed.
-                            </div>
-                        {% endif %}
-                    {% endif %}
+                {% if user.is_authenticated %}
+                {% if event.event_date|date:"Y-m-d" >= today %}
+                <h4>Sign up to the event:</h4>
+                <p>Signing up as: <strong>{{user.username}}</strong></p>
+                <form method="post" style="margin-top: 1.3em;">
+                    {{sign_up_form | crispy}}
+                    {% csrf_token %}
+                    <small id="start-number-alert" class="text-danger">
+                    </small><br>
+                    <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+                </form>
+                {% else %}
+                <div class="alert-old alert-warning" role="alert">
+                    Sign up for this event has closed.
+                </div>
+                {% endif %}
+                {% endif %}
                 {% endif %}
             </div>
         </div>
@@ -147,6 +149,7 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
+    // Handle check for existing start numbers in apporved sign ups.
     $(document).ready(function () {
         $('#id_start_number').on('change', function () {
             var enteredStartNumber = $(this).val();

@@ -217,9 +217,21 @@ a {
 }
 
 .confirm-delete {
+    
+}
+
+.btn-confirm {
+    background-color: #fff;
+    color: #bb2323;
+    
     display: none;
     cursor: pointer;
-    text-decoration: underline;
-    color: #c90000;
+    text-decoration: none;
     font-weight: bold;
+}
+
+.btn-confirm:hover,
+.btn-confirm:active {
+    background-color: #bb2323;
+    color: #fff;
 }

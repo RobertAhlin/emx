@@ -10,6 +10,12 @@ from django.views.generic.edit import UpdateView
 
 
 class EventList(generic.ListView):
+    """
+    Displays a list of upcoming events.
+    Paginates the event list by 6 per page.
+    Filters events based on status and event date.
+    Orders events by event date.
+    """
     model = Event
     template_name = 'index.html'
     paginate_by = 6
@@ -20,6 +26,11 @@ class EventList(generic.ListView):
 
 
 class OldEventList(generic.ListView):
+    """
+    Displays a list of past events.
+    Filters events based on status and past event date.
+    Orders events by event date.
+    """
     model = Event
     template_name = 'old_events.html'
     context_object_name = 'event_list'
@@ -30,7 +41,10 @@ class OldEventList(generic.ListView):
 
 
 class EventDetail(View):
-
+    """
+    Handles displaying event details and sign-ups.
+    Renders event details and sign-up form.
+    """
     def get(self, request, slug, *args, **kwargs):
         queryset = Event.objects.filter(status=1)
         event = get_object_or_404(queryset, slug=slug)
@@ -48,7 +62,6 @@ class EventDetail(View):
         sign_up_form.fields['start_number'].widget.attrs['data-existing-start-numbers'] = ','.join(
             existing_start_numbers)
 
-        print("Event Detail View - Event Slug:", event.slug)  # Add this line
         return render(
             request,
             "event_detail.html",
@@ -99,7 +112,10 @@ class EventDetail(View):
 
 
 class EventLike(View):
-
+    """
+    Handles liking/unliking an event.
+    Adds or removes the current user from the event likes.
+    """
     def post(self, request, slug):
         event = get_object_or_404(Event, slug=slug)
 
@@ -112,10 +128,13 @@ class EventLike(View):
 
 
 class EditSignUp(UpdateView):
+    """
+    Handles editing sign-ups for events.
+    Displays form for editing sign-up details.
+    """
     model = SignUp
     form_class = SignUpForm
     template_name = 'edit_signup.html'
-    # success_url = reverse_lazy('home')
 
     def get_object(self, queryset=None):
         slug = self.kwargs.get('slug')
@@ -145,7 +164,9 @@ class EditSignUp(UpdateView):
 
 
 class DeleteSignUp(View):
-
+    """
+    Handles deleting a sign-up from an event.
+    """
     def post(self, request, slug, signup_id):
         # Ensure that the user can only delete their own sign-up
         sign_up = get_object_or_404(
