@@ -64,7 +64,7 @@
         <div class="message-area">
             <div class="container-fluid">
                 {% if user.is_authenticated %}
-                    <p>Logged in as:<br><strong>{{user.username}}</strong></p>
+                    <p class="logged-in-text">Logged in as:<br><strong>{{user.username}}</strong></p>
                 {% endif %}
                 <!-- Message notifications -->
                 <div class="container">

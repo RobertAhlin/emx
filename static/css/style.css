@@ -14,7 +14,7 @@ a {
     box-shadow: 0 5px 5px #3a3a3a;
 }
 
-.message-area {
+.info-area {
     position: fixed;
     background-color: #fff;
     right: 0px;
@@ -244,4 +244,21 @@ a {
 .btn-confirm:active {
     background-color: #bb2323;
     color: #fff;
+}
+
+/* For screens smaller than 991 pixels */
+@media (max-width: 991px) {
+
+    .navbar {
+        width: 100%;
+    }
+
+    .logged-in-text {
+        visibility: hidden;
+        }
+
+    .info-area {
+        box-shadow: none;
+        }
+
 }
