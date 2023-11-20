@@ -5,10 +5,10 @@ from django import forms
 class SignUpForm(forms.ModelForm):
     class Meta:
         model = SignUp
-        fields = ('fname', 'lname', 'start_number', 'transponder',)
+        fields = ('first_name', 'last_name', 'start_number', 'transponder',)
         labels = {
-            'fname': 'First name',
-            'lname': 'Last name',
+            'first_name': 'First name',
+            'last_name': 'Last name',
         }
 
     

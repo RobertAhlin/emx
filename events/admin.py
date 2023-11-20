@@ -16,7 +16,7 @@ class EventAdmin(SummernoteModelAdmin):
 @admin.register(SignUp)
 class SignUpAdmin(admin.ModelAdmin):
 
-    list_display = ('approved', 'fname', 'lname', 'start_number',
+    list_display = ('approved', 'first_name', 'last_name', 'start_number',
                     'transponder', 'created_on', 'sign', 'name')
     list_filter = ('approved', 'created_on')
     search_fields = ('name', 'start_number')
