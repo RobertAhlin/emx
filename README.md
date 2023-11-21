@@ -129,7 +129,7 @@ On the index page the events are sorted with the next upcoming event first.<br>
 Adding more events over time would soon fill the event page with a lot of events. And I didn't want to have all the event saved. I first thought of making a delete function. But I also thought that both event creators and users might want to see when the event was and who participated. So I made a new page for old events. I copied index.html to old_event.html and added date sorting functions to respective view to after and before today's date.<br>
 <img src="readmefiles/test-event_with_old_date_03.jpg" alt="Sceeentshot of events in the Old Event page"><br>
 When viewing details of an old event. It is longer possible to sign up for the event. This is also notifided through an active alert message:
-<img src="readmefiles/old_event_closed_01.jpg" alt="Sceeentshot alert message closed for sign up."><br>
+<img src="readmefiles/old_event_closed_02b.jpg" alt="Sceeentshot alert message closed for sign up."><br>
 
 ### <a id="likes"></a><b>Likes</b>
 I kept the function to like an event. First I thought of removing it as it seemed quite unnecessary to like an event. But for educational purpose I kept it. Also it will give a hint of if it is an event is popular.<br>
