@@ -276,6 +276,18 @@ To test to register as a user I:
 <img src="readmefiles/test-sign_up_errors_03.jpg" alt="Sceeentshot showing the message of that start number already taken."><br>
 </details>
 
+<details><summary>Edit a sign up</summary>
+I logged in a user, viewed the details of an event and made sure the user I used had an approved sign up.<br>
+Next to the sign up is an icon to edit a sign up. I clicked it.<br>
+<img src="readmefiles/test-edit_sign_up_01.jpg" alt="Image example of edit sign up icon."><br>
+I then come to this edit sign up page.<br>
+<img src="readmefiles/test-edit_sign_up_02.jpg" alt="Image example of edit sign up icon."><br>
+I removed one "s" from the last name and added a transponder number and clicked Save changes.<br>
+<img src="readmefiles/test-edit_sign_up_03.jpg" alt="Image example of edit sign up icon."><br>
+I got redirected back to the event where I get a message that the sign up has been updated. Also, I see now that the last name only has one "s".<br>
+<img src="readmefiles/test-edit_sign_up_04.jpg" alt="Image example of edit sign up icon."><br>
+</details>
+
 <details><summary>Deleting a sign up</summary>
 I logged in a user, viewed the details of an event and made sure the user I used had an approved sign up.<br>
 Next to the sign up is an icon to delete it<br>
