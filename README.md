@@ -374,6 +374,8 @@ emx/urls.py<br>
 veiws.py<br>
 <img src="readmefiles/validate_pep8_views_02.jpg" alt="Sceeentshot from validating views.py"><br>
 
+I also ran admin.py, apps.py and forms.py in the pep8 validator without it showing any issues.
+
 
 ### <a id="bugs"></a>Bugs?
 
