@@ -3,7 +3,7 @@
 <h2>Project 4 - EMX Events</h2>
 
 Welcome to this Enduro and Motocross event handler.<br>
-This is event handler for motocross and enduro, which will forfill a real life need. There is no good event handler to create events for motocross and enduro clubs. All clubs uses their own systems. (Everything from Google sheets and mail groups all kind of temporary solutions.) There is one event handler for official competitions handled by SVEMO the Swedish motor sport association.
+This is event handler for motocross and enduro, which will forfill a real life need. There is no good event handler to create events for motocross and enduro clubs. All clubs uses their own systems. (Everything from Google sheets, mail groups and all kind of temporary solutions.) There is one event handler for official competitions, administered by SVEMO (Swedish motor sport association).
 <img src="readmefiles/am_i_responsive.jpg" alt="Image of the site showed on different devices."><br>
 
 # <a id="table-of-content"></a>Table of Content
@@ -44,16 +44,16 @@ This is event handler for motocross and enduro, which will forfill a real life n
 
 The live link to Heroku can be found here - <a href="https://emx-6d9da8d3da50.herokuapp.com/" target="_blank">https://emx-6d9da8d3da50.herokuapp.com/</a>
 
-The idea for this project is to get create an event handler for motocross and enduro events. Riders can register to sign up for events. Competitions, training or other available events.
+The idea for this project is to get create an event handler for motocross and enduro events. Riders can register to sign up for events, competitions, training or other available events.
 
 # <a id="agile"></a>Thinking Agile
 
 Link to board: <a href="https://github.com/users/RobertAhlin/projects/8/views/1" target="_blank">RobertAhlin's EMX Project Board</a>
 
-I'm already familiar with the agile understanding. Just 6 month ago, I got an exam from two years part time studies in an Agile Project Managment course where most of the agile concept was covered, all from Scrum, SAFe, project owner to the legal aspects and also change management. To use the project board in Github was a new experience, as I'm use to using Miro and Trello. But fun to learn something new. Using the User Stories on the board is a nice way to keep track of what to do and see the progress. Using the board on my own is a bit strange, as for example, the iterations and iteration planning will not be applicable in the same way. But to show my knowledge I first created a backlog column where I can apply the MoSCoW principle and sort out things to do and not to do etc. Also a column for things to be tested as a way of using Defenition of Done (DoD).<br> Later I added a column for User Stories I choose not to do.<br>
+I'm already familiar with the agile understanding. Just 6 month ago, I got an exam from two years part time studies in an Agile Project Managment course where most of the agile concept was covered, all from Scrum, SAFe, project owner to the legal aspects and also agile change management. To use the project board in Github was a new experience, as I'm use to using Miro and Trello. But fun to learn something new. Using the User Stories on the board is a nice way to keep track of what to do and see the progress. Using the board on my own is a bit strange, as for example, the iterations and iteration planning will not be applicable in the same way. But to show my knowledge I first created a backlog column where I can apply the MoSCoW principle on the user stories and sort out things to do and not to do etc. Also a column for things to be tested as a way of using Definition of Done (DoD).<br> Later I added a column for User Stories I choose not to do.<br>
 <img src="readmefiles/agile-board_01.jpg" alt="Image showing a Project Board"><br>
 
-Using the DoD column I place all implemented user stories in that column waiting to be tested. My defenition of done was to do a final test and document it in this README. I also added checkboxes for task and to define the DoD. Also leave a comment in the user story that it was done before move it to the done column. I also used labels when applicable.<br>
+Using the DoD column I place all implemented user stories in that column waiting to be tested. My definition of done was to do a final test and document it in this README. I also added checkboxes for task and to define the DoD. Also leave a comment in the user story that it was done before move it to the done column. I also used labels when applicable.<br>
 <img src="readmefiles/agile-board_02b.jpg" alt="Image showing a Project Board"><br>
 
 Here is just an image from when I was about to come to the end of my project.<br>
@@ -61,9 +61,7 @@ Here is just an image from when I was about to come to the end of my project.<br
   
 # <a id="user-experience"></a>User Experience
 
-The idea is to make it simple and be able to easily overview different events.<br>
-By registering as a user, you are able to sign up for events.
-When the sign up is approved. It's possible to view in the event details. And if the user is logged in, they are able to delete or edit the sign up.
+The idea is to make it simple and be able to easily overview different events. By registering as a user, you are able to sign up for events. When the sign up is approved. It's possible to view in the event details. And if the user is logged in, they are able to delete or edit the sign up.
 
 ## <a id="user-stories"></a>User stories
 
@@ -85,7 +83,7 @@ I used the Django blog walkthrough as a base. My idea was to, instead of posts, 
 ### <a id="scope"></a>Scope
 
 This will show what I learnt with Python using Django and all things in earlier modules.<br>
-Also with feedback from previous portfolio projects, do a lot of testing and document it.
+Also with feedback from previous portfolio projects, do a lot of manual testing and document it.
 
 ### <a id="structure"></a>Structure
 
@@ -101,7 +99,7 @@ The skeleton is based on a Django blog. I started "emxevent" as a project and "e
 
 ### <a id="surface"></a>Surface
 
-I see a lot of potential on this event managment app. I really had to put aside ideas I had not to make this project to big. You can read some of the ideas in the "<a href="#more-features">More Features</a>" section in this README.
+I see a lot of potential on this event managment app. I really had to put aside ideas I had, not to make this project to big. You can read some of the ideas in the "<a href="#more-features">More Features</a>" section in this README.
 
 I really like the rounded corner and shadow effect to get the website more three dimensional. As well as both the navigation bar and each event, but also messages and other small things. This will make each part stand out a bit more.
 
@@ -415,4 +413,4 @@ The site was deployed to Heroku. Using the Code institute guidence from "I think
 
 ## <a id="acknowledgements">Acknowledgement</a>
 
-- I've been struggeling with Codeanywhere as an editor. By the end of my project 18-20 Nov. they had an scheduled downtime. After it came back up it worked fine for the first day. But on the 21st Nov. something happened. When I ran server (python3 manage.py runserver) and viewing my site on "https://8000-robertahlin-emx-lymh6zhmfc.us2.codeanyapp.com/" it only loaded an old version of my style.css. All the changes I made during the 20th Nov wasn't applied even though it was still saved in my style.css file. I tried to restart my workspace, even closing the browser and restart but it didn't work. But when deploying to Heroku it all worked fine. Since I was about to finish I didn't try more to solve it.
+- I've been struggeling with Codeanywhere as an editor. By the end of my project 18-20 Nov. they had an scheduled downtime. After it came back up it worked fine for the first day. But on the 21st Nov. something happened. When I ran server (python3 manage.py runserver) and viewing my site on "https://8000-robertahlin-emx-lymh6zhmfc.us2.codeanyapp.com/" it only loaded an old version of my style.css. Like it was using a old cached filed. All the changes I made during the 20th Nov wasn't loaded in browser even though it was still saved in my style.css file. I tried to restart my workspace, even closing the browser and restart my pc, but it didn't work. But when deploying to Heroku it all worked fine. Since I was about to finish I didn't try more to solve it.
