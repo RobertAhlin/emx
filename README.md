@@ -113,6 +113,7 @@ I really like the rounded corner and shadow effect to get the website more three
 3. Django - using Django as a foundation.
 4. Cloudinary - to host images.
 5. Summernote - to apply a wysiwyg editor.
+6. Bootstrap - for design.
 
 # <a id="features"></a>Features
 
@@ -122,7 +123,7 @@ I really like the rounded corner and shadow effect to get the website more three
 On top of the page is the navigation bar. The "EMX|Event" logo is clickable and as "Home" it will also link to the landing page. Next to it is a link to "Old Event". It is explained later in this feature section. Next is "Login" if the visitor is not logged in as a user.<br>
 <img src="readmefiles/navbar_logged_out_01.jpg" alt="Image of the navigation bar in logged out mode"><br>
 If the user is logged in, the Login will change to "Logout".<br>
-Also if the logged in user has "staff status" the user can add an event where the link "Add Event" will appear and will link direktly to the add event panel.<br>
+Also, if the logged in user has "staff status" the user can add an event where the link "Add Event" will appear and will link directly to the add event panel.<br>
 <img src="readmefiles/navbar_logged_in_admin_01.jpg" alt="Image of the navigation bar in logged in in admin mode"><br>
 
 ### <a id="logged-in-as"></a><b>Logged in as</b>
@@ -150,7 +151,7 @@ On the index page the events are sorted with the next upcoming event first.<br>
 <img src="readmefiles/sort_by_event_date_01.jpg" alt="Image example of events sorted by event date."><br>
 
 ### <a id="old-events"></a><b>Page for old events</b>
-Adding more events over time would soon fill the event page with a lot of events. And I didn't want to have all the event saved. I first thought of making a delete function. But I also thought that both event creators and users might want to see when the event was and who participated. So I made a new page for old events. I copied index.html to old_event.html and added date sorting functions to respective view to after and before today's date.<br>
+Adding more events over time would soon fill the event page with a lot of events. And I didn't want to have all the events saved. I first thought of making a delete function. But I also thought that both event creators and users might want to see when the event was and who participated. So I made a new page for old events. I copied index.html to old_event.html and added date sorting functions to respective view to after and before today's date.<br>
 <img src="readmefiles/test-event_with_old_date_03.jpg" alt="Sceeentshot of events in the Old Event page"><br>
 When viewing details of an old event. It is longer possible to sign up for the event. This is also notified through an active alert message:
 <img src="readmefiles/old_event_closed_02b.jpg" alt="Sceeentshot alert message closed for sign up."><br>
@@ -162,7 +163,7 @@ View total likes:<img src="readmefiles/like_before.jpg" alt="Screenshot of likes
 ### <a id="signed-up"></a><b>Signed up</b>
 On the index page is it possible to see how many has signed up for the event.<br>
 <img src="readmefiles/signed_up_01.jpg" alt="Screenshot of total amount of sign ups for an event."><br>
-When looking at the details of the event. It shows how many has been approved and how many has signed up in total.<br>
+When looking at the details of the event. It shows how many has been approved and how many has signed up in total for this event.<br>
 <img src="readmefiles/signed_up_02.jpg" alt="Screenshot of how many sign ups has been approved and total amount of sign ups for the event."><br>
 
 ### <a id="edit-sign-up"></a><b>Edit sign up</b>
