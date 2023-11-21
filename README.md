@@ -56,6 +56,8 @@ I'm already familiar with the agile understanding. Just 6 month ago, I got an ex
 Using the DoD column I place all implemented user stories in that column waiting to be tested. My defenition of done was to do a final test and document it in this README. I also added checkboxes for task and to define the DoD. Also leave a comment in the user story that it was done before move it to the done column. I also used labels when applicable.<br>
 <img src="readmefiles/agile-board_02b.jpg" alt="Image showing a Project Board"><br>
 
+Here is just an image from when I was about to come to the end of my project.<br>
+<img src="readmefiles/agile-board_03.jpg" alt="Image showing a Project Board"><br>  
   
 # <a id="user-experience"></a>User Experience
 
