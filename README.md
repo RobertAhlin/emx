@@ -252,7 +252,6 @@ To test to register as a user I:
 <img src="readmefiles/test-add_event_03.jpg" alt="Sceeentshot example three in the add event process."><br>
 4. Finally, I made sure it appears on the index page and that I could click on it to see event details.<br>
 <img src="readmefiles/test-add_event_04.jpg" alt="Sceeentshot example four in the add event process."><br>
-
 - When I started to create more events and more sign ups to events I soon discovered that the sign ups didn't register in the database. Trying to troubleshoot I soon discovered that the issue was that start_number in my model had `unique=True`. My original thought was that each sign up should have a unique start number related for each event. But as the database will check for all start numbers in all events, it was not possible to use the same start number in different events. I solved it by just remember the `unique=True` line in the model.
 <hr>
 </details>
@@ -271,7 +270,6 @@ To test to register as a user I:
 <img src="readmefiles/test-sign_up_06.jpg" alt="Sceeentshot example six in the sign up process."><br>
 6. When viewing old events details it is not possible to sign up. The sign up form will automatically be disabled when the date for the event has passed.<br>
 <img src="readmefiles/test-sign_up_07.jpg" alt="Sceeentshot example seven in the sign up process."><br>
-
 <h3>Error handling for sign up</h3>
 1. Testing <b>not</b> to fill in the First name or Last name will result in a warning since those fields are required.<br>
 <img src="readmefiles/test-sign_up_errors_01.jpg" alt="Sceeentshot example of error not filling in first or last name."><br>
@@ -334,8 +332,13 @@ I added events to make sure I had enough to activate the pagination function to 
 <hr>
 </details>
 
-### <a id="validating"></a>Validating
+I used Lighthouse in Chrome browser. It showed I had some accessibility issues with contrast for text color compared to background color. It was some bootstrap classes that I either removed or made custom color in style.css to get the accessibilty to green.<br>
+the I also tried to work with the Performance, but it was because of used larged images being uploaded for the events. So for the future I'll keep that in mind.<br>
+Results after I fixed the suggested issues.
+<img src="readmefiles/lighthouse_01.jpg" alt="Sceeentshot from the reslut of Lighthouse testing"><br>
 
+
+### <a id="validating"></a>Validating
 
 When I started to validate my code I got a lot of errors to begin with. Most of them where about "white spaces" that I couldn't do anything about.  I talked about it with my mentor, and he said it's because of the mix of python in the html code. So to be able to validate the html is removed all the {{ tags }} and {% tags %} to get clean html. So I validated the code by pasting it in to the validators.<br> 
 Later I just started to hide python tags in filters.<br>
