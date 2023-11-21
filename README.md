@@ -22,6 +22,7 @@ This is event handler for motocross and enduro, which will forfill a real life n
   - <a href="#surface">Surface</a>
 - <a href="#technologies">Technologies</a>
 - <a href="#features">Features</a>
+  - <a href="#navbar">Navigation bar</a>
   - <a href="#view-event-date">View event date</a>
   - <a href="#events-sorted">Events sorted by event date</a>
   - <a href="#old-events">Page for old events</a>
@@ -116,6 +117,23 @@ I see a lot of potential on this event managment app. I really had to put aside 
 # <a id="features"></a>Features
 
 ## Existing Features
+
+### <a id="navbar"></a><b>Navigation bar</b>
+On top of the page is the navigation bar. The "EMX|Event" logo is clickable and as "Home" it will also link to the landing page. Next to it is a link to "Old Event". Which is explained later in this feature section. Next is "Login" if the visitor is not logged in as a user.<br>
+<img src="readmefiles/navbar_logged_out_01.jpg" alt="Image of the navigation bar in logged out mode"><br>
+If the user is logged in, the Login will change to "Logout".<br>
+Also if the logged in user has "staff status" the user can add an event where the link "Add Event" will appear and will link direktly to the add event panel.<br>
+<img src="readmefiles/navbar_logged_in_admin_01.jpg" alt="Image of the navigation bar in logged in in admin mode"><br>
+
+### <a id="messages"></a><b>Notification Messages</b>
+Messages for different notifications will appar in the top right corner fitted to the height of the navigation bar.<br>
+<img src="readmefiles/messages_01.jpg" alt="Image of a message example"><br>
+Messages will appear for:
+- Logged in
+- Logged out
+- Signed up to an event
+- Edited sign up
+- Deleted sign up
 
 ### <a id="view-event-date"></a><b>View event date:</b>
 On the index page for each event, it is possible to see when the event will happen.<br>
