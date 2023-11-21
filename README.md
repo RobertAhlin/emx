@@ -49,18 +49,20 @@ The idea for this project is to get create an event handler for motocross and en
 
 # <a id="agile"></a>Thinking Agile
 
-  I'm already familaar with the agile understanding. Just 6 month ago, I got an exam from two years part time studies in an Aglie Project Managment course where most of the agile concept was covered, all from Scrum, SAFe, project owner to the legal aspects and also change management. To use the project board in Github was a new experience, as I'm use to using Miro and Trello. But fun to learn something new. Using the User Stories on the board is a nice way to keep track of what to do and see the progress. Using the board on my own is a bit strange, as for example, the iterations and iteration planning will not be applicable in the same way. But to show my knowledge I first created a backlog column where I can apply the MoSCoW principle and sort out things to do and not to do etc. Also a column for things to be tested as a way of using Defenition of Done (DoD).<br>
-  <img src="readmefiles/agile-board_01.jpg" width="75%" alt="Image showing a Project Board"><br>
-  
-  Using the DoD column I place all implemented user stories in that column waiting to be tested. My defenition of done was to do a final test and document it in this README. I also added checkboxes for task and to define the DoD. Also leave a comment in the user story that it was done before move it to the done column.<br>
-  <img src="readmefiles/agile-board_02.jpg" alt="Image showing a Project Board"><br>
-  Later I added a column for User Stories I choosed not to do.
+Link to board: <a href="https://github.com/users/RobertAhlin/projects/8/views/1" taget="_blank">RobertAhlin's EMX Project Board</a>
+
+I'm already familiar with the agile understanding. Just 6 month ago, I got an exam from two years part time studies in an Aglie Project Managment course where most of the agile concept was covered, all from Scrum, SAFe, project owner to the legal aspects and also change management. To use the project board in Github was a new experience, as I'm use to using Miro and Trello. But fun to learn something new. Using the User Stories on the board is a nice way to keep track of what to do and see the progress. Using the board on my own is a bit strange, as for example, the iterations and iteration planning will not be applicable in the same way. But to show my knowledge I first created a backlog column where I can apply the MoSCoW principle and sort out things to do and not to do etc. Also a column for things to be tested as a way of using Defenition of Done (DoD).<br> Later I added a column for User Stories I choosed not to do.<br>
+<img src="readmefiles/agile-board_01.jpg" alt="Image showing a Project Board"><br>
+
+Using the DoD column I place all implemented user stories in that column waiting to be tested. My defenition of done was to do a final test and document it in this README. I also added checkboxes for task and to define the DoD. Also leave a comment in the user story that it was done before move it to the done column. I also used labels when applicable.<br>
+<img src="readmefiles/agile-board_02b.jpg" alt="Image showing a Project Board"><br>
+
   
 # <a id="user-experience"></a>User Experience
 
 The idea is to make it simple and be able to easily overview different events.<br>
 By registering as a user, you are able to sign up for events.
-When the sign up is approved. It's possible to view in the event details. And of the user is logged in, they are able to delete or edit the sign up.
+When the sign up is approved. It's possible to view in the event details. And if the user is logged in, they are able to delete or edit the sign up.
 
 ## <a id="user-stories"></a>User stories
 
@@ -76,12 +78,13 @@ A user should:
 
 ### <a id="strategy"></a>Strategy
 
-I used the Django blog walkthrough as a base. My idea was to use the posts as a way to create events, and then use the comment function to sign up for the event. From there build more content and functions.<br>
-The comment model didn't fit at all so I made my own custom SignUp model.
+I used the Django blog walkthrough as a base. My idea was to, instead of posts, create events, and then skip the comments and instead make a model for signing up for the event. From there build more content and functions.<br>
+
 
 ### <a id="scope"></a>Scope
 
 This will show what I learnt with Python using Django and all things in earlier modules.<br>
+Also weed feeback from previous portfolio projects, do a lot of testing and document it.
 
 ### <a id="structure"></a>Structure
 
@@ -97,18 +100,18 @@ The skeleton is based on a Django blog. I started "emxevent" as a project and "e
 
 ### <a id="surface"></a>Surface
 
-I see a lot of potential on this event managment app. I really had to but aside ideas I had not to make this project to big
+I see a lot of potential on this event managment app. I really had to put aside ideas I had not to make this project to big. You can read some of the ideas in the "<a href="#more-features">More Features</a>" secion in this README.
 
-- I really like the rounded corner and shadow effect to get the website more three dimensional. As well as both the navigation bar and each event, but also messages and other small things.
-- 
+- I really like the rounded corner and shadow effect to get the website more three dimensional. As well as both the navigation bar and each event, but also messages and other small things. This will make each part stand out a bit more.
 
 
 ## <a id="technologies"></a>Technologies
 
-1. Python - to create functions for the game.
-2. Django - using Django blog as a foundation.
-3. Cloudinary - to host images.
-4. Summernote - to apply a wysiwyg editor.
+1. Python - to create back end function.
+2. HTML and CSS - for the front end.
+3. Django - using Django as a foundation.
+4. Cloudinary - to host images.
+5. Summernote - to apply a wysiwyg editor.
 
 # <a id="features"></a>Features
 

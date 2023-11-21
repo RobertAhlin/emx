@@ -246,7 +246,7 @@ a {
     color: #fff;
 }
 
-/* For screens smaller than 991 pixels */
+/* For screens smaller than 991 pixels (bootstrap media query) */
 @media (max-width: 991px) {
 
     .navbar {
