@@ -363,7 +363,7 @@ models.py<br>
 <img src="readmefiles/validate_pep8_models_01.jpg" alt="Sceeentshot from validating models.py"><br>
 
 settings.py<br>
-<img src="readmefiles/validate_pep8_settings_02.jpg" alt="Sceeentshot from validating settings.py"><br>
+<img src="readmefiles/validate_pep8_settings_03.jpg" alt="Sceeentshot from validating settings.py"><br>
 
 emxevents/urls.py<br>
 <img src="readmefiles/validate_pep8_urls_01.jpg" alt="Sceeentshot from validating emxevents/urls.py"><br>
