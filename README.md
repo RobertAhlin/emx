@@ -5,7 +5,7 @@
 <h2>Project 4 - EMX Events</h2>
 
 Welcome to this Enduro and Motocross event handler.<br>
-This is event handler for motocross and enduro, which will forfill a real life need. There is no good event handler to create events for motocross and enduro clubs. All clubs uses thier own systems. (Everything from Google sheets and mail groups all kind of temporary solutions.) There is one event hadler for official competitions handled by SVEMO the Swedish motorsport association.
+This is event handler for motocross and enduro, which will forfill a real life need. There is no good event handler to create events for motocross and enduro clubs. All clubs uses their own systems. (Everything from Google sheets and mail groups all kind of temporary solutions.) There is one event handler for official competitions handled by SVEMO the Swedish motor sport association.
 
 # <a id="table-of-content"></a>Table of Content
 
@@ -53,7 +53,7 @@ The idea for this project is to get create an event handler for motocross and en
 
 Link to board: <a href="https://github.com/users/RobertAhlin/projects/8/views/1" taget="_blank">RobertAhlin's EMX Project Board</a>
 
-I'm already familiar with the agile understanding. Just 6 month ago, I got an exam from two years part time studies in an Aglie Project Managment course where most of the agile concept was covered, all from Scrum, SAFe, project owner to the legal aspects and also change management. To use the project board in Github was a new experience, as I'm use to using Miro and Trello. But fun to learn something new. Using the User Stories on the board is a nice way to keep track of what to do and see the progress. Using the board on my own is a bit strange, as for example, the iterations and iteration planning will not be applicable in the same way. But to show my knowledge I first created a backlog column where I can apply the MoSCoW principle and sort out things to do and not to do etc. Also a column for things to be tested as a way of using Defenition of Done (DoD).<br> Later I added a column for User Stories I choosed not to do.<br>
+I'm already familiar with the agile understanding. Just 6 month ago, I got an exam from two years part time studies in an Agile Project Managment course where most of the agile concept was covered, all from Scrum, SAFe, project owner to the legal aspects and also change management. To use the project board in Github was a new experience, as I'm use to using Miro and Trello. But fun to learn something new. Using the User Stories on the board is a nice way to keep track of what to do and see the progress. Using the board on my own is a bit strange, as for example, the iterations and iteration planning will not be applicable in the same way. But to show my knowledge I first created a backlog column where I can apply the MoSCoW principle and sort out things to do and not to do etc. Also a column for things to be tested as a way of using Defenition of Done (DoD).<br> Later I added a column for User Stories I choose not to do.<br>
 <img src="readmefiles/agile-board_01.jpg" alt="Image showing a Project Board"><br>
 
 Using the DoD column I place all implemented user stories in that column waiting to be tested. My defenition of done was to do a final test and document it in this README. I also added checkboxes for task and to define the DoD. Also leave a comment in the user story that it was done before move it to the done column. I also used labels when applicable.<br>
@@ -86,13 +86,13 @@ I used the Django blog walkthrough as a base. My idea was to, instead of posts, 
 ### <a id="scope"></a>Scope
 
 This will show what I learnt with Python using Django and all things in earlier modules.<br>
-Also weed feeback from previous portfolio projects, do a lot of testing and document it.
+Also with feedback from previous portfolio projects, do a lot of testing and document it.
 
 ### <a id="structure"></a>Structure
 
 - Using Django and Python
 - Implement Cloudinary for images to the event
-- Linked to ElephantSQL to use Postages SQL
+- Linked to ElephantSQL to use Postges SQL
 - User Summernote for a WYSIWYG editor for creating event.
 
 ### <a id="skeleton"></a>Skeleton
@@ -102,7 +102,7 @@ The skeleton is based on a Django blog. I started "emxevent" as a project and "e
 
 ### <a id="surface"></a>Surface
 
-I see a lot of potential on this event managment app. I really had to put aside ideas I had not to make this project to big. You can read some of the ideas in the "<a href="#more-features">More Features</a>" secion in this README.
+I see a lot of potential on this event managment app. I really had to put aside ideas I had not to make this project to big. You can read some of the ideas in the "<a href="#more-features">More Features</a>" section in this README.
 
 I really like the rounded corner and shadow effect to get the website more three dimensional. As well as both the navigation bar and each event, but also messages and other small things. This will make each part stand out a bit more.
 
@@ -120,14 +120,14 @@ I really like the rounded corner and shadow effect to get the website more three
 ## Existing Features
 
 ### <a id="navbar"></a><b>Navigation bar</b>
-On top of the page is the navigation bar. The "EMX|Event" logo is clickable and as "Home" it will also link to the landing page. Next to it is a link to "Old Event". Which is explained later in this feature section. Next is "Login" if the visitor is not logged in as a user.<br>
+On top of the page is the navigation bar. The "EMX|Event" logo is clickable and as "Home" it will also link to the landing page. Next to it is a link to "Old Event". It is explained later in this feature section. Next is "Login" if the visitor is not logged in as a user.<br>
 <img src="readmefiles/navbar_logged_out_01.jpg" alt="Image of the navigation bar in logged out mode"><br>
 If the user is logged in, the Login will change to "Logout".<br>
 Also if the logged in user has "staff status" the user can add an event where the link "Add Event" will appear and will link direktly to the add event panel.<br>
 <img src="readmefiles/navbar_logged_in_admin_01.jpg" alt="Image of the navigation bar in logged in in admin mode"><br>
 
 ### <a id="messages"></a><b>Notification Messages</b>
-Messages for different notifications will appar in the top right corner fitted to the height of the navigation bar.<br>
+Messages for different notifications will appear in the top right corner fitted to the height of the navigation bar.<br>
 <img src="readmefiles/messages_01.jpg" alt="Image of a message example"><br>
 Messages will appear for:
 - Logged in
@@ -147,7 +147,7 @@ On the index page the events are sorted with the next upcoming event first.<br>
 ### <a id="old-events"></a><b>Page for old events</b>
 Adding more events over time would soon fill the event page with a lot of events. And I didn't want to have all the event saved. I first thought of making a delete function. But I also thought that both event creators and users might want to see when the event was and who participated. So I made a new page for old events. I copied index.html to old_event.html and added date sorting functions to respective view to after and before today's date.<br>
 <img src="readmefiles/test-event_with_old_date_03.jpg" alt="Sceeentshot of events in the Old Event page"><br>
-When viewing details of an old event. It is longer possible to sign up for the event. This is also notifided through an active alert message:
+When viewing details of an old event. It is longer possible to sign up for the event. This is also notified through an active alert message:
 <img src="readmefiles/old_event_closed_02b.jpg" alt="Sceeentshot alert message closed for sign up."><br>
 
 ### <a id="likes"></a><b>Likes</b>
@@ -155,7 +155,7 @@ I kept the function to like an event. First I thought of removing it as it seeme
 View total likes:<img src="readmefiles/like_before.jpg" alt="Screenshot of likes and not yet liked by logged in user."> Liked by user:<img src="readmefiles/liked_after.jpg" alt="Screenshot of likes and now liked by logged in user."><br>
 
 ### <a id="signed-up"></a><b>Signed up</b>
-On the index page is it possible to se how many has signed up for the event.<br>
+On the index page is it possible to see how many has signed up for the event.<br>
 <img src="readmefiles/signed_up_01.jpg" alt="Screenshot of total amount of sign ups for an event."><br>
 When looking at the details of the event. It shows how many has been approved and how many has signed up in total.<br>
 <img src="readmefiles/signed_up_02.jpg" alt="Screenshot of how many sign ups has been approved and total amount of sign ups for the event."><br>
@@ -209,7 +209,7 @@ A screenshot from my browser.<br>
 
 I can actually think of a lot of things to implement to this.
 
-- Implent emailing functions. Such as
+- Implement emailing functions. Such as
   - Send an authentication link when signing up.
   - Send a password reset link.
 - Save a riders transponder number in the user information.
@@ -220,19 +220,19 @@ I can actually think of a lot of things to implement to this.
 ## <a id="testing"></a>Testing
 
 Through the developing of the EMX Events I had various challanges.
-I followed the "I think, therefore I blog" walkthrough to set it up and use that blog as a base and then changed to my needs. At one part everything just fell apart. The Admin user interface stopped working. When logged in as an admin it showed nothing. Trying to fix it, it kind of went downhill from there. So I started over from scratch in a new repo and a new workspace and copied code piece by piece untill I was on track again. This will explain why the user stories in the project board are linked to two different repos.
+I followed the "I think, therefore I blog" walkthrough to set it up and use that blog as a base and then changed to my needs. At one part everything just fell apart. The Admin user interface stopped working. When logged in as an admin it showed nothing. Trying to fix it, it kind of went downhill from there. So I started over from scratch in a new repo and a new workspace and copied code piece by piece until I was on track again. This will explain why the user stories in the project board are linked to two different repos.
 
-I decided from the beginning that I should make sure to test everything I do. So from the first runnable skeleton of the project. I made sure it was working on Heroku by doing an early deploy. Through the whole process of developing the EMX Events app I hade it running with `python3 manage.py runserver` and checked that all was working about when I did each commit.
+I decided from the beginning that I should make sure to test everything I do. So from the first runable skeleton of the project. I made sure it was working on Heroku by doing an early deploy. Through the whole process of developing the EMX Events app I had it running with `python3 manage.py runserver` and checked that all was working about when I did each commit.
 
    
-Please click on each test below to se details:
+Please click on each test below to see details:
 <details><summary>Register as a user.</summary>
 To test to register as a user I:
 1. Clicked Register in the navigation bar:<br>
 <img src="readmefiles/test-register_01.jpg" alt="Sceeentshot example one in the add event process."><br>
 2. Filled in the form with a username and password.<br>
 <img src="readmefiles/test-register_02.jpg" alt="Sceeentshot example one in the add event process."><br>
-3. Finally when rigistration has been submittet the user gets logged in and an alert will appert to notify the user.<br>
+3. Finally when rigistration has been submitted the user gets logged in and an alert will appert to notify the user.<br>
 <img src="readmefiles/test-register_03.jpg" alt="Sceeentshot example one in the add event process."><br>
 </details>
 
@@ -243,7 +243,7 @@ To test to register as a user I:
 <img src="readmefiles/test-add_event_02.jpg" alt="Sceeentshot example two in the add event process."><br>
 3. I went back to the Admin panel and opened the event and set it to "Active" and saved it.<br>
 <img src="readmefiles/test-add_event_03.jpg" alt="Sceeentshot example three in the add event process."><br>
-4. Finally I made sure it appear on the index page and that I could click on it to see event details.<br>
+4. Finally, I made sure it appears on the index page and that I could click on it to see event details.<br>
 <img src="readmefiles/test-add_event_04.jpg" alt="Sceeentshot example four in the add event process."><br>
 </details>
 
@@ -283,7 +283,7 @@ When looking in the approved sign up list. The sign up is gone.<br>
 <img src="readmefiles/test-delete_sign-up_04.jpg" alt="Image example of a approved sign up list after deleted one sign up."><br>
 
 <details><summary>Events with an event date that passed today date.</summary>
-This is a small story on it self. Filtering out events on event_date prior to todays date didn't work at all first using this line of code:<br>
+This is a small story on itself. Filtering out events on event_date prior to today's date didn't work at all first using this line of code:<br>
 `{% if event.event_date >= today %}`<br>
 To test it I added this line to print the results to the browser:<br> `{{ event.event_date }} | {{ today }}`<br>
 in the browser it showed: "Nov. 8, 2023 | 2023-11-09"<br>
@@ -297,36 +297,64 @@ As shown in the image below I just created an event.<br>
 <img src="readmefiles/test-event_with_old_date_01.jpg" alt="Sceeentshot example of creating and event with date prior to today"><br>
 The event got a event date prior to today. (When I did the test it was 2023-11-10)<br>
 <img src="readmefiles/test-event_with_old_date_02.jpg" alt="Sceeentshot example of selecting a date prior to today"><br>
-On the website it is possible to click "Old Events" to get a view over events that has an event date before todays date.
+On the website it is possible to click "Old Events" to get a view over events that has an event date before today's date.
 <img src="readmefiles/test-event_with_old_date_03.jpg" alt="Sceeentshot of events in the Old Event page"><br>
 </details>
 
 <details><summary>Pagination</summary>
-I added enough envents to make sure I hade more to activate the pagination function to verify that it works.<br>
+I added events to make sure I had enough to activate the pagination function to verify that it works.<br>
 <img src="readmefiles/test-pagination_01.jpg" alt="Sceeentshot the 'Next' button when pagnitate."><br>
 </details>
 
-- When I started to create more events and more sign ups to events I soon discovered that the sign ups didn't register in the database. Trying to troubleshoot I soon discovered that the issue was that start_number in my model had `unique=True`. My original thought was that each sign up should have a unique start number related for each event. But as the database will check for all start numbers in all events, it was not possible to use the same start number in different events. I solved it by just remober the `unique=True` line in the model.
+- When I started to create more events and more sign ups to events I soon discovered that the sign ups didn't register in the database. Trying to troubleshoot I soon discovered that the issue was that start_number in my model had `unique=True`. My original thought was that each sign up should have a unique start number related for each event. But as the database will check for all start numbers in all events, it was not possible to use the same start number in different events. I solved it by just remember the `unique=True` line in the model.
 
 ### <a id="validating"></a>Validating
 
-- HTML Validating:
-  - Link to each page
 
-- CSS Validating
-  - 
+When I started to validate my code I got a lot of errors to begin with. Most of them where about "white spaces" that I couldn't do anything about.  I talked about it with my mentor, and he said it's because of the mix of python in the html code. So to be able to validate the html is removed all the {{ tags }} and {% tags %} to get clean html. So I validated the code by pasting it in to the validators.<br> 
+Later I just started to hide python tags in filters.<br>
 
-- PEP8 Validating
-  - 
-From my issue of not being able to find a working pep8 validator in PP3, I got a validator in the feedback. So using that to vaildate my code.
+HTML Validating:<br>
+base.html<br>
+<img src="readmefiles/validate_html_base_01.jpg" alt="Sceeentshot from validating base.html"><br>
+
+index.html<br>
+<img src="readmefiles/validate_html_index_01.jpg" alt="Sceeentshot from validating index.html"><br>
+
+event_detail.html<br>
+<img src="readmefiles/validate_html_event_detail_01.jpg" alt="Sceeentshot from validating event_detail.html"><br>
+
+old_event.html<br>
+<img src="readmefiles/validate_html_old_events_01.jpg" alt="Sceeentshot from validating old_event.html"><br>
+
+CSS Validating:<br>
+style.css<br>
+<img src="readmefiles/validate_css_style_01.jpg" alt="Sceeentshot from validating style.css"><br>
+
+PEP8 Validating:<br>
+models.py<br>
+<img src="readmefiles/validate_pep8_models_01.jpg" alt="Sceeentshot from validating models.py"><br>
+
+settings.py<br>
+<img src="readmefiles/validate_pep8_settings_01.jpg" alt="Sceeentshot from validating settings.py"><br>
+
+emxevents/urls.py<br>
+<img src="readmefiles/validate_pep8_urls_01.jpg" alt="Sceeentshot from validating emxevents/urls.py"><br>
+
+emx/urls.py<br>
+<img src="readmefiles/validate_pep8_urls_02.jpg" alt="Sceeentshot from validating emx/urls.py"><br>
+
+veiws.py<br>
+<img src="readmefiles/validate_pep8_views_01.jpg" alt="Sceeentshot from validating views.py"><br>
+
+
+I couldn't find solutions to some of the "line too long" issues. But asking around, I soon understood that it can't always be fixed.
 
 
 ### <a id="bugs"></a>Bugs?
 
-I haven't really encountered any bugs in this project. Just a couple of small problems:<br>
-
-- Allauth: `../.pip-modules/lib/` doesn't work in Codeanywhere. It gives: `ls: cannot access '../.pip-modules/lib/': No such file or directory` the solution was found in Slack and I used this command instead: `cp -r /home/codeany/.local/lib/python3.9/site-packages/allauth/templates/* ./templates/.`
-- I got stuck several times in order to figure out different things but that is all about learning.
+I haven't really encountered any bugs in this project. Just a couple of small problems.<br>
+Most of it was that I got stuck several times in order to figure out different things but that is all about learning.
 
 ## <a id="deployment"></a>Deployment
 
@@ -351,9 +379,8 @@ The site was deployed to Heroku. Using the Code institute guidence from "I think
 - I Think, Therefore I Blog - The base foundation for the skeleton setup from this walkthrough.
 - Google search engine is frequently used. It's hard to remember how to write codes.
 - A lot of help comes from search hits at the "stack overflow" forums.
-- <a href="<https://djangocentral.com/authentication-using-an-email-address/" target="_blank">Djangocentral</a> - Code examples and help.
-- ChatGPT - While exploring the endless possibilies using ChatGPT I have used this to troubleshoot and ask for help for code snippets.
-- <a href="https://learndjango.com/" target="_blank">https://learndjango.com/</a> - to set up the password reset function. There will be no mail sent as I've choosed not to implement a SMTP engine in this scope.
+- ChatGPT - While exploring the endless possibilities using ChatGPT I have used this to troubleshoot and ask for help for code snippets.
+- <a href="https://learndjango.com/" target="_blank">https://learndjango.com/</a> - to set up the password reset function. There will be no mail sent as I've choose not to implement a SMTP engine in this scope.
 - Using <a href="https://www.online-spellcheck.com/" target="_blank">https://www.online-spellcheck.com/</a> for spelling.
 - Images from https://www.pexels.com, https://www.svemo.com, <https://stock.adobe.com/>
 
