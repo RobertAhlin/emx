@@ -409,3 +409,7 @@ The site was deployed to Heroku. Using the Code institute guidence from "I think
 - <a href="https://learndjango.com/" target="_blank">https://learndjango.com/</a> - to set up the password reset function. There will be no mail sent as I've choose not to implement a SMTP engine in this scope.
 - Using <a href="https://www.online-spellcheck.com/" target="_blank">https://www.online-spellcheck.com/</a> for spelling.
 - Images from https://www.pexels.com, https://www.svemo.com, <https://stock.adobe.com/>
+
+## <a id="acknowledgements">Acknowledgement</a>
+
+- I've been struggeling with Codeanywhere as an editor. By the end of my project 18-20 Nov. they had an scheduled downtime. After it came back up it worked fine for the first day. But on the 21st Nov. something happened. When I ran server (python3 manage.py runserver) and viewing my site on "https://8000-robertahlin-emx-lymh6zhmfc.us2.codeanyapp.com/" it only loaded an old version of my style.css. All the changes I made during the 20th Nov wasn't applied even though it was still saved in my style.css file. I tried to restart my workspace, even closing the browser and restart but it didn't work. But when deploying to Heroku it all worked fine. Since I was about to finish I didn't try more to solve it.
