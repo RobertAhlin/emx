@@ -299,6 +299,7 @@ After clicking "Confirm delete!". A success message of deleting the sign up appe
 <img src="readmefiles/test-delete_sign-up_03.jpg" alt="Image example of success message of deleting a sign up."><br>
 When looking in the approved sign up list. The sign up is gone.<br>
 <img src="readmefiles/test-delete_sign-up_04.jpg" alt="Image example of a approved sign up list after deleted one sign up."><br>
+</details>
 
 <details><summary>Events with an event date that passed today date.</summary>
 This is a small story on itself. Filtering out events on event_date prior to today's date didn't work at all first using this line of code:<br>
