@@ -240,6 +240,7 @@ To test to register as a user I:
 <img src="readmefiles/test-register_02.jpg" alt="Sceeentshot example one in the add event process."><br>
 3. Finally when rigistration has been submitted the user gets logged in and an alert will appert to notify the user.<br>
 <img src="readmefiles/test-register_03.jpg" alt="Sceeentshot example one in the add event process."><br>
+<hr>
 </details>
 
 <details><summary>Create an event with image upload.</summary>
@@ -251,6 +252,9 @@ To test to register as a user I:
 <img src="readmefiles/test-add_event_03.jpg" alt="Sceeentshot example three in the add event process."><br>
 4. Finally, I made sure it appears on the index page and that I could click on it to see event details.<br>
 <img src="readmefiles/test-add_event_04.jpg" alt="Sceeentshot example four in the add event process."><br>
+
+- When I started to create more events and more sign ups to events I soon discovered that the sign ups didn't register in the database. Trying to troubleshoot I soon discovered that the issue was that start_number in my model had `unique=True`. My original thought was that each sign up should have a unique start number related for each event. But as the database will check for all start numbers in all events, it was not possible to use the same start number in different events. I solved it by just remember the `unique=True` line in the model.
+<hr>
 </details>
 
 <details><summary>Sign up for event. Manual testing to sign up for an event.</summary>
@@ -267,7 +271,7 @@ To test to register as a user I:
 <img src="readmefiles/test-sign_up_06.jpg" alt="Sceeentshot example six in the sign up process."><br>
 6. When viewing old events details it is not possible to sign up. The sign up form will automatically be disabled when the date for the event has passed.<br>
 <img src="readmefiles/test-sign_up_07.jpg" alt="Sceeentshot example seven in the sign up process."><br>
-<hr>
+
 <h3>Error handling for sign up</h3>
 1. Testing <b>not</b> to fill in the First name or Last name will result in a warning since those fields are required.<br>
 <img src="readmefiles/test-sign_up_errors_01.jpg" alt="Sceeentshot example of error not filling in first or last name."><br>
@@ -275,6 +279,7 @@ To test to register as a user I:
 <img src="readmefiles/test-sign_up_errors_02.jpg" alt="Sceeentshot showing filling a start number the alreay exist."><br>
 3. If the user try to use a number that has been taken. The field will be cleared and a warning will appear when changing field.<br>
 <img src="readmefiles/test-sign_up_errors_03.jpg" alt="Sceeentshot showing the message of that start number already taken."><br>
+<hr>
 </details>
 
 <details><summary>Edit a sign up</summary>
@@ -287,6 +292,7 @@ I removed one "s" from the last name and added a transponder number and clicked 
 <img src="readmefiles/test-edit_sign_up_03.jpg" alt="Image example of edit sign up icon."><br>
 I got redirected back to the event where I get a message that the sign up has been updated. Also, I see now that the last name only has one "s".<br>
 <img src="readmefiles/test-edit_sign_up_04.jpg" alt="Image example of edit sign up icon."><br>
+<hr>
 </details>
 
 <details><summary>Deleting a sign up</summary>
@@ -299,6 +305,7 @@ After clicking "Confirm delete!". A success message of deleting the sign up appe
 <img src="readmefiles/test-delete_sign-up_03.jpg" alt="Image example of success message of deleting a sign up."><br>
 When looking in the approved sign up list. The sign up is gone.<br>
 <img src="readmefiles/test-delete_sign-up_04.jpg" alt="Image example of a approved sign up list after deleted one sign up."><br>
+<hr>
 </details>
 
 <details><summary>Events with an event date that passed today date.</summary>
@@ -318,14 +325,14 @@ The event got a event date prior to today. (When I did the test it was 2023-11-1
 <img src="readmefiles/test-event_with_old_date_02.jpg" alt="Sceeentshot example of selecting a date prior to today"><br>
 On the website it is possible to click "Old Events" to get a view over events that has an event date before today's date.
 <img src="readmefiles/test-event_with_old_date_03.jpg" alt="Sceeentshot of events in the Old Event page"><br>
+<hr>
 </details>
 
 <details><summary>Pagination</summary>
 I added events to make sure I had enough to activate the pagination function to verify that it works.<br>
 <img src="readmefiles/test-pagination_01.jpg" alt="Sceeentshot the 'Next' button when pagnitate."><br>
+<hr>
 </details>
-
-- When I started to create more events and more sign ups to events I soon discovered that the sign ups didn't register in the database. Trying to troubleshoot I soon discovered that the issue was that start_number in my model had `unique=True`. My original thought was that each sign up should have a unique start number related for each event. But as the database will check for all start numbers in all events, it was not possible to use the same start number in different events. I solved it by just remember the `unique=True` line in the model.
 
 ### <a id="validating"></a>Validating
 
