@@ -1,11 +1,10 @@
 # <a id="title"></a>EMX Event Management
 
-<img src="readmefiles/am_i_responsive.jpg" alt="Image of the site showed on different devices."><br>
-
 <h2>Project 4 - EMX Events</h2>
 
 Welcome to this Enduro and Motocross event handler.<br>
 This is event handler for motocross and enduro, which will forfill a real life need. There is no good event handler to create events for motocross and enduro clubs. All clubs uses their own systems. (Everything from Google sheets and mail groups all kind of temporary solutions.) There is one event handler for official competitions handled by SVEMO the Swedish motor sport association.
+<img src="readmefiles/am_i_responsive.jpg" alt="Image of the site showed on different devices."><br>
 
 # <a id="table-of-content"></a>Table of Content
 
@@ -33,15 +32,13 @@ This is event handler for motocross and enduro, which will forfill a real life n
   - <a href="#footer">Footer</a>
   - <a href="#crud">CRUD</a>
   - <a href="#error-handling">Error handling</a>
-  
 - <a href="#finalizing">Finalizing</a>
 - <a href="#more-features">More Features</a>
 - <a href="#testing">Testing</a>
   - <a href="#validating">Validating</a>
   - <a href="#bugs">Bugs</a>
 - <a href="#deployment">Deployment</a>
-- <a href="#credits">Credits</a>
-  - <a href="#acknowledgments">Acknowledgments</a>
+
 
 # <a id="demo"></a>Demo
 
@@ -125,6 +122,12 @@ On top of the page is the navigation bar. The "EMX|Event" logo is clickable and 
 If the user is logged in, the Login will change to "Logout".<br>
 Also if the logged in user has "staff status" the user can add an event where the link "Add Event" will appear and will link direktly to the add event panel.<br>
 <img src="readmefiles/navbar_logged_in_admin_01.jpg" alt="Image of the navigation bar in logged in in admin mode"><br>
+
+### <a id="logged-in-as"></a><b>Logged in as</b>
+When developing the site I wonder which user I had logged in with. So I thought it would be a nice feature to show who is logged in when logged in. So I added this little feature to the top right corner.<br>
+<img src="readmefiles/logged_in_as_01.jpg" alt="Screenshot of showing who is logged in."><br>
+Also, if the user is a staff. The username is clickable and will open the "Admin panel" in a new page.<br>
+<img src="readmefiles/logged_in_as_02.jpg" alt="Screenshot of showing logged in admin name is clickable."><br>
 
 ### <a id="messages"></a><b>Notification Messages</b>
 Messages for different notifications will appear in the top right corner fitted to the height of the navigation bar.<br>
@@ -383,5 +386,3 @@ The site was deployed to Heroku. Using the Code institute guidence from "I think
 - <a href="https://learndjango.com/" target="_blank">https://learndjango.com/</a> - to set up the password reset function. There will be no mail sent as I've choose not to implement a SMTP engine in this scope.
 - Using <a href="https://www.online-spellcheck.com/" target="_blank">https://www.online-spellcheck.com/</a> for spelling.
 - Images from https://www.pexels.com, https://www.svemo.com, <https://stock.adobe.com/>
-
-### <a id="acknowledgments"></a>Acknowledgments
