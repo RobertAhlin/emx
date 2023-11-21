@@ -22,7 +22,10 @@ class EventList(generic.ListView):
 
     def get_queryset(self):
         today = timezone.now().date()
-        return Event.objects.filter(status=1, event_date__gte=today).order_by('event_date')
+        return Event.objects.filter(
+            status=1,
+            event_date__gte=today
+            ).order_by('event_date')
 
 
 class OldEventList(generic.ListView):
@@ -37,7 +40,10 @@ class OldEventList(generic.ListView):
 
     def get_queryset(self):
         today = timezone.now().date()
-        return Event.objects.filter(status=1, event_date__lt=today).order_by('event_date')
+        return Event.objects.filter(
+            status=1,
+            event_date__lt=today
+            ).order_by('event_date')
 
 
 class EventDetail(View):
@@ -139,7 +145,11 @@ class EditSignUp(UpdateView):
     def get_object(self, queryset=None):
         slug = self.kwargs.get('slug')
         signup_id = self.kwargs.get('signup_id')
-        return get_object_or_404(SignUp, id=signup_id, sign__slug=slug, name=self.request.user.username)
+        return get_object_or_404(
+            SignUp, id=signup_id,
+            sign__slug=slug,
+            name=self.request.user.username
+            )
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

@@ -46,7 +46,7 @@
                                 <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                             </li>
                             {% if user.is_staff %}
-                            </li>
+                            <li>
                                 <a class="nav-link" href="{% url 'admin:events_event_add' %}" target="_blank">Add Event</a>
                             </li>
                             {% endif %}
@@ -59,9 +59,7 @@
                         </li>
                         {% endif %}                    
                     </ul>
-                    
                 </div>
-                
             </div>
         </nav>
 
@@ -83,12 +81,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 offset-md-2">
-                    <span class="message-bar">
+                    <sdiv class="message-bar">
                         {% for message in messages %}
-                        <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+                        <p class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
                             {{ message | safe }}
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
+                        </p>
                         {% endfor %}
                     </span>
                 </div>

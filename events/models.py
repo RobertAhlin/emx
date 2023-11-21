@@ -4,6 +4,7 @@ from cloudinary.models import CloudinaryField
 
 STATUS = ((0, "Draft"), (1, "Active"))
 
+
 # Event model to create events
 class Event(models.Model):
     title = models.CharField(max_length=200, unique=True)
@@ -31,6 +32,7 @@ class Event(models.Model):
     @property
     def number_of_likes(self):
         return self.likes.count()
+
 
 # SignUp model to use when signing up participants to event.
 class SignUp(models.Model):
