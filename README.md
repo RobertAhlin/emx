@@ -333,7 +333,7 @@ I added events to make sure I had enough to activate the pagination function to 
 </details>
 
 I used Lighthouse in Chrome browser. It showed I had some accessibility issues with contrast for text color compared to background color. It was some bootstrap classes that I either removed or made custom color in style.css to get the accessibilty to green.<br>
-the I also tried to work with the Performance, but it was because of used larged images being uploaded for the events. So for the future I'll keep that in mind.<br>
+the I also tried to work with the Performance, but it was because of larged images being uploaded for the events and server response time. So for the future I'll keep that in mind trying to use smaller images.<br>
 Results after I fixed the suggested issues.
 <img src="readmefiles/lighthouse_01.jpg" alt="Sceeentshot from the reslut of Lighthouse testing"><br>
 
