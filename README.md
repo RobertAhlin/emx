@@ -1,6 +1,6 @@
 # <a id="title"></a>EMX Event Management
 
-<img src="" alt=""><br>
+<img src="readmefiles/am_i_responsive.jpg" alt="Image of the site showed on different devices."><br>
 
 <h2>Project 4 - EMX Events</h2>
 
@@ -104,7 +104,7 @@ The skeleton is based on a Django blog. I started "emxevent" as a project and "e
 
 I see a lot of potential on this event managment app. I really had to put aside ideas I had not to make this project to big. You can read some of the ideas in the "<a href="#more-features">More Features</a>" secion in this README.
 
-- I really like the rounded corner and shadow effect to get the website more three dimensional. As well as both the navigation bar and each event, but also messages and other small things. This will make each part stand out a bit more.
+I really like the rounded corner and shadow effect to get the website more three dimensional. As well as both the navigation bar and each event, but also messages and other small things. This will make each part stand out a bit more.
 
 
 ## <a id="technologies"></a>Technologies
@@ -164,7 +164,7 @@ When looking at the details of the event. It shows how many has been approved an
 If you're logged in a user, viewing the details of an event and you have an approved sign up. There is an option to edit the sign up.<br>
 Next to your sign up is a blue icon for edit your sign up.<br>
 <img src="readmefiles/edit_sign_up_01.jpg" alt="Image example of edit sign up icon."><br>
-Click on the edit icon to open the sign up data in a new form. Here the user can edit fist name, last name and transponder number. But not the start number. As the startnumber is concidered to be set when the sign up is approved the user can not edit it. Cause in real life this start number will be locked in to the official start list to identify the rider. The "Cancel" button will just take the user back in browser's history one step. Eg. to the event that was previously viewed.<br>
+Click on the edit icon to open the sign up data in a new form. Here the user can edit first name, last name and transponder number. But not the start number. As the start number is concidered to be set when the sign up is approved the user can not edit it. Cause in real life this start number will be locked in to the official start list to identify the rider. The "Cancel" button will just take the user back in browser's history one step. Eg. to the event that was previously viewed.<br>
 <img src="readmefiles/edit_sign_up_02.jpg" alt="Image example of editing a sign up."><br>
 When saving changes. The form will update the sign up and give the user a message of success.<br>
 <img src="readmefiles/edit_sign_up_03.jpg" alt="Image example of a saved sign up."><br>
@@ -174,7 +174,7 @@ When saving changes. The form will update the sign up and give the user a messag
 If you're logged in a user, viewing the details of an event and you have an approved sign up. There is an option to delete the sign up.<br>
 To the right of the edit icon on the sign up is an icon to delete the sign up.<br>
 <img src="readmefiles/test-delete_sign-up_01b.jpg" alt="Image example of delete sign up icon."><br>
-When clicking it, a button to confirm the delete will appear to prevent missclicks and unwanted deletions. Hovering the button will make it more colorfull to really make the user aware of what is happening.<br>
+When clicking it, a button to confirm the delete will appear to prevent missclicks and unwanted deletions. Hovering the button will make it more colorful to really make the user aware of what is happening.<br>
 <img src="readmefiles/test-delete_sign-up_02b.jpg" alt="Image example of a clicked delete sign up icon."><br>
 <img src="readmefiles/test-delete_sign-up_02c.jpg" alt="Image example of a hovering confirm delete button."><br>
 
@@ -200,14 +200,15 @@ The app has error handling in UI:
 
 ## <a id="finalizing"></a>Finalizing
 
-A screenshot form the game running in Heroku console.<br>
+A screenshot from my browser.<br>
+<img src="readmefiles/deployed_01.jpg" alt="Image example of the website."><br>
+
 <img src="" alt=""><br>
 
 ## <a id ="more-features"></a>More Features?
 
 I can actually think of a lot of things to implement to this.
 
-- Permit selected users to create events.
 - Implent emailing functions. Such as
   - Send an authentication link when signing up.
   - Send a password reset link.
@@ -238,11 +239,11 @@ To test to register as a user I:
 <details><summary>Create an event with image upload.</summary>
 1. In the Admin panel I clicked the "+Add" button to start creating an event. I added an image to also test that the Cloudinary API works.<br>
 <img src="readmefiles/test-add_event_01.jpg" alt="Sceeentshot example one in the add event process."><br>
-1. As shown in the image, I saved it as a draft first to test that function. I made sure the event wasn't visible on the index page.<br>
+2. As shown in the image, I saved it as a draft first to test that function. I made sure the event wasn't visible on the index page.<br>
 <img src="readmefiles/test-add_event_02.jpg" alt="Sceeentshot example two in the add event process."><br>
-1. I went back to the Admin panel and opened the event and set it to "Active" and saved it.<br>
+3. I went back to the Admin panel and opened the event and set it to "Active" and saved it.<br>
 <img src="readmefiles/test-add_event_03.jpg" alt="Sceeentshot example three in the add event process."><br>
-1. Finally I made sure it appear on the index page and that I could click on it to see event details.<br>
+4. Finally I made sure it appear on the index page and that I could click on it to see event details.<br>
 <img src="readmefiles/test-add_event_04.jpg" alt="Sceeentshot example four in the add event process."><br>
 </details>
 
@@ -273,9 +274,9 @@ To test to register as a user I:
 <details><summary>Deleting a sign up</summary>
 I logged in a user, viewed the details of an event and made sure the user I used had an approved sign up.<br>
 Next to the sign up is an icon to delete it<br>
-<img src="readmefiles/test-delete_sign-up_01.jpg" alt="Image example of delete sign up icon."><br>
+<img src="readmefiles/test-delete_sign-up_01b.jpg" alt="Image example of delete sign up icon."><br>
 When clicking the icon. The words "Confirm delete!" appear to make sure the deletion is not a missclick.<br>
-<img src="readmefiles/test-delete_sign-up_02.jpg" alt="Image example of confirm delete sign up."><br>
+<img src="readmefiles/test-delete_sign-up_02b.jpg" alt="Image example of confirm delete sign up."><br>
 After clicking "Confirm delete!". A success message of deleting the sign up appear, containing the name of the person in the deleted sign up.<br>
 <img src="readmefiles/test-delete_sign-up_03.jpg" alt="Image example of success message of deleting a sign up."><br>
 When looking in the approved sign up list. The sign up is gone.<br>
