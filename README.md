@@ -331,7 +331,7 @@ I added events to make sure I had enough to activate the pagination function to 
 </details>
 
 I used Lighthouse in Chrome browser. It showed I had some accessibility issues with contrast for text color compared to background color. It was some bootstrap classes that I either removed or made custom color in style.css to get the accessibilty to green.<br>
-the I also tried to work with the Performance, but it was because of larged images being uploaded for the events and server response time. So for the future I'll keep that in mind trying to use smaller images.<br>
+I also tried to work with the Performance, but it was because of larged images being uploaded for the events or server response time. So for the future I'll keep that in mind trying to use smaller images.<br>
 Results after I fixed the suggested issues.<br>
 <img src="readmefiles/lighthouse_01.jpg" alt="Sceeentshot from the reslut of Lighthouse testing"><br>
 
@@ -413,4 +413,4 @@ The site was deployed to Heroku. Using the Code institute guidence from "I think
 
 ## <a id="acknowledgements">Acknowledgement</a>
 
-- I've been struggeling with Codeanywhere as an editor. By the end of my project 18-20 Nov. they had an scheduled downtime. After it came back up it worked fine for the first day. But on the 21st Nov. something happened. When I ran server (python3 manage.py runserver) and viewing my site on "https://8000-robertahlin-emx-lymh6zhmfc.us2.codeanyapp.com/" it only loaded an old version of my style.css. Like it was using a old cached filed. All the changes I made during the 20th Nov wasn't loaded in browser even though it was still saved in my style.css file. I tried to restart my workspace, even closing the browser and restart my pc, but it didn't work. But when deploying to Heroku it all worked fine. Since I was about to finish I didn't try more to solve it.
+- I've been struggeling with Codeanywhere as an editor. By the end of my project 18-20 Nov. they had an scheduled downtime. After it came back up it worked fine for the first day. But on the 21st Nov. something happened. When I ran server (python3 manage.py runserver) and viewing my site on "https://8000-robertahlin-emx-lymh6zhmfc.us2.codeanyapp.com/" it only loaded an old version of my style.css. Like it was using a old cached file. All the changes I made during the 20th Nov wasn't loaded in browser even though it was still saved in my style.css file. I tried to restart my workspace, even closing the browser and restart my pc, but it didn't work. But when deploying to Heroku it all worked fine. Since I was about to finish I didn't try more to solve it.
