@@ -28,6 +28,7 @@ This is event handler for motocross and enduro, which will forfill a real life n
   - <a href="#old-events">Page for old events</a>
   - <a href="#likes">Likes</a>
   - <a href="#signed-up">Signed up</a>
+  - <a href="#edit-sign-up">Edit sign up</a>
   - <a href="#delete-sign-up">Delete sign up</a>
   - <a href="#footer">Footer</a>
   - <a href="#crud">CRUD</a>
@@ -159,10 +160,23 @@ On the index page is it possible to se how many has signed up for the event.<br>
 When looking at the details of the event. It shows how many has been approved and how many has signed up in total.<br>
 <img src="readmefiles/signed_up_02.jpg" alt="Screenshot of how many sign ups has been approved and total amount of sign ups for the event."><br>
 
+### <a id="edit-sign-up"></a><b>Edit sign up</b>
+If you're logged in a user, viewing the details of an event and you have an approved sign up. There is an option to edit the sign up.<br>
+Next to your sign up is a blue icon for edit your sign up.<br>
+<img src="readmefiles/edit_sign_up_01.jpg" alt="Image example of edit sign up icon."><br>
+Click on the edit icon to open the sign up data in a new form. Here the user can edit fist name, last name and transponder number. But not the start number. As the startnumber is concidered to be set when the sign up is approved the user can not edit it. Cause in real life this start number will be locked in to the official start list to identify the rider. The "Cancel" button will just take the user back in browser's history one step. Eg. to the event that was previously viewed.<br>
+<img src="readmefiles/edit_sign_up_02.jpg" alt="Image example of editing a sign up."><br>
+When saving changes. The form will update the sign up and give the user a message of success.<br>
+<img src="readmefiles/edit_sign_up_03.jpg" alt="Image example of a saved sign up."><br>
+
+
 ### <a id="delete-sign-up"></a><b>Delete sign up</b>
 If you're logged in a user, viewing the details of an event and you have an approved sign up. There is an option to delete the sign up.<br>
-Next to your sign up is an icon to delete the sign up.<br>
-<img src="readmefiles/test-delete_sign-up_01.jpg" alt="Image example of delete sign up icon."><br>
+To the right of the edit icon on the sign up is an icon to delete the sign up.<br>
+<img src="readmefiles/test-delete_sign-up_01b.jpg" alt="Image example of delete sign up icon."><br>
+When clicking it, a button to confirm the delete will appear to prevent missclicks and unwanted deletions. Hovering the button will make it more colorfull to really make the user aware of what is happening.<br>
+<img src="readmefiles/test-delete_sign-up_02b.jpg" alt="Image example of a clicked delete sign up icon."><br>
+<img src="readmefiles/test-delete_sign-up_02c.jpg" alt="Image example of a hovering confirm delete button."><br>
 
 ### <a id="footer"></a><b>Footer</b>
 
@@ -170,6 +184,11 @@ The footer of the page contains links to external social sites and a live timing
 <img src="readmefiles/footer.jpg" alt="Image example of the footer including links to externa sites."><br>
 
 ## <a id="crud"></a>CRUD
+The above features include the Create, Read, Update and Delete functions in the front end. As a user you can.
+- <b>C</b>reate - Sign up for an event.
+- <b>R</b>ead - View a list of approved participants.
+- <b>U</b>pdate - Edit your sign up.
+- <b>D</b>elete - Delete the sign up.
 
 ## <a id="error-handling"></a>Error handling
 

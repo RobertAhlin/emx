@@ -15,9 +15,9 @@
                                 <div class="image-container">
                                     <a href="{% url 'event_detail' event.slug %}">
                                         {% if "placeholder" in event.featured_image.url %}
-                                            <img class="card-img-top" src="{% static 'images/emx.webp' %}" alt="dirtbike rider revving away">
+                                            <img class="card-img-top" src="{% static 'images/emx.webp' %}" alt="Dirtbike rider revving away">
                                         {% else %}
-                                            <img class="card-img-top" src=" {{ event.featured_image.url }}">
+                                            <img class="card-img-top" src="{{ event.featured_image.url }}" alt="Uploaded image for the event">
                                         {% endif %}
                                         <div class="image-flash-author">
                                             <p class="author">By: {{ event.author }}</p>
