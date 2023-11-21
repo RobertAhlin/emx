@@ -187,8 +187,8 @@ class DeleteSignUp(View):
             SignUp, id=signup_id, sign__slug=slug, name=request.user.username)
         sign_up.delete()
 
-        # Message to confirm removded sign up.
+        # Message to confirm removed sign up.
         messages.success(
-            request, f'You have removed {sign_up.fname} {sign_up.lname} from the event.')
+            request, f'You have removed {sign_up.first_name} {sign_up.last_name} from the event.')
 
         return redirect('event_detail', slug=slug)
