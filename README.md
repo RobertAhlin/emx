@@ -42,7 +42,7 @@ This is event handler for motocross and enduro, which will forfill a real life n
 
 # <a id="demo"></a>Demo
 
-The live link to Heroku can be found here - <a href="https://emx-event-c84aa8e070ad.herokuapp.com/" target="_blank">https://emx-event-c84aa8e070ad.herokuapp.com/</a>
+The live link to Heroku can be found here - <a href="https://emx-6d9da8d3da50.herokuapp.com/" target="_blank">https://emx-6d9da8d3da50.herokuapp.com/</a>
 
 The idea for this project is to get create an event handler for motocross and enduro events. Riders can register to sign up for events. Competitions, training or other available events.
 
@@ -334,7 +334,7 @@ I added events to make sure I had enough to activate the pagination function to 
 
 I used Lighthouse in Chrome browser. It showed I had some accessibility issues with contrast for text color compared to background color. It was some bootstrap classes that I either removed or made custom color in style.css to get the accessibilty to green.<br>
 the I also tried to work with the Performance, but it was because of larged images being uploaded for the events and server response time. So for the future I'll keep that in mind trying to use smaller images.<br>
-Results after I fixed the suggested issues.
+Results after I fixed the suggested issues.<br>
 <img src="readmefiles/lighthouse_01.jpg" alt="Sceeentshot from the reslut of Lighthouse testing"><br>
 
 
