@@ -65,8 +65,8 @@ class EventDetail(View):
                                   for sign in signed_up if sign.start_number]
 
         sign_up_form = SignUpForm()
-        sign_up_form.fields['start_number'].widget.attrs['data-existing-start-numbers'] = ','.join(
-            existing_start_numbers)
+        field = sign_up_form.fields['start_number'].widget.attrs
+        field['data-existing-start-numbers'] = ','.join(existing_start_numbers)
 
         return render(
             request,
@@ -188,7 +188,8 @@ class DeleteSignUp(View):
         sign_up.delete()
 
         # Message to confirm removed sign up.
-        messages.success(
-            request, f'You have removed {sign_up.first_name} {sign_up.last_name} from the event.')
+        full_name = f'{sign_up.first_name} {sign_up.last_name}'
+        message = f'You have removed {full_name} from the event.'
+        messages.success(request, message)
 
         return redirect('event_detail', slug=slug)

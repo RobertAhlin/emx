@@ -372,7 +372,7 @@ emx/urls.py<br>
 <img src="readmefiles/validate_pep8_urls_02.jpg" alt="Sceeentshot from validating emx/urls.py"><br>
 
 veiws.py<br>
-<img src="readmefiles/validate_pep8_views_01.jpg" alt="Sceeentshot from validating views.py"><br>
+<img src="readmefiles/validate_pep8_views_02.jpg" alt="Sceeentshot from validating views.py"><br>
 
 
 ### <a id="bugs"></a>Bugs?
