@@ -48,7 +48,7 @@ The idea for this project is to get create an event handler for motocross and en
 
 # <a id="agile"></a>Thinking Agile
 
-Link to board: <a href="https://github.com/users/RobertAhlin/projects/8/views/1" taget="_blank">RobertAhlin's EMX Project Board</a>
+Link to board: <a href="https://github.com/users/RobertAhlin/projects/8/views/1" target="_blank">RobertAhlin's EMX Project Board</a>
 
 I'm already familiar with the agile understanding. Just 6 month ago, I got an exam from two years part time studies in an Agile Project Managment course where most of the agile concept was covered, all from Scrum, SAFe, project owner to the legal aspects and also change management. To use the project board in Github was a new experience, as I'm use to using Miro and Trello. But fun to learn something new. Using the User Stories on the board is a nice way to keep track of what to do and see the progress. Using the board on my own is a bit strange, as for example, the iterations and iteration planning will not be applicable in the same way. But to show my knowledge I first created a backlog column where I can apply the MoSCoW principle and sort out things to do and not to do etc. Also a column for things to be tested as a way of using Defenition of Done (DoD).<br> Later I added a column for User Stories I choose not to do.<br>
 <img src="readmefiles/agile-board_01.jpg" alt="Image showing a Project Board"><br>
