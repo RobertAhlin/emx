@@ -19,7 +19,7 @@
                 {% if "placeholder" in event.featured_image.url %}
                 <img class="card-img-top" src="{% static 'images/emx.webp' %}" alt="dirtbike rider revving away">
                 {% else %}
-                <img class="card-img-top" src="{{ event.featured_image.url }}">
+                <img class="card-img-top" src="{{ event.featured_image.url }}" alt="Uploaded image for the event">
                 {% endif %}
             </div>
         </div>
@@ -34,7 +34,7 @@
                 <p class="card-text ">{{event.content | safe}}</p>
                 <div class="row">
                     <div class="col-1">
-                        <strong>
+                        
                             {% if user.is_authenticated %}
                             <form class="d-inline" action="{% url 'event_like' event.slug %}" method="POST">
                                 {% csrf_token %}
@@ -53,10 +53,11 @@
                                 <i class="far fa-heart"></i>
                             </span>
                             {% endif %}
+                            <strong>
                             <span class="text-secondary">
                                 {{event.number_of_likes}}
                             </span>
-                        </strong>
+                            </strong>
                     </div>
                     <!-- View how many approved sign ups and total sign ups -->
                     <div class="col-3">
