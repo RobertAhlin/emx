@@ -106,7 +106,7 @@ I see a lot of potential on this event management app. I really had to put aside
 
 I really like the rounded corner and shadow effect to get the website more three dimensional. As well as both the navigation bar and each event, but also messages and other small things. This will make each part stand out a bit more.
 
-Bootstrap kind of solve the most of the responsivness. But I made sure everything would work on smaller devices. Such as the info area in the top right corner. Just so it doesn't intefere with the hamburger menu on smaller diveces. I've chosen to hide with a media query scc script just at the moment the hamburger menu appear.
+Bootstrap kind of solve the most of the responsivness. But I made sure everything would work on smaller devices. Such as the info area i created in the top right corner. Just so it doesn't intefere with the hamburger menu on smaller diveces. I've chosen to hide it with a media query scc script, just at the moment the hamburger menu appear.
 
 
 ## <a id="technologies"></a>Technologies
@@ -114,9 +114,10 @@ Bootstrap kind of solve the most of the responsivness. But I made sure everythin
 1. Python - to create back end function.
 2. HTML and CSS - for the front end.
 3. Django - using Django as a foundation.
-4. Cloudinary - to host images.
-5. Summernote - to apply a WYSIWYG editor.
-6. Bootstrap - for design.
+4. Allauth - A nice way to hande authentication, registration, etc.
+5. Cloudinary - to host images.
+6. Summernote - to apply a WYSIWYG editor.
+7. Bootstrap - for design.
 
 ## <a id="models"></a>Database models
 Event - is the model for the created events.<br>
