@@ -106,6 +106,8 @@ I see a lot of potential on this event management app. I really had to put aside
 
 I really like the rounded corner and shadow effect to get the website more three dimensional. As well as both the navigation bar and each event, but also messages and other small things. This will make each part stand out a bit more.
 
+Bootstrap kind of solve the most of the responsivness. But I made sure everything would work on smaller devices. Such as the info area in the top right corner. Just so it doesn't intefere with the hamburger menu on smaller diveces. I've chosen to hide with a media query scc script just at the moment the hamburger menu appear.
+
 
 ## <a id="technologies"></a>Technologies
 
