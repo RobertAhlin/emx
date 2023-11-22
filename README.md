@@ -31,14 +31,16 @@ This is event handler for motocross and enduro, which will forfill a real life n
   - <a href="#edit-sign-up">Edit sign up</a>
   - <a href="#delete-sign-up">Delete sign up</a>
   - <a href="#footer">Footer</a>
-  - <a href="#crud">CRUD</a>
-  - <a href="#error-handling">Error handling</a>
+- <a href="#crud">CRUD</a>
+- <a href="#error-handling">Error handling</a>
 - <a href="#finalizing">Finalizing</a>
 - <a href="#more-features">More Features</a>
 - <a href="#testing">Testing</a>
   - <a href="#validating">Validating</a>
   - <a href="#bugs">Bugs</a>
 - <a href="#deployment">Deployment</a>
+- <a href="#credits">Credits</a>
+- <a href="#acknowledgement">Acknowledgement</a>
 
 
 # <a id="demo"></a>Demo
@@ -146,6 +148,7 @@ class Event(models.Model):
     def __str__(self):
         return self.title
 ```
+        
 - Fields:
   - title: CharField with a maximum length of 200 characters, representing the title of the event.
   - slug: SlugField with a maximum length of 200 characters, providing a URL-friendly version of the title for use in URLs.
@@ -190,7 +193,8 @@ class SignUp(models.Model):
 
     def __str__(self):
         return f"{self.name}, signed up {self.created_on}"
-```       
+```
+
 - Fields:
   - sign: ForeignKey to the Event model, establishing a many-to-one relationship. It represents the event to which participants are signing up.
   - name: CharField with a maximum length of 80 characters, storing the name of the participant.
