@@ -3,7 +3,7 @@
 <h2>Project 4 - EMX Events</h2>
 
 Welcome to this Enduro and Motocross event handler.<br>
-This is event handler for motocross and enduro, which will forfill a real life need. There is no good event handler to create events for motocross and enduro clubs. All clubs uses their own systems. (Everything from Google sheets, mail groups and all kind of temporary solutions.) There is one event handler for official competitions, administered by SVEMO (Swedish motor sport association).
+This is event handler for motocross and enduro, which will for fill a real-life need. There is no good event handler to create events for motocross and enduro clubs. All clubs use their own systems. (Everything from Google sheets, mail groups and all kind of temporary solutions.) There is one event handler for official competitions, administered by SVEMO (Swedish motor sport association).
 <img src="readmefiles/am_i_responsive.jpg" alt="Image of the site showed on different devices."><br>
 
 # <a id="table-of-content"></a>Table of Content
@@ -53,10 +53,10 @@ The idea for this project is to get create an event handler for motocross and en
 
 Link to board: <a href="https://github.com/users/RobertAhlin/projects/8/views/1" target="_blank">RobertAhlin's EMX Project Board</a>
 
-I'm already familiar with the agile understanding. Just 6 month ago, I got an exam from two years part time studies in an Agile Project Managment course where most of the agile concept was covered, all from Scrum, SAFe, project owner to the legal aspects and also agile change management. To use the project board in Github was a new experience, as I'm use to using Miro and Trello. But fun to learn something new. Using the User Stories on the board is a nice way to keep track of what to do and see the progress. Using the board on my own is a bit strange, as for example, the iterations and iteration planning will not be applicable in the same way. But to show my knowledge I first created a backlog column where I can apply the MoSCoW principle on the user stories and sort out things to do and not to do etc. Also a column for things to be tested as a way of using Definition of Done (DoD).<br> Later I added a column for User Stories I choose not to do.<br>
+I'm already familiar with the agile understanding. Just 6 months ago, I got an exam from two years part time studies in an Agile Project Management course where most of the agile concept was covered, all from Scrum, SAFe, project owner to the legal aspects and also agile change management. To use the project board in Github was a new experience, as I'm used to using Miro and Trello. But fun to learn something new. Using the User Stories on the board is a nice way to keep track of what to do and see the progress. Using the board on my own is a bit strange, as for example, the iterations and iteration planning will not be applicable in the same way. But to show my knowledge I first created a backlog column where I can apply the MoSCoW principle on the user stories and sort out things to do and not to do etc. Also a column for things to be tested as a way of using Definition of Done (DoD).<br> Later I added a column for User Stories I choose not to do.<br>
 <img src="readmefiles/agile-board_01.jpg" alt="Image showing a Project Board"><br>
 
-Using the DoD column I place all implemented user stories in that column waiting to be tested. My definition of done was to do a final test and document it in this README. I also added checkboxes for task and to define the DoD. Also leave a comment in the user story that it was done before move it to the done column. I also used labels when applicable.<br>
+Using the DoD column, I place all implemented user stories in that column waiting to be tested. My definition of done was to do a final test and document it in this README. I also added checkboxes for task and to define the DoD. Also leave a comment in the user story that it was done before move it to the done column. I also used labels when applicable.<br>
 <img src="readmefiles/agile-board_02b.jpg" alt="Image showing a Project Board"><br>
 
 Here is just an image from when I was about to come to the end of my project.<br>
@@ -86,7 +86,7 @@ I used the Django blog walkthrough as a base. My idea was to, instead of posts, 
 ### <a id="scope"></a>Scope
 
 This will show what I learnt with Python using Django and all things in earlier modules.<br>
-Also with feedback from previous portfolio projects, do a lot of manual testing and document it.
+Also, with feedback from previous portfolio projects, do a lot of manual testing and document it.
 
 ### <a id="structure"></a>Structure
 
@@ -102,7 +102,7 @@ The skeleton is based on a Django blog. I started "emxevent" as a project and "e
 
 ### <a id="surface"></a>Surface
 
-I see a lot of potential on this event managment app. I really had to put aside ideas I had, not to make this project to big. You can read some of the ideas in the "<a href="#more-features">More Features</a>" section in this README.
+I see a lot of potential on this event management app. I really had to put aside ideas I had, not to make this project to big. You can read some of the ideas in the "<a href="#more-features">More Features</a>" section in this README.
 
 I really like the rounded corner and shadow effect to get the website more three dimensional. As well as both the navigation bar and each event, but also messages and other small things. This will make each part stand out a bit more.
 
@@ -113,7 +113,7 @@ I really like the rounded corner and shadow effect to get the website more three
 2. HTML and CSS - for the front end.
 3. Django - using Django as a foundation.
 4. Cloudinary - to host images.
-5. Summernote - to apply a wysiwyg editor.
+5. Summernote - to apply a WYSIWYG editor.
 6. Bootstrap - for design.
 
 ## <a id="models"></a>Database models
@@ -156,7 +156,7 @@ class Event(models.Model):
   - updated_on: DateTimeField with auto_now=True, automatically updating to the current date and time whenever the instance is modified.
   - content: TextField, storing the content or description of the event.
   - featured_image: CloudinaryField for storing images associated with the event.
-  - excerpt: TextField, an optional field providing a brief summary or excerpt of the event content.
+  - excerpt: TextField, an optional field providing a summary or excerpt of the event content.
   - event_date: DateField, storing the date of the event.
   - created_on: DateTimeField with auto_now_add=True, capturing the date and time when the instance is created.
   - status: IntegerField with choices defined by the STATUS tuple, allowing the event to be in either "Draft" (0) or "Active" (1) status.
@@ -223,7 +223,7 @@ Also, if the logged in user has "staff status" the user can add an event where t
 <img src="readmefiles/navbar_logged_in_admin_01.jpg" alt="Image of the navigation bar in logged in in admin mode"><br>
 
 ### <a id="logged-in-as"></a><b>Logged in as</b>
-When developing the site I wonder which user I had logged in with. So I thought it would be a nice feature to show who is logged in when logged in. So I added this little feature to the top right corner.<br>
+When developing the site, I wonder which user I had logged in with. So, I thought it would be a nice feature to show who is logged in when logged in. So I added this little feature to the top right corner.<br>
 <img src="readmefiles/logged_in_as_01.jpg" alt="Screenshot of showing who is logged in."><br>
 Also, if the user is a staff. The username is clickable and will open the "Admin panel" in a new page.<br>
 <img src="readmefiles/logged_in_as_02.jpg" alt="Screenshot of showing logged in admin name is clickable."><br>
@@ -253,7 +253,7 @@ When viewing details of an old event. It is longer possible to sign up for the e
 <img src="readmefiles/old_event_closed_02b.jpg" alt="Sceeentshot alert message closed for sign up."><br>
 
 ### <a id="likes"></a><b>Likes</b>
-I kept the function to like an event. First I thought of removing it as it seemed quite unnecessary to like an event. But for educational purpose I kept it. Also it will give a hint of if it is an event is popular.<br>
+I kept the function to like an event. First, I thought of removing it as it seemed quite unnecessary to like an event. But for educational purpose I kept it. Also it will give a hint of if it is an event is popular.<br>
 View total likes:<img src="readmefiles/like_before.jpg" alt="Screenshot of likes and not yet liked by logged in user."> Liked by user:<img src="readmefiles/liked_after.jpg" alt="Screenshot of likes and now liked by logged in user."><br>
 
 ### <a id="signed-up"></a><b>Signed up</b>
@@ -266,7 +266,7 @@ When looking at the details of the event. It shows how many has been approved an
 If you're logged in a user, viewing the details of an event and you have an approved sign up. There is an option to edit the sign up.<br>
 Next to your sign up is a blue icon for edit your sign up.<br>
 <img src="readmefiles/edit_sign_up_01.jpg" alt="Image example of edit sign up icon."><br>
-Click on the edit icon to open the sign up data in a new form. Here the user can edit first name, last name and transponder number. But not the start number. As the start number is concidered to be set when the sign up is approved the user can not edit it. Cause in real life this start number will be locked in to the official start list to identify the rider. The "Cancel" button will just take the user back in browser's history one step. Eg. to the event that was previously viewed.<br>
+Click on the edit icon to open the sign up data in a new form. Here the user can edit first name, last name and transponder number. But not the start number. As the start number is concidered to be set when the sign up is approved the user cannot edit it. Cause in real life this start number will be locked into the official start list to identify the rider. The "Cancel" button will just take the user back in browser's history one step. Eg. to the event that was previously viewed.<br>
 <img src="readmefiles/edit_sign_up_02.jpg" alt="Image example of editing a sign up."><br>
 When saving changes. The form will update the sign up and give the user a message of success.<br>
 <img src="readmefiles/edit_sign_up_03.jpg" alt="Image example of a saved sign up."><br>
@@ -324,7 +324,7 @@ I can actually think of a lot of things to implement to this.
 Through the developing of the EMX Events I had various challanges.
 I followed the "I think, therefore I blog" walkthrough to set it up and use that blog as a base and then changed to my needs. At one part everything just fell apart. The Admin user interface stopped working. When logged in as an admin it showed nothing. Trying to fix it, it kind of went downhill from there. So I started over from scratch in a new repo and a new workspace and copied code piece by piece until I was on track again. This will explain why the user stories in the project board are linked to two different repos.
 
-I decided from the beginning that I should make sure to test everything I do. So from the first runable skeleton of the project. I made sure it was working on Heroku by doing an early deploy. Through the whole process of developing the EMX Events app I had it running with `python3 manage.py runserver` and checked that all was working about when I did each commit.
+I decided from the beginning that I should make sure to test everything I do. So from the first runnable skeleton of the project. I made sure it was working on Heroku by doing an early deploy. Through the whole process of developing the EMX Events app I had it running with `python3 manage.py runserver` and checked that all was working about when I did each commit.
 
    
 Please click on each test below to see details:
@@ -408,7 +408,7 @@ This is a small story on itself. Filtering out events on event_date prior to tod
 To test it I added this line to print the results to the browser:<br> `{{ event.event_date }} | {{ today }}`<br>
 in the browser it showed: "Nov. 8, 2023 | 2023-11-09"<br>
 I understood that the format was not same of the two dates. The solution that finally worked is:<br> `{% if event.event_date|date:"Y-m-d" >= today %}`<br>
-But when I added more events I discovered that the "for event in event_list" loop generated empty entries rather than remove them. Here I got the help from ChatGPT that came up with the solution to filter it out in the view before passing the data to the template.<br>
+But when I added more events, I discovered that the "for event in event_list" loop generated empty entries rather than remove them. Here I got the help from ChatGPT that came up with the solution to filter it out in the view before passing the data to the template.<br>
 def get_queryset(self):<br>
         today = timezone.now().date()<br>
         return Event.objects.filter(status=1, event_date__gte=today).order_by('event_date')<br><br>
@@ -436,7 +436,7 @@ Results after I fixed the suggested issues.<br>
 
 ### <a id="validating"></a>Validating
 
-When I started to validate my code I got a lot of errors to begin with. Most of them where about "white spaces" that I couldn't do anything about.  I talked about it with my mentor, and he said it's because of the mix of python in the html code. So to be able to validate the html is removed all the {{ tags }} and {% tags %} to get clean html. So I validated the code by pasting it in to the validators.<br> 
+When I started to validate my code, I got a lot of errors to begin with. Most of them where about "white spaces" that I couldn't do anything about.  I talked about it with my mentor, and he said it's because of the mix of python in the html code. So to be able to validate the html is removed all the {{ tags }} and {% tags %} to get clean html. So I validated the code by pasting it in to the validators.<br> 
 Later I just started to hide python tags in filters.<br>
 
 HTML Validating:<br>
@@ -504,10 +504,10 @@ The site was deployed to Heroku. Using the Code institute guidence from "I think
 - Google search engine is frequently used. It's hard to remember how to write codes.
 - A lot of help comes from search hits at the "stack overflow" forums.
 - ChatGPT - While exploring the endless possibilities using ChatGPT I have used this to troubleshoot and ask for help for code snippets.
-- <a href="https://learndjango.com/" target="_blank">https://learndjango.com/</a> - to set up the password reset function. There will be no mail sent as I've choose not to implement a SMTP engine in this scope.
+- <a href="https://learndjango.com/" target="_blank">https://learndjango.com/</a> - to set up the password reset function. There will be no mail sent as I've chosen not to implement a SMTP engine in this scope.
 - Using <a href="https://www.online-spellcheck.com/" target="_blank">https://www.online-spellcheck.com/</a> for spelling.
 - Images from https://www.pexels.com, https://www.svemo.com, <https://stock.adobe.com/>
 
 ## <a id="acknowledgements">Acknowledgement</a>
 
-- I've been struggeling with Codeanywhere as an editor. By the end of my project 18-20 Nov. they had an scheduled downtime. After it came back up it worked fine for the first day. But on the 21st Nov. something happened. When I ran server (python3 manage.py runserver) and viewing my site on ```https://8000-robertahlin-emx-lymh6zhmfc.us2.codeanyapp.com/``` it only loaded an old version of my style.css. Like it was using a old cached file. All the changes I made during the 20th Nov wasn't loaded in browser even though it was stil saved in my style.css file. I tried to restart my workspace, even closing the browser and restart my pc, but it didn't work. But when deploying to Heroku it all worked fine. I have asked the Support at Codeanywhere for help, and they replied, asking me to create a new workspace. Since I am almost finished, this don't really matter.
+- I've been struggeling with Codeanywhere as an editor. By the end of my project 18-20 Nov., they had an scheduled downtime. After it came back up it worked fine for the first day. But on the 21st of Nov. something happened. When I ran server (python3 manage.py runserver) and viewing my site on ```https://8000-robertahlin-emx-lymh6zhmfc.us2.codeanyapp.com/``` it only loaded an old version of my style.css. Like it was using a old cached file. All the changes I made during the 20th of Nov wasn't loaded in browser even though it was stil saved in my style.css file. I tried to restart my workspace, even closing the browser and restart my pc, but it didn't work. But when deploying to Heroku it all worked fine. I have asked the Support at Codeanywhere for help, and they replied, asking me to create a new workspace. Since I am almost finished, this don't really matter.
