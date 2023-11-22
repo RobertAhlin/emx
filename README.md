@@ -228,8 +228,9 @@ Also, if the logged in user has "staff status" the user can add an event where t
 ### <a id="logged-in-as"></a><b>Logged in as</b>
 When developing the site, I wonder which user I had logged in with. So, I thought it would be a nice feature to show who is logged in when logged in. So I added this little feature to the top right corner.<br>
 <img src="readmefiles/logged_in_as_01.jpg" alt="Screenshot of showing who is logged in."><br>
-Also, if the user is a staff. The username is clickable and will open the "Admin panel" in a new page.<br>
+Also, if the user is a staff. The username is clickable and will open the Django panel in a new page.<br>
 <img src="readmefiles/logged_in_as_02.jpg" alt="Screenshot of showing logged in admin name is clickable."><br>
+This little info field is hidden on smaller divices in favor for the hamburger manu.  
 
 ### <a id="messages"></a><b>Notification Messages</b>
 Messages for different notifications will appear in the top right corner fitted to the height of the navigation bar.<br>
