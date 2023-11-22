@@ -20,6 +20,7 @@ This is event handler for motocross and enduro, which will forfill a real life n
   - <a href="#skeleton">Skeleton</a>
   - <a href="#surface">Surface</a>
 - <a href="#technologies">Technologies</a>
+- <a href="#models">Database models</a>
 - <a href="#features">Features</a>
   - <a href="#navbar">Navigation bar</a>
   - <a href="#view-event-date">View event date</a>
@@ -112,6 +113,99 @@ I really like the rounded corner and shadow effect to get the website more three
 4. Cloudinary - to host images.
 5. Summernote - to apply a wysiwyg editor.
 6. Bootstrap - for design.
+
+## <a id="models"></a>Database models
+Event - is the model for the created events.<br>
+SigUp - to use when signing up participants to event.<br>
+I did an entity relationship diagram in excel.<br>
+<img src="readmefiles/models_excel_01.jpg" alt="Screenshot from excel sheet includin models description."><br>
+
+### Data Schema Overview
+<b>Event Model</b><br>
+```
+class Event(models.Model):
+    title = models.CharField(max_length=200, unique=True)
+    slug = models.SlugField(max_length=200, unique=True)
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="emx_events"
+    )
+    updated_on = models.DateTimeField(auto_now=True)
+    content = models.TextField()
+    featured_image = CloudinaryField('image', default='placeholder')
+    excerpt = models.TextField(blank=True)
+    event_date = models.DateField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    status = models.IntegerField(choices=STATUS, default=0)
+    likes = models.ManyToManyField(
+        User, related_name='event_likes', blank=True
+    )
+
+    class Meta:
+        ordering = ['-created_on']
+
+    def __str__(self):
+        return self.title
+```
+- Fields:
+  - title: CharField with a maximum length of 200 characters, representing the title of the event.
+  - slug: SlugField with a maximum length of 200 characters, providing a URL-friendly version of the title for use in URLs.
+  - author: ForeignKey to the User model, establishing a many-to-one relationship. It represents the author of the event and is related to the emx_events attribute of the User model.
+  - updated_on: DateTimeField with auto_now=True, automatically updating to the current date and time whenever the instance is modified.
+  - content: TextField, storing the content or description of the event.
+  - featured_image: CloudinaryField for storing images associated with the event.
+  - excerpt: TextField, an optional field providing a brief summary or excerpt of the event content.
+  - event_date: DateField, storing the date of the event.
+  - created_on: DateTimeField with auto_now_add=True, capturing the date and time when the instance is created.
+  - status: IntegerField with choices defined by the STATUS tuple, allowing the event to be in either "Draft" (0) or "Active" (1) status.
+  - likes: ManyToManyField to the User model, establishing a many-to-many relationship for users who have liked the event.
+
+- Methods:
+  - number_of_likes: Property method calculating and returning the number of likes for the event.
+- Meta:
+  - ordering: Specifies the default ordering for queries, ordering events by created_on in descending order.
+- String Representation:
+  - str: Returns the title of the event as its string representation.
+  
+<b>SignUp Model</b>
+```
+class SignUp(models.Model):
+    sign = models.ForeignKey(
+        Event, on_delete=models.CASCADE, related_name='signed_up'
+    )
+    name = models.CharField(max_length=80)
+    first_name = models.CharField(max_length=80)
+    last_name = models.CharField(max_length=80)
+    email = models.EmailField()
+    start_number = models.CharField(
+        max_length=8,
+        blank=True,
+        null=True
+    )
+    transponder = models.IntegerField(null=True, blank=True)
+    created_on = models.DateTimeField(auto_now_add=True)
+    approved = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ['created_on']
+
+    def __str__(self):
+        return f"{self.name}, signed up {self.created_on}"
+```       
+- Fields:
+  - sign: ForeignKey to the Event model, establishing a many-to-one relationship. It represents the event to which participants are signing up.
+  - name: CharField with a maximum length of 80 characters, storing the name of the participant.
+  - first_name: CharField with a maximum length of 80 characters, storing the first name of the participant.
+  - last_name: CharField with a maximum length of 80 characters, storing the last name of the participant.
+  - email: EmailField, storing the email address of the participant.
+  - start_number: CharField with a maximum length of 8 characters, allowing blank or null values. Represents the start number assigned to the participant.
+  - transponder: IntegerField, allowing blank or null values. Represents a transponder associated with the participant.
+  - created_on: DateTimeField with auto_now_add=True, capturing the date and time when the instance is created.
+  - approved: BooleanField with a default value of False, indicating whether the participant's sign-up has been approved.
+
+- Meta:
+  - ordering: Specifies the default ordering for queries, ordering sign-ups by created_on in ascending order.
+- String Representation:
+  - str: Returns a string representation containing the name of the participant and the sign-up creation date.
 
 # <a id="features"></a>Features
 
